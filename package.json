@@ -1,0 +1,30 @@
+{
+  "name": "black-perfumes",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others -n web,api \"npm run dev -w @black-perfumes/web\" \"npm run dev -w @black-perfumes/api\"",
+    "dev:web": "npm run dev -w @black-perfumes/web",
+    "dev:api": "npm run dev -w @black-perfumes/api",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "build": "npm run build --workspaces",
+    "start:web": "npm run start -w @black-perfumes/web",
+    "start:api": "npm run start -w @black-perfumes/api",
+    "db:validate": "npm run db:validate -w @black-perfumes/api",
+    "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.5",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.0"
+  }
+}

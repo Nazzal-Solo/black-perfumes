@@ -1,0 +1,100 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  importFileExtension = "js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AdminUser {
+  id                  Int            @id @default(1)
+  email               String         @unique @db.VarChar(254)
+  passwordHash        String
+  loginAttempts       Int            @default(0)
+  loginWindowStartsAt DateTime       @default(now()) @db.Timestamptz(3)
+  createdAt           DateTime       @default(now()) @db.Timestamptz(3)
+  sessions            AdminSession[]
+}
+
+model AdminSession {
+  id        String    @id @default(uuid()) @db.Uuid
+  tokenHash String    @unique @db.Char(64)
+  adminId   Int
+  expiresAt DateTime  @db.Timestamptz(3)
+  revokedAt DateTime? @db.Timestamptz(3)
+  createdAt DateTime  @default(now()) @db.Timestamptz(3)
+  admin     AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([adminId])
+  @@index([expiresAt])
+}
+
+model Category {
+  id        String    @id @default(uuid()) @db.Uuid
+  name      String    @unique @db.VarChar(120)
+  products  Product[]
+  createdAt DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime  @updatedAt @db.Timestamptz(3)
+}
+
+enum ProductType {
+  UNCONFIRMED
+  INSPIRED
+  ORIGINAL
+  OTHER
+}
+
+enum Availability {
+  AVAILABLE
+  UNAVAILABLE
+}
+
+model Product {
+  id          String         @id @default(uuid()) @db.Uuid
+  name        String         @db.VarChar(200)
+  description String         @default("")
+  priceJod    Decimal?       @db.Decimal(10, 3)
+  categoryId  String         @db.Uuid
+  isVisible   Boolean        @default(false)
+  inspirationBrand String? @db.VarChar(200)
+  inspirationFragrance String? @db.VarChar(200)
+  productType ProductType @default(UNCONFIRMED)
+  customDisplayName String? @db.VarChar(200)
+  nameAr String? @db.VarChar(200)
+  descriptionAr String?
+  disclosureText String?
+  disclosureAr String?
+  availability Availability?
+  sizeMl Decimal? @db.Decimal(8, 2)
+  concentration String? @db.VarChar(120)
+  fragranceNotes String?
+  fragranceNotesAr String?
+  referenceVerified Boolean @default(false)
+  isArchived Boolean @default(false)
+  catalogImportKey String? @unique
+  catalogReferences String[] @default([])
+  seasonalRecommendations String[] @default([])
+  reviewNotes String?
+  category    Category       @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  images      ProductImage[]
+  createdAt   DateTime       @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime       @updatedAt @db.Timestamptz(3)
+
+  @@index([categoryId])
+  @@index([isVisible])
+}
+
+model ProductImage {
+  id                 String   @id @default(uuid()) @db.Uuid
+  productId          String   @db.Uuid
+  cloudinaryPublicId String   @unique
+  url                String
+  altText            String   @default("") @db.VarChar(300)
+  position           Int
+  product            Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt          DateTime @default(now()) @db.Timestamptz(3)
+
+  @@unique([productId, position])
+}

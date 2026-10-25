@@ -1,0 +1,42 @@
+{
+  "name": "@black-perfumes/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src prisma.config.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.test.json && tsc --noEmit --module NodeNext --moduleResolution NodeNext --target ES2022 --esModuleInterop --skipLibCheck --strict prisma.config.ts",
+    "build": "prisma generate && tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "db:validate": "prisma validate",
+    "db:generate": "prisma generate",
+    "db:deploy": "prisma migrate deploy",
+    "admin:create": "prisma generate && tsx src/cli/create-admin.ts",
+    "test:auth": "tsx --test tests/auth.test.ts",
+    "test:admin": "tsx --test tests/admin.test.ts",
+    "test:images": "tsx --test tests/images.test.ts",
+    "images:cleanup": "tsx src/cli/cleanup-images.ts",
+    "catalog:import": "tsx src/cli/import-catalog.ts",
+    "test:catalog": "tsx --test tests/catalog.test.ts",
+    "catalog:release": "tsx src/cli/release-catalog.ts",
+    "test:release": "tsx --test tests/catalog-release.test.ts",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.18.0",
+    "prisma": "^7.0.0",
+    "tsx": "^4.20.6"
+  }
+}

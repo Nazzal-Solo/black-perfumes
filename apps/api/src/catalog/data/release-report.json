@@ -1,0 +1,3820 @@
+[
+  {
+    "at": "2026-10-25T00:28:23.658Z",
+    "auditSha256": "4100b37d9eb4368abcb2b2dec0bdac95d034ee8ccd044923fae307614d7913e8",
+    "summary": {
+      "mode": "applied",
+      "published": 146,
+      "drafts": 34,
+      "changed": 147,
+      "held": 34
+    },
+    "changes": [
+      {
+        "reference": "M1",
+        "id": "228705f9-8995-41c9-abca-664a53aa4eb8",
+        "references": [
+          "M1"
+        ],
+        "before": {
+          "name": "Versace Eros",
+          "inspirationFragrance": "Eros",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Eros",
+          "inspirationFragrance": "Eros",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M2",
+        "id": "58eb538a-d0cc-48da-a8a9-3e9214ea70fa",
+        "references": [
+          "M2"
+        ],
+        "before": {
+          "name": "Dolce & Gabbana K",
+          "inspirationFragrance": "K",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dolce & Gabbana K",
+          "inspirationFragrance": "K",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M3",
+        "id": "c909e719-601f-47e7-99ce-2960a88c5778",
+        "references": [
+          "M3"
+        ],
+        "before": {
+          "name": "Paco Rabanne Invictus Cologne",
+          "inspirationFragrance": "Invictus Cologne",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne Invictus Cologne",
+          "inspirationFragrance": "Invictus Cologne",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption says invictus cologne; exact variant requires confirmation.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M4",
+        "id": "6499785b-9abf-4f4c-9b53-4bab6e3be816",
+        "references": [
+          "M4"
+        ],
+        "before": {
+          "name": "Chanel Bleu de Chanel",
+          "inspirationFragrance": "Bleu de Chanel",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chanel Bleu de Chanel",
+          "inspirationFragrance": "Bleu de Chanel",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M5",
+        "id": "eeb928ae-8e4c-4b41-bab0-e30fe5313322",
+        "references": [
+          "M5"
+        ],
+        "before": {
+          "name": "Chanel Allure Homme Sport",
+          "inspirationFragrance": "Allure Homme Sport",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chanel Allure Homme Sport",
+          "inspirationFragrance": "Allure Homme Sport",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M6",
+        "id": "e6bba1ba-51da-45cc-83f3-02a3919db471",
+        "references": [
+          "M6"
+        ],
+        "before": {
+          "name": "Dior Sauvage",
+          "inspirationFragrance": "Sauvage",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Sauvage",
+          "inspirationFragrance": "Sauvage",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M7",
+        "id": "5d87e462-2cee-454d-b335-d88ac8e6f155",
+        "references": [
+          "M7",
+          "M87"
+        ],
+        "before": {
+          "name": "Creed Aventus",
+          "inspirationFragrance": "Aventus",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Creed Aventus",
+          "inspirationFragrance": "Aventus",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Linked M7/M87 merge: different Aventus bottle presentations; owner confirmation required.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M8",
+        "id": "d39300a6-1f67-412f-96e2-749a8a6e0f87",
+        "references": [
+          "M8"
+        ],
+        "before": {
+          "name": "Catalog M8 — Yves Saint Laurent",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog M8 — Yves Saint Laurent",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption gives brand only; Y bottle shown; compare M60 before identifying variant.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M9",
+        "id": "f260e78f-8369-4e11-8e68-32807294fa8c",
+        "references": [
+          "M9"
+        ],
+        "before": {
+          "name": "Catalog M9 — Montblanc",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog M9 — Montblanc",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption says Mont Blank; exact fragrance not stated.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M10",
+        "id": "cd5fdb8e-f858-4768-8cb1-1a2cafa4571b",
+        "references": [
+          "M10",
+          "M48"
+        ],
+        "before": {
+          "name": "Giorgio Armani Acqua di Giò Pour Homme",
+          "inspirationFragrance": "Acqua di Giò Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Acqua di Giò Pour Homme",
+          "inspirationFragrance": "Acqua di Giò Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M11",
+        "id": "1e909cbc-eca6-4e07-871a-941fd213cb3f",
+        "references": [
+          "M11",
+          "M33"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Ultra Male",
+          "inspirationFragrance": "Ultra Male",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Ultra Male",
+          "inspirationFragrance": "Ultra Male",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M12",
+        "id": "d408fdbf-ebf7-44c7-9037-fcd01b0314e8",
+        "references": [
+          "M12"
+        ],
+        "before": {
+          "name": "Dior Homme Intense",
+          "inspirationFragrance": "Homme Intense",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Homme Intense",
+          "inspirationFragrance": "Homme Intense",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M13",
+        "id": "460547b0-6776-4ae8-bbf9-15ffc94882fb",
+        "references": [
+          "M13"
+        ],
+        "before": {
+          "name": "Dolce & Gabbana The One for Men",
+          "inspirationFragrance": "The One for Men",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dolce & Gabbana The One for Men",
+          "inspirationFragrance": "The One for Men",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M14",
+        "id": "acb1a9a7-fd37-4a06-a135-008ea6c9aaf4",
+        "references": [
+          "M14"
+        ],
+        "before": {
+          "name": "Emporio Armani Stronger With You",
+          "inspirationFragrance": "Stronger With You",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Emporio Armani Stronger With You",
+          "inspirationFragrance": "Stronger With You",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M15",
+        "id": "f9035cac-88c1-493b-b00d-1877c7c7ea4d",
+        "references": [
+          "M15"
+        ],
+        "before": {
+          "name": "Giorgio Armani Acqua di Giò Profumo",
+          "inspirationFragrance": "Acqua di Giò Profumo",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Acqua di Giò Profumo",
+          "inspirationFragrance": "Acqua di Giò Profumo",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M16",
+        "id": "24ce74fb-6d6c-40cb-89dd-7a9c3e00a8d5",
+        "references": [
+          "M16"
+        ],
+        "before": {
+          "name": "Gucci Guilty Pour Homme",
+          "inspirationFragrance": "Guilty Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Guilty Pour Homme",
+          "inspirationFragrance": "Guilty Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M17",
+        "id": "3b40e4e5-ea8f-4780-970f-6b4cdca87d2b",
+        "references": [
+          "M17"
+        ],
+        "before": {
+          "name": "Tom Ford Ombré Leather",
+          "inspirationFragrance": "Ombré Leather",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Ombré Leather",
+          "inspirationFragrance": "Ombré Leather",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M18",
+        "id": "7fb8e67f-cbc3-49c9-a3c7-d8c7e0916b64",
+        "references": [
+          "M18"
+        ],
+        "before": {
+          "name": "Dior Sauvage Elixir",
+          "inspirationFragrance": "Sauvage Elixir",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Sauvage Elixir",
+          "inspirationFragrance": "Sauvage Elixir",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M19",
+        "id": "c8da7ade-23da-4160-8431-d6e4368b3fd2",
+        "references": [
+          "M19",
+          "M101"
+        ],
+        "before": {
+          "name": "Louis Vuitton Ombre Nomade",
+          "inspirationFragrance": "Ombre Nomade",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Louis Vuitton Ombre Nomade",
+          "inspirationFragrance": "Ombre Nomade",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M20",
+        "id": "09496486-1562-4f90-b660-40f0381370a2",
+        "references": [
+          "M20"
+        ],
+        "before": {
+          "name": "Mancera Red Tobacco",
+          "inspirationFragrance": "Red Tobacco",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Mancera Red Tobacco",
+          "inspirationFragrance": "Red Tobacco",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M21",
+        "id": "8d582781-912d-4281-b9ce-2d47c17ee5b9",
+        "references": [
+          "M21"
+        ],
+        "before": {
+          "name": "Montblanc Explorer Platinum",
+          "inspirationFragrance": "Explorer Platinum",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Montblanc Explorer Platinum",
+          "inspirationFragrance": "Explorer Platinum",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M22",
+        "id": "9762c155-9731-4623-8ddd-483d06dc1bd5",
+        "references": [
+          "M22",
+          "M31"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Le Male Elixir",
+          "inspirationFragrance": "Le Male Elixir",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Le Male Elixir",
+          "inspirationFragrance": "Le Male Elixir",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M23",
+        "id": "2d648aed-646b-42e9-8b13-dcd9b68feaaf",
+        "references": [
+          "M23"
+        ],
+        "before": {
+          "name": "Paco Rabanne Phantom",
+          "inspirationFragrance": "Phantom",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne Phantom",
+          "inspirationFragrance": "Phantom",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M24",
+        "id": "80697977-6f82-4d4a-8ea7-fccc7135488a",
+        "references": [
+          "M24"
+        ],
+        "before": {
+          "name": "Prada L'Homme Intense",
+          "inspirationFragrance": "L'Homme Intense",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Prada L'Homme Intense",
+          "inspirationFragrance": "L'Homme Intense",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M25",
+        "id": "cdf2d7c1-2bfd-4bab-a304-e9bda65be1d9",
+        "references": [
+          "M25"
+        ],
+        "before": {
+          "name": "Burberry Mr. Burberry",
+          "inspirationFragrance": "Mr. Burberry",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry Mr. Burberry",
+          "inspirationFragrance": "Mr. Burberry",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M26",
+        "id": "9d22c5d7-27af-4db7-9a53-d8a4988c6713",
+        "references": [
+          "M26"
+        ],
+        "before": {
+          "name": "Versace Dylan Blue Pour Homme",
+          "inspirationFragrance": "Dylan Blue Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Dylan Blue Pour Homme",
+          "inspirationFragrance": "Dylan Blue Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M27",
+        "id": "796c3319-005f-4b21-87d3-ca72da4b13ae",
+        "references": [
+          "M27"
+        ],
+        "before": {
+          "name": "Versace Pour Homme",
+          "inspirationFragrance": "Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Pour Homme",
+          "inspirationFragrance": "Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M28",
+        "id": "6a52083e-3ab7-43e1-abce-87b7fb57a2d6",
+        "references": [
+          "M28"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent La Nuit de L'Homme",
+          "inspirationFragrance": "La Nuit de L'Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent La Nuit de L'Homme",
+          "inspirationFragrance": "La Nuit de L'Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M29",
+        "id": "220c7f02-dbad-4c57-bc25-a299b5c18171",
+        "references": [
+          "M29"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent La Nuit de Bleu",
+          "inspirationFragrance": "La Nuit de Bleu",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent La Nuit de Bleu",
+          "inspirationFragrance": "La Nuit de Bleu",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source caption La Nuit de Bleu; exact variant requires verification.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M30",
+        "id": "79753b93-fb55-49cb-ab65-8f0a7c1b513d",
+        "references": [
+          "M30"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent Tuxedo",
+          "inspirationFragrance": "Tuxedo",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent Tuxedo",
+          "inspirationFragrance": "Tuxedo",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M32",
+        "id": "e9d6af3a-db8c-4c24-9453-d1bcbfe2edbc",
+        "references": [
+          "M32"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Le Male Le Parfum",
+          "inspirationFragrance": "Le Male Le Parfum",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Le Male Le Parfum",
+          "inspirationFragrance": "Le Male Le Parfum",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption says Le Male Le; verify exact variant from owner.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M34",
+        "id": "c0e456f3-ee3d-48a9-8c06-9284f2687be4",
+        "references": [
+          "M34"
+        ],
+        "before": {
+          "name": "Nasomatto Black Afgano",
+          "inspirationFragrance": "Black Afgano",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Nasomatto Black Afgano",
+          "inspirationFragrance": "Black Afgano",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M35",
+        "id": "f9cd9882-d322-4d58-9673-3fabec47d864",
+        "references": [
+          "M35"
+        ],
+        "before": {
+          "name": "Hugo Boss Hugo Man",
+          "inspirationFragrance": "Hugo Man",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Hugo Boss Hugo Man",
+          "inspirationFragrance": "Hugo Man",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M36",
+        "id": "d6ee4951-0a05-4753-acea-ca644c53f348",
+        "references": [
+          "M36"
+        ],
+        "before": {
+          "name": "Carolina Herrera Bad Boy",
+          "inspirationFragrance": "Bad Boy",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera Bad Boy",
+          "inspirationFragrance": "Bad Boy",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M37",
+        "id": "e8d07201-1094-47aa-95e7-ebdf8a13e123",
+        "references": [
+          "M37"
+        ],
+        "before": {
+          "name": "Carolina Herrera 212 Sexy Men",
+          "inspirationFragrance": "212 Sexy Men",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera 212 Sexy Men",
+          "inspirationFragrance": "212 Sexy Men",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M38",
+        "id": "2a200397-b2a1-45cb-b925-3d6b1e6bd1bb",
+        "references": [
+          "M38"
+        ],
+        "before": {
+          "name": "Carolina Herrera 212 Men",
+          "inspirationFragrance": "212 Men",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera 212 Men",
+          "inspirationFragrance": "212 Men",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M39",
+        "id": "20190c0f-4874-449a-b0d3-e2ac1fecb91c",
+        "references": [
+          "M39"
+        ],
+        "before": {
+          "name": "Bvlgari Man in Black",
+          "inspirationFragrance": "Man in Black",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Bvlgari Man in Black",
+          "inspirationFragrance": "Man in Black",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M40",
+        "id": "e40379b9-1c53-4e5d-91b5-6b640ca0140a",
+        "references": [
+          "M40"
+        ],
+        "before": {
+          "name": "Parfums de Marly Percival",
+          "inspirationFragrance": "Percival",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Percival",
+          "inspirationFragrance": "Percival",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M41",
+        "id": "e3340914-3535-4ff0-ba4b-78fe610b55f1",
+        "references": [
+          "M41"
+        ],
+        "before": {
+          "name": "Parfums de Marly Greenley",
+          "inspirationFragrance": "Greenley",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Greenley",
+          "inspirationFragrance": "Greenley",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M42",
+        "id": "f92a964e-a4dc-49c1-a7c3-b8c7d42e9fc1",
+        "references": [
+          "M42"
+        ],
+        "before": {
+          "name": "Parfums de Marly Haltane",
+          "inspirationFragrance": "Haltane",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Haltane",
+          "inspirationFragrance": "Haltane",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M43",
+        "id": "9fa4b443-c4be-45dd-8836-2d5338120cfb",
+        "references": [
+          "M43"
+        ],
+        "before": {
+          "name": "Parfums de Marly Layton",
+          "inspirationFragrance": "Layton",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Layton",
+          "inspirationFragrance": "Layton",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M44",
+        "id": "612aa924-6421-41f2-b068-40c6067c5404",
+        "references": [
+          "M44"
+        ],
+        "before": {
+          "name": "Parfums de Marly Pegasus",
+          "inspirationFragrance": "Pegasus",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Pegasus",
+          "inspirationFragrance": "Pegasus",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M45",
+        "id": "8a8f8b79-59f2-4ee9-9e18-6afb85066e02",
+        "references": [
+          "M45"
+        ],
+        "before": {
+          "name": "Parfums de Marly Herod",
+          "inspirationFragrance": "Herod",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Herod",
+          "inspirationFragrance": "Herod",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M46",
+        "id": "3fe0bcdf-bb10-4077-b4bf-db209c19d649",
+        "references": [
+          "M46"
+        ],
+        "before": {
+          "name": "Giorgio Armani Acqua di Giò Profondo",
+          "inspirationFragrance": "Acqua di Giò Profondo",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Acqua di Giò Profondo",
+          "inspirationFragrance": "Acqua di Giò Profondo",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M47",
+        "id": "b551528b-f9f3-46c2-856a-4e23acdc327c",
+        "references": [
+          "M47"
+        ],
+        "before": {
+          "name": "Giorgio Armani Acqua di Giò Absolu",
+          "inspirationFragrance": "Acqua di Giò Absolu",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Acqua di Giò Absolu",
+          "inspirationFragrance": "Acqua di Giò Absolu",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M49",
+        "id": "a16be17c-eb97-4d84-82a0-140ac2424c7c",
+        "references": [
+          "M49"
+        ],
+        "before": {
+          "name": "Givenchy Gentleman",
+          "inspirationFragrance": "Gentleman",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Givenchy Gentleman",
+          "inspirationFragrance": "Gentleman",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Same caption as M50 but different bottle; variants unresolved; do not merge.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M50",
+        "id": "3b1bb1e7-fb82-43b9-a75a-232061af000c",
+        "references": [
+          "M50"
+        ],
+        "before": {
+          "name": "Givenchy Gentleman",
+          "inspirationFragrance": "Gentleman",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Givenchy Gentleman",
+          "inspirationFragrance": "Gentleman",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Same caption as M49 but different bottle; variants unresolved; do not merge.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M51",
+        "id": "803cbba6-7a0c-435a-8fe3-8fe763cb7bfc",
+        "references": [
+          "M51"
+        ],
+        "before": {
+          "name": "Givenchy Gentleman Réserve Privée",
+          "inspirationFragrance": "Gentleman Réserve Privée",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Givenchy Gentleman Réserve Privée",
+          "inspirationFragrance": "Gentleman Réserve Privée",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M52",
+        "id": "24d3d4c9-1a4e-496c-abee-bb9b8336b378",
+        "references": [
+          "M52"
+        ],
+        "before": {
+          "name": "Hugo Boss Boss Bottled",
+          "inspirationFragrance": "Boss Bottled",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Hugo Boss Boss Bottled",
+          "inspirationFragrance": "Boss Bottled",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M53",
+        "id": "483d46ce-4521-47bc-836d-8420e1b89739",
+        "references": [
+          "M53"
+        ],
+        "before": {
+          "name": "Hermès Terre d'Hermès",
+          "inspirationFragrance": "Terre d'Hermès",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Hermès Terre d'Hermès",
+          "inspirationFragrance": "Terre d'Hermès",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M54",
+        "id": "3ac91d32-d1c0-4f44-9ba9-202625dc5012",
+        "references": [
+          "M54"
+        ],
+        "before": {
+          "name": "Montblanc Legend Spirit",
+          "inspirationFragrance": "Legend Spirit",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Montblanc Legend Spirit",
+          "inspirationFragrance": "Legend Spirit",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M55",
+        "id": "33b435af-0ac6-42b3-8644-ea47e28d137b",
+        "references": [
+          "M55"
+        ],
+        "before": {
+          "name": "Montblanc Explorer",
+          "inspirationFragrance": "Explorer",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Montblanc Explorer",
+          "inspirationFragrance": "Explorer",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M56",
+        "id": "ef46d603-c5be-48d0-9c0f-f6f95736d611",
+        "references": [
+          "M56"
+        ],
+        "before": {
+          "name": "Lacoste L.12.12 Blanc",
+          "inspirationFragrance": "L.12.12 Blanc",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lacoste L.12.12 Blanc",
+          "inspirationFragrance": "L.12.12 Blanc",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M57",
+        "id": "5556927f-5262-4a10-8e2c-4eb18063fc77",
+        "references": [
+          "M57"
+        ],
+        "before": {
+          "name": "Carolina Herrera 212 VIP Men",
+          "inspirationFragrance": "212 VIP Men",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera 212 VIP Men",
+          "inspirationFragrance": "212 VIP Men",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M58",
+        "id": "814e6bb0-1a5e-4f75-9b3f-f7f10bcc3299",
+        "references": [
+          "M58"
+        ],
+        "before": {
+          "name": "Dunhill Alfred Dunhill London",
+          "inspirationFragrance": "Alfred Dunhill London",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dunhill — catalog M58",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source Dunhill London Alfred; exact fragrance unclear.",
+        "action": "updated"
+      },
+      {
+        "reference": "M59",
+        "id": "b260143d-b9ab-4745-be16-dce0c4f79294",
+        "references": [
+          "M59"
+        ],
+        "before": {
+          "name": "Calvin Klein CK One",
+          "inspirationFragrance": "CK One",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Calvin Klein CK One",
+          "inspirationFragrance": "CK One",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M60",
+        "id": "534c2505-7f84-41e9-9d8c-cd065ddb324b",
+        "references": [
+          "M60"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent Y Le",
+          "inspirationFragrance": "Y Le",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent Y Le",
+          "inspirationFragrance": "Y Le",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption Y Le; exact variant unclear; compare M8.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M61",
+        "id": "46f33fec-4e17-4a01-b49a-44ca73d69f79",
+        "references": [
+          "M61"
+        ],
+        "before": {
+          "name": "Carolina Herrera Mystery Tobacco",
+          "inspirationFragrance": "Mystery Tobacco",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera Mystery Tobacco",
+          "inspirationFragrance": "Mystery Tobacco",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M62",
+        "id": "2ff2f76a-7c29-492f-86d4-9c5896d56881",
+        "references": [
+          "M62",
+          "M79"
+        ],
+        "before": {
+          "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+          "inspirationFragrance": "Baccarat Rouge 540",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+          "inspirationFragrance": "Baccarat Rouge 540",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "M62 and M79 share title; concentration/edition unconfirmed.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M63",
+        "id": "7157d5b0-7af6-4376-9010-43b80596539f",
+        "references": [
+          "M63"
+        ],
+        "before": {
+          "name": "Bvlgari Le Gemme Ambero",
+          "inspirationFragrance": "Le Gemme Ambero",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Bvlgari Le Gemme Ambero",
+          "inspirationFragrance": "Le Gemme Ambero",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M64",
+        "id": "481b8e80-b40a-4acb-8045-3a72f8d9b314",
+        "references": [
+          "M64"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Le Male",
+          "inspirationFragrance": "Le Male",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Le Male",
+          "inspirationFragrance": "Le Male",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M65",
+        "id": "2eb5348c-e443-47f8-8e48-c8d42f043fef",
+        "references": [
+          "M65"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Scandal Pour Homme",
+          "inspirationFragrance": "Scandal Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Scandal Pour Homme",
+          "inspirationFragrance": "Scandal Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M66",
+        "id": "f2bb30b1-f67a-4f5c-bc8c-07b57da5d8e8",
+        "references": [
+          "M66"
+        ],
+        "before": {
+          "name": "Giorgio Armani Code",
+          "inspirationFragrance": "Code",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Code",
+          "inspirationFragrance": "Code",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M67",
+        "id": "50f138ef-f557-470a-8d07-d7b598ef4958",
+        "references": [
+          "M67"
+        ],
+        "before": {
+          "name": "Viktor & Rolf Spicebomb",
+          "inspirationFragrance": "Spicebomb",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Viktor & Rolf Spicebomb",
+          "inspirationFragrance": "Spicebomb",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Exact variant unconfirmed.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M68",
+        "id": "4c35b32b-3e42-49fe-877c-51eb96591de0",
+        "references": [
+          "M68"
+        ],
+        "before": {
+          "name": "Valentino Uomo",
+          "inspirationFragrance": "Uomo",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Valentino Uomo",
+          "inspirationFragrance": "Uomo",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Exact variant unconfirmed.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M69",
+        "id": "79b7bded-125b-42ac-963f-1915fab3e91d",
+        "references": [
+          "M69"
+        ],
+        "before": {
+          "name": "Paco Rabanne 1 Million Privé",
+          "inspirationFragrance": "1 Million Privé",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne 1 Million Privé",
+          "inspirationFragrance": "1 Million Privé",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M70",
+        "id": "d4c926e1-2865-47b6-91fe-30eed0198eb7",
+        "references": [
+          "M70"
+        ],
+        "before": {
+          "name": "Paco Rabanne 1 Million",
+          "inspirationFragrance": "1 Million",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne 1 Million",
+          "inspirationFragrance": "1 Million",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M71",
+        "id": "8f1e980f-4c2b-4aa3-97ed-30c746c04ab8",
+        "references": [
+          "M71"
+        ],
+        "before": {
+          "name": "Tom Ford Portofino",
+          "inspirationFragrance": "Portofino",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Neroli Portofino",
+          "inspirationFragrance": "Neroli Portofino",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M72",
+        "id": "a03392ef-391c-4073-acbb-8e0acdca9c4d",
+        "references": [
+          "M72"
+        ],
+        "before": {
+          "name": "Tom Ford Oud Wood",
+          "inspirationFragrance": "Oud Wood",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Oud Wood",
+          "inspirationFragrance": "Oud Wood",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M73",
+        "id": "11e90212-333b-47b6-959f-1ddf14ef4be6",
+        "references": [
+          "M73"
+        ],
+        "before": {
+          "name": "Tom Ford Tuscan Leather",
+          "inspirationFragrance": "Tuscan Leather",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Tuscan Leather",
+          "inspirationFragrance": "Tuscan Leather",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M74",
+        "id": "4929956b-f106-4fc6-8347-1c7ac72dd34b",
+        "references": [
+          "M74"
+        ],
+        "before": {
+          "name": "Tom Ford Black Orchid",
+          "inspirationFragrance": "Black Orchid",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Black Orchid",
+          "inspirationFragrance": "Black Orchid",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M75",
+        "id": "e785683d-3bd2-4dd0-ac59-e4b98e1e6831",
+        "references": [
+          "M75"
+        ],
+        "before": {
+          "name": "Amouage Interlude Man",
+          "inspirationFragrance": "Interlude Man",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Amouage Interlude Man",
+          "inspirationFragrance": "Interlude Man",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M76",
+        "id": "5a9c18c8-b750-4dc3-ba52-909a011e076d",
+        "references": [
+          "M76"
+        ],
+        "before": {
+          "name": "Armani Privé Rose d'Arabie",
+          "inspirationFragrance": "Rose d'Arabie",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Armani Privé Rose d'Arabie",
+          "inspirationFragrance": "Rose d'Arabie",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M77",
+        "id": "d0f20e7b-cb14-4bd8-82ad-c81d08e9af66",
+        "references": [
+          "M77"
+        ],
+        "before": {
+          "name": "Cartier Pasha de Cartier",
+          "inspirationFragrance": "Pasha de Cartier",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Cartier Pasha de Cartier",
+          "inspirationFragrance": "Pasha de Cartier",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M78",
+        "id": "03284606-b877-4fa3-bc5c-935ab800bf18",
+        "references": [
+          "M78"
+        ],
+        "before": {
+          "name": "Maison Francis Kurkdjian Oud Satin Mood",
+          "inspirationFragrance": "Oud Satin Mood",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Maison Francis Kurkdjian Oud Satin Mood",
+          "inspirationFragrance": "Oud Satin Mood",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M80",
+        "id": "20469665-2f81-4769-ada8-b02d1f9902b5",
+        "references": [
+          "M80"
+        ],
+        "before": {
+          "name": "Gucci Intense Oud",
+          "inspirationFragrance": "Intense Oud",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Intense Oud",
+          "inspirationFragrance": "Intense Oud",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M81",
+        "id": "ebb4553a-4dad-4124-8d16-6c2862ab27f7",
+        "references": [
+          "M81"
+        ],
+        "before": {
+          "name": "Dior Fahrenheit",
+          "inspirationFragrance": "Fahrenheit",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Fahrenheit",
+          "inspirationFragrance": "Fahrenheit",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M82",
+        "id": "cfe1a377-3d01-4ed8-a346-a25b49989d00",
+        "references": [
+          "M82"
+        ],
+        "before": {
+          "name": "Dolce & Gabbana The One Royal Night",
+          "inspirationFragrance": "The One Royal Night",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dolce & Gabbana The One Royal Night",
+          "inspirationFragrance": "The One Royal Night",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M83",
+        "id": "0dbc4a4e-f04b-456a-b7d9-5625c4c02b5c",
+        "references": [
+          "M83"
+        ],
+        "before": {
+          "name": "Calvin Klein Euphoria Men",
+          "inspirationFragrance": "Euphoria Men",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Calvin Klein Euphoria Men",
+          "inspirationFragrance": "Euphoria Men",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M84",
+        "id": "7aef6f0b-6938-4ebd-b15b-d651539475dc",
+        "references": [
+          "M84"
+        ],
+        "before": {
+          "name": "Gucci Guilty Black Pour Homme",
+          "inspirationFragrance": "Guilty Black Pour Homme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Guilty Black Pour Homme",
+          "inspirationFragrance": "Guilty Black Pour Homme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M85",
+        "id": "3663cf54-7d9c-48ab-8aa1-8d60a47f18c9",
+        "references": [
+          "M85"
+        ],
+        "before": {
+          "name": "Nikos Sculpture",
+          "inspirationFragrance": "Sculpture",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Nikos Sculpture",
+          "inspirationFragrance": "Sculpture",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Exact variant unconfirmed.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M86",
+        "id": "e369a9a9-9dc9-4816-ae6c-9c77dc3694fd",
+        "references": [
+          "M86"
+        ],
+        "before": {
+          "name": "Davidoff Cool Water",
+          "inspirationFragrance": "Cool Water",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Davidoff Cool Water",
+          "inspirationFragrance": "Cool Water",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M88",
+        "id": "6b32742b-5840-481b-a268-07d8166b5c33",
+        "references": [
+          "M88"
+        ],
+        "before": {
+          "name": "Creed Silver Mountain",
+          "inspirationFragrance": "Silver Mountain",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Creed Silver Mountain",
+          "inspirationFragrance": "Silver Mountain",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source CREED SILVER MOUNTAIN; exact full title requires confirmation.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M89",
+        "id": "bffd2bf0-4dd8-438c-a9e1-2aa76a927c21",
+        "references": [
+          "M89"
+        ],
+        "before": {
+          "name": "Creed Green Irish",
+          "inspirationFragrance": "Green Irish",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Creed Green Irish",
+          "inspirationFragrance": "Green Irish",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source CREED GREEN IRISH; exact full title requires confirmation.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M90",
+        "id": "75c5f336-ee94-4c61-8e68-64b361d69b12",
+        "references": [
+          "M90"
+        ],
+        "before": {
+          "name": "Creed Viking",
+          "inspirationFragrance": "Viking",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Creed Viking",
+          "inspirationFragrance": "Viking",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M91",
+        "id": "749e7303-86be-419b-a643-a357d4c0cd10",
+        "references": [
+          "M91"
+        ],
+        "before": {
+          "name": "Prada Black",
+          "inspirationFragrance": "Black",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Prada Black",
+          "inspirationFragrance": "Black",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption PRADA UNVEILS BLACK; exact Luna Rossa variant requires confirmation.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "M92",
+        "id": "8b8d2d97-3d98-412d-8eab-b0ed68083267",
+        "references": [
+          "M92"
+        ],
+        "before": {
+          "name": "Nautica Voyage",
+          "inspirationFragrance": "Voyage",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Nautica Voyage",
+          "inspirationFragrance": "Voyage",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M93",
+        "id": "08c04c00-6a95-480b-9404-8bb150a93b2a",
+        "references": [
+          "M93"
+        ],
+        "before": {
+          "name": "Burberry Hero",
+          "inspirationFragrance": "Hero",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry Hero",
+          "inspirationFragrance": "Hero",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M94",
+        "id": "62a08716-e65b-4bbc-a3c1-4b2a5bed1cff",
+        "references": [
+          "M94"
+        ],
+        "before": {
+          "name": "Emporio Armani Stronger With You Oud",
+          "inspirationFragrance": "Stronger With You Oud",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Emporio Armani Stronger With You Oud",
+          "inspirationFragrance": "Stronger With You Oud",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M95",
+        "id": "814806c8-8c2a-4a69-8a8c-2ecfeb6cb239",
+        "references": [
+          "M95"
+        ],
+        "before": {
+          "name": "Emporio Armani Stronger With You Intensely",
+          "inspirationFragrance": "Stronger With You Intensely",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Emporio Armani Stronger With You Intensely",
+          "inspirationFragrance": "Stronger With You Intensely",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M96",
+        "id": "50532655-5e65-465c-91af-1b00837ac6ae",
+        "references": [
+          "M96"
+        ],
+        "before": {
+          "name": "Giorgio Armani Ambre Eccentrico",
+          "inspirationFragrance": "Ambre Eccentrico",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Ambre Eccentrico",
+          "inspirationFragrance": "Ambre Eccentrico",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M97",
+        "id": "49821867-ae85-40d1-82c8-368ec3ed8dc2",
+        "references": [
+          "M97"
+        ],
+        "before": {
+          "name": "Initio Psychedelic Love",
+          "inspirationFragrance": "Psychedelic Love",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Initio Psychedelic Love",
+          "inspirationFragrance": "Psychedelic Love",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M98",
+        "id": "b7e275d1-5db7-4503-8534-5d67abda99a2",
+        "references": [
+          "M98"
+        ],
+        "before": {
+          "name": "Xerjoff Alexandria II",
+          "inspirationFragrance": "Alexandria II",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Xerjoff Alexandria II",
+          "inspirationFragrance": "Alexandria II",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M99",
+        "id": "ae24ef9e-75cc-4cdd-916f-62f1fdc32a82",
+        "references": [
+          "M99"
+        ],
+        "before": {
+          "name": "Unique'e Luxury Crush On Me",
+          "inspirationFragrance": "Crush On Me",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Unique'e Luxury Crush On Me",
+          "inspirationFragrance": "Crush On Me",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M100",
+        "id": "5b106216-b731-42f8-b5d3-ca8b11f21f03",
+        "references": [
+          "M100"
+        ],
+        "before": {
+          "name": "Parfums de Marly Layton Exclusif",
+          "inspirationFragrance": "Layton Exclusif",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Layton Exclusif",
+          "inspirationFragrance": "Layton Exclusif",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M102",
+        "id": "ac58cb82-5c90-4d6a-9929-25a5b2fee797",
+        "references": [
+          "M102"
+        ],
+        "before": {
+          "name": "Kilian Angels' Share",
+          "inspirationFragrance": "Angels' Share",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Kilian Angels' Share",
+          "inspirationFragrance": "Angels' Share",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M103",
+        "id": "d9fbc734-3ceb-47c5-a0d4-aa4fc7dd9f7b",
+        "references": [
+          "M103"
+        ],
+        "before": {
+          "name": "Initio Oud for Greatness",
+          "inspirationFragrance": "Oud for Greatness",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Initio Oud for Greatness",
+          "inspirationFragrance": "Oud for Greatness",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M104",
+        "id": "10eed24b-9c67-4515-b8db-8f379e8627e4",
+        "references": [
+          "M104"
+        ],
+        "before": {
+          "name": "Lattafa Khamrah",
+          "inspirationFragrance": "Khamrah",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lattafa Khamrah",
+          "inspirationFragrance": "Khamrah",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M105",
+        "id": "a2856c8e-4635-45d1-b7be-57f7c16ec6bb",
+        "references": [
+          "M105"
+        ],
+        "before": {
+          "name": "Chanel Égoïste",
+          "inspirationFragrance": "Égoïste",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chanel Platinum Égoïste",
+          "inspirationFragrance": "Platinum Égoïste",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M106",
+        "id": "9af76f3c-de05-4466-a2d2-b1cba1bbdfed",
+        "references": [
+          "M106"
+        ],
+        "before": {
+          "name": "Carolina Herrera CH Men Privé",
+          "inspirationFragrance": "CH Men Privé",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera CH Men Privé",
+          "inspirationFragrance": "CH Men Privé",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "M107",
+        "id": "bd217913-63ed-48bb-8040-c283683005f8",
+        "references": [
+          "M107"
+        ],
+        "before": {
+          "name": "Dior Oud Ispahan",
+          "inspirationFragrance": "Oud Ispahan",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Oud Ispahan",
+          "inspirationFragrance": "Oud Ispahan",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W1",
+        "id": "8a55e991-e1f6-4231-bacf-0f573a9da3bc",
+        "references": [
+          "W1"
+        ],
+        "before": {
+          "name": "Giorgio Armani Sì Passione",
+          "inspirationFragrance": "Sì Passione",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Sì Passione",
+          "inspirationFragrance": "Sì Passione",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W2",
+        "id": "cd0c744e-4f78-4bcc-9733-80f7014246b2",
+        "references": [
+          "W2"
+        ],
+        "before": {
+          "name": "Chanel Coco Mademoiselle",
+          "inspirationFragrance": "Coco Mademoiselle",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chanel Coco Mademoiselle",
+          "inspirationFragrance": "Coco Mademoiselle",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W3",
+        "id": "3e55eec1-18e9-4068-ad91-f169ea01c364",
+        "references": [
+          "W3"
+        ],
+        "before": {
+          "name": "Tom Ford Bitter Peach",
+          "inspirationFragrance": "Bitter Peach",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Bitter Peach",
+          "inspirationFragrance": "Bitter Peach",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W4",
+        "id": "66f88e6f-28b3-47f3-8d2e-59ec5cb25173",
+        "references": [
+          "W4"
+        ],
+        "before": {
+          "name": "Lancôme La Vie Est Belle",
+          "inspirationFragrance": "La Vie Est Belle",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lancôme La Vie Est Belle",
+          "inspirationFragrance": "La Vie Est Belle",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W5",
+        "id": "aa939abd-d4d0-48bd-bf00-020dbda7a64c",
+        "references": [
+          "W5"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent Black Opium",
+          "inspirationFragrance": "Black Opium",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent Black Opium",
+          "inspirationFragrance": "Black Opium",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W6",
+        "id": "2593633e-9d11-4b1b-9300-848884fe4c28",
+        "references": [
+          "W6"
+        ],
+        "before": {
+          "name": "Versace Bright Crystal",
+          "inspirationFragrance": "Bright Crystal",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Bright Crystal",
+          "inspirationFragrance": "Bright Crystal",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W7",
+        "id": "5577ed22-9dbf-420f-9f25-719db7a64b58",
+        "references": [
+          "W7"
+        ],
+        "before": {
+          "name": "Catalog W7 — Narciso Rodriguez",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog W7 — Narciso Rodriguez",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Brand-only caption; pale pink bottle; fragrance unresolved.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W8",
+        "id": "4d3b47b5-9e5e-45bb-b8d9-dd81ac0f78fa",
+        "references": [
+          "W8"
+        ],
+        "before": {
+          "name": "Lancôme Idôle",
+          "inspirationFragrance": "Idôle",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lancôme Idôle",
+          "inspirationFragrance": "Idôle",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W9",
+        "id": "7e656400-59e3-46cf-ba98-8e36176ec02e",
+        "references": [
+          "W9"
+        ],
+        "before": {
+          "name": "Chanel Chance",
+          "inspirationFragrance": "Chance",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chanel Chance",
+          "inspirationFragrance": "Chance",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Pink bottle; variant not specified in caption.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W10",
+        "id": "bcfe1db7-9ba3-472b-b2ba-0cf21fa6a95e",
+        "references": [
+          "W10"
+        ],
+        "before": {
+          "name": "Burberry Her Blossom",
+          "inspirationFragrance": "Her Blossom",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry Her Blossom",
+          "inspirationFragrance": "Her Blossom",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W11",
+        "id": "26cf6e0c-510a-4e71-aea4-7154dd87dd74",
+        "references": [
+          "W11"
+        ],
+        "before": {
+          "name": "Dior Joy",
+          "inspirationFragrance": "Joy",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Joy",
+          "inspirationFragrance": "Joy",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W12",
+        "id": "165999c3-07c5-49d8-8ab3-600d76e8884a",
+        "references": [
+          "W12"
+        ],
+        "before": {
+          "name": "Dolce & Gabbana The One for Women",
+          "inspirationFragrance": "The One for Women",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dolce & Gabbana The One for Women",
+          "inspirationFragrance": "The One for Women",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W13",
+        "id": "7788c268-e588-4f94-8907-0943c8e61c59",
+        "references": [
+          "W13",
+          "W14"
+        ],
+        "before": {
+          "name": "Emporio Armani In Love With You",
+          "inspirationFragrance": "In Love With You",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Emporio Armani In Love With You",
+          "inspirationFragrance": "In Love With You",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "W13/W14 share caption but different liquids/bottles; merged at stated name only; edition requires review.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W15",
+        "id": "054ed0f3-d0eb-46dc-95d7-993c61a3dd67",
+        "references": [
+          "W15"
+        ],
+        "before": {
+          "name": "Lancôme Trésor Midnight Rose",
+          "inspirationFragrance": "Trésor Midnight Rose",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lancôme Trésor Midnight Rose",
+          "inspirationFragrance": "Trésor Midnight Rose",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W16",
+        "id": "dfd8fe05-0b83-42f8-bdb5-cc2202bcf4c5",
+        "references": [
+          "W16",
+          "W80"
+        ],
+        "before": {
+          "name": "Versace Dylan Blue Pour Femme",
+          "inspirationFragrance": "Dylan Blue Pour Femme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Dylan Blue Pour Femme",
+          "inspirationFragrance": "Dylan Blue Pour Femme",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W17",
+        "id": "5ba55463-dc54-403a-9d94-d017019690f6",
+        "references": [
+          "W17"
+        ],
+        "before": {
+          "name": "Tom Ford Lost Cherry",
+          "inspirationFragrance": "Lost Cherry",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Lost Cherry",
+          "inspirationFragrance": "Lost Cherry",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W18",
+        "id": "063a4af9-e951-4166-ba4e-450efee9ac70",
+        "references": [
+          "W18"
+        ],
+        "before": {
+          "name": "Prada Candy",
+          "inspirationFragrance": "Candy",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Prada Candy",
+          "inspirationFragrance": "Candy",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W19",
+        "id": "a64a3b89-c76f-4232-a034-a00c7aa56a5e",
+        "references": [
+          "W19"
+        ],
+        "before": {
+          "name": "Viktor & Rolf Flowerbomb",
+          "inspirationFragrance": "Flowerbomb",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Viktor & Rolf Flowerbomb",
+          "inspirationFragrance": "Flowerbomb",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W20",
+        "id": "b5e036f2-64d5-41ab-acad-42f93ef9aeb4",
+        "references": [
+          "W20"
+        ],
+        "before": {
+          "name": "Burberry My Burberry",
+          "inspirationFragrance": "My Burberry",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry My Burberry",
+          "inspirationFragrance": "My Burberry",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W21",
+        "id": "a9ca9cc3-6896-40a7-87d0-0d6efbd5f89c",
+        "references": [
+          "W21"
+        ],
+        "before": {
+          "name": "Calvin Klein Euphoria Women",
+          "inspirationFragrance": "Euphoria Women",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Calvin Klein Euphoria Women",
+          "inspirationFragrance": "Euphoria Women",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W22",
+        "id": "978aea2f-1352-4655-b5b0-07f946b08b1c",
+        "references": [
+          "W22"
+        ],
+        "before": {
+          "name": "Calvin Klein CK One Shock for Her",
+          "inspirationFragrance": "CK One Shock for Her",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Calvin Klein CK One Shock for Her",
+          "inspirationFragrance": "CK One Shock for Her",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W23",
+        "id": "9d8548c5-5904-4085-8c1a-6bda8f3d5581",
+        "references": [
+          "W23"
+        ],
+        "before": {
+          "name": "Gucci Flora",
+          "inspirationFragrance": "Flora",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Flora",
+          "inspirationFragrance": "Flora",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Exact Flora variant not stated; verify.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W24",
+        "id": "302e964a-cebe-4e85-b67b-f24503d54b62",
+        "references": [
+          "W24"
+        ],
+        "before": {
+          "name": "Gucci Oud",
+          "inspirationFragrance": "Oud",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Oud",
+          "inspirationFragrance": "Oud",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W25",
+        "id": "27d8faeb-56e7-43cf-b44a-bf93d1af84ae",
+        "references": [
+          "W25"
+        ],
+        "before": {
+          "name": "Gucci Guilty Pour Femme",
+          "inspirationFragrance": "Guilty Pour Femme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Guilty Pour Femme",
+          "inspirationFragrance": "Guilty Pour Femme",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Compare W26 EDP; possible related edition; kept separate.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W26",
+        "id": "e15f4140-08e9-448e-bdb3-e89f033018ae",
+        "references": [
+          "W26"
+        ],
+        "before": {
+          "name": "Gucci Guilty EDP",
+          "inspirationFragrance": "Guilty EDP",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Guilty EDP",
+          "inspirationFragrance": "Guilty EDP",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Compare W25; exact variant unresolved; kept separate.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W27",
+        "id": "8fb71d58-280b-4794-95bb-cf930458572c",
+        "references": [
+          "W27"
+        ],
+        "before": {
+          "name": "Escada Incredible Me",
+          "inspirationFragrance": "Incredible Me",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Escada Incredible Me",
+          "inspirationFragrance": "Incredible Me",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W28",
+        "id": "a016a0d6-869e-4015-8c0c-d6cb34097a25",
+        "references": [
+          "W28"
+        ],
+        "before": {
+          "name": "Escada Especially",
+          "inspirationFragrance": "Especially",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Escada Especially",
+          "inspirationFragrance": "Especially",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W29",
+        "id": "e06203ae-a2c7-46f1-8d36-ccd0092fe2de",
+        "references": [
+          "W29"
+        ],
+        "before": {
+          "name": "Escada Tropical Punch",
+          "inspirationFragrance": "Tropical Punch",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Escada Tropical Punch",
+          "inspirationFragrance": "Tropical Punch",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W30",
+        "id": "647976d5-f235-4fdf-807f-0f20eb83ec46",
+        "references": [
+          "W30"
+        ],
+        "before": {
+          "name": "Escada Magnetism",
+          "inspirationFragrance": "Magnetism",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Escada Magnetism",
+          "inspirationFragrance": "Magnetism",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W31",
+        "id": "01aef858-4a91-4f98-b7c6-7aad9cb99c57",
+        "references": [
+          "W31"
+        ],
+        "before": {
+          "name": "Tom Ford Orchid Soleil",
+          "inspirationFragrance": "Orchid Soleil",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Tom Ford Orchid Soleil",
+          "inspirationFragrance": "Orchid Soleil",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W32",
+        "id": "25802c8a-65ac-4073-b365-9366c53ad318",
+        "references": [
+          "W32"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Scandal À Paris",
+          "inspirationFragrance": "Scandal À Paris",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Scandal À Paris",
+          "inspirationFragrance": "Scandal À Paris",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W33",
+        "id": "3c1ff0b6-f880-4d75-a9e4-72ae6dde35db",
+        "references": [
+          "W33"
+        ],
+        "before": {
+          "name": "Lancôme Poême",
+          "inspirationFragrance": "Poême",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lancôme Poême",
+          "inspirationFragrance": "Poême",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W34",
+        "id": "b79a5b60-7a9e-477b-8189-2a6eab1b1a86",
+        "references": [
+          "W34"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier Scandal Le Parfum",
+          "inspirationFragrance": "Scandal Le Parfum",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier Scandal Le Parfum",
+          "inspirationFragrance": "Scandal Le Parfum",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W35",
+        "id": "d6cdf194-690a-4999-94bf-206d14e000ab",
+        "references": [
+          "W35"
+        ],
+        "before": {
+          "name": "Carolina Herrera Very Good Girl",
+          "inspirationFragrance": "Very Good Girl",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera Very Good Girl",
+          "inspirationFragrance": "Very Good Girl",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W36",
+        "id": "94052e93-db54-4cf1-8c79-4ba87d20e008",
+        "references": [
+          "W36"
+        ],
+        "before": {
+          "name": "Versace Bright Crystal Absolu",
+          "inspirationFragrance": "Bright Crystal Absolu",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Bright Crystal Absolu",
+          "inspirationFragrance": "Bright Crystal Absolu",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W37",
+        "id": "7829912b-2525-406d-8692-619cd1c62636",
+        "references": [
+          "W37"
+        ],
+        "before": {
+          "name": "Chloé Signature",
+          "inspirationFragrance": "Signature",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Chloé Signature",
+          "inspirationFragrance": "Signature",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W38",
+        "id": "449972f5-d7ef-468b-a02b-84310fd46af8",
+        "references": [
+          "W38"
+        ],
+        "before": {
+          "name": "Calvin Klein Eternity Moment",
+          "inspirationFragrance": "Eternity Moment",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Calvin Klein Eternity Moment",
+          "inspirationFragrance": "Eternity Moment",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W39",
+        "id": "10458921-5f2e-49dd-8125-fe3d6c75ef2e",
+        "references": [
+          "W39"
+        ],
+        "before": {
+          "name": "Paco Rabanne Lady Million",
+          "inspirationFragrance": "Lady Million",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne Lady Million",
+          "inspirationFragrance": "Lady Million",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W40",
+        "id": "92e4e561-ddcd-45f5-a690-134ac29f8288",
+        "references": [
+          "W40"
+        ],
+        "before": {
+          "name": "Montale Roses Musk",
+          "inspirationFragrance": "Roses Musk",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Montale Roses Musk",
+          "inspirationFragrance": "Roses Musk",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source Rose Musk.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W41",
+        "id": "7555106b-5c1c-4d14-b73e-db3488a0ecaf",
+        "references": [
+          "W41"
+        ],
+        "before": {
+          "name": "Narciso Rodriguez Pure Musc",
+          "inspirationFragrance": "Pure Musc",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Narciso Rodriguez Pure Musc",
+          "inspirationFragrance": "Pure Musc",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W42",
+        "id": "73ab982e-8e77-42a8-adba-6fe525715730",
+        "references": [
+          "W42"
+        ],
+        "before": {
+          "name": "Hugo Boss The Scent for Her",
+          "inspirationFragrance": "The Scent for Her",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Hugo Boss The Scent for Her",
+          "inspirationFragrance": "The Scent for Her",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Linked W42/W45 possible duplicate: W45 is unlabeled; owner confirmation required.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W43",
+        "id": "4c94cc3f-a2e2-435d-a446-67b826076ced",
+        "references": [
+          "W43"
+        ],
+        "before": {
+          "name": "Dolce & Gabbana Floral Drops",
+          "inspirationFragrance": "Floral Drops",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dolce & Gabbana Floral Drops",
+          "inspirationFragrance": "Floral Drops",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W44",
+        "id": "fc6fbc84-bf53-4ea9-a418-22d5ea1e3667",
+        "references": [
+          "W44"
+        ],
+        "before": {
+          "name": "Jean Paul Gaultier La Belle Le",
+          "inspirationFragrance": "La Belle Le",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Jean Paul Gaultier La Belle Le",
+          "inspirationFragrance": "La Belle Le",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source La Belle Le; full variant unresolved.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W45",
+        "id": "3548c517-bc26-43f8-9796-fc2cb4a775f5",
+        "references": [
+          "W45"
+        ],
+        "before": {
+          "name": "Catalog W45 — Hugo Boss",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog W45 — Hugo Boss",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "No caption at W45; visually resembles W42; do not merge without verification.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W46",
+        "id": "f0416c78-4fe4-4568-8aa3-c3a981c3aa56",
+        "references": [
+          "W46"
+        ],
+        "before": {
+          "name": "Paco Rabanne Olympéa",
+          "inspirationFragrance": "Olympéa",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne Olympéa",
+          "inspirationFragrance": "Olympéa",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W47",
+        "id": "a3c29ed8-27db-44fb-bc79-386c1c2af4ae",
+        "references": [
+          "W47"
+        ],
+        "before": {
+          "name": "Narciso Rodriguez Fleur Musc",
+          "inspirationFragrance": "Fleur Musc",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Narciso Rodriguez Fleur Musc",
+          "inspirationFragrance": "Fleur Musc",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W48",
+        "id": "0d719b35-fb7b-49db-800c-8175036edea3",
+        "references": [
+          "W48"
+        ],
+        "before": {
+          "name": "Elie Saab Shine",
+          "inspirationFragrance": "Shine",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Elie Saab Shine",
+          "inspirationFragrance": "Shine",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Source ELIE SAAB SHINE; full variant unresolved.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W49",
+        "id": "02a14329-cf8a-42a1-939a-a4937dde0ef1",
+        "references": [
+          "W49"
+        ],
+        "before": {
+          "name": "Parfums de Marly Delina",
+          "inspirationFragrance": "Delina",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Parfums de Marly Delina",
+          "inspirationFragrance": "Delina",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W50",
+        "id": "ccc2fa44-1fed-4c4a-83d5-d15ddca33ce9",
+        "references": [
+          "W50"
+        ],
+        "before": {
+          "name": "Guerlain Insolence",
+          "inspirationFragrance": "Insolence",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Guerlain Insolence",
+          "inspirationFragrance": "Insolence",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W51",
+        "id": "92259693-b4e0-4bf6-a077-c41efe51602a",
+        "references": [
+          "W51"
+        ],
+        "before": {
+          "name": "Roberto Cavalli Paradiso",
+          "inspirationFragrance": "Paradiso",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Roberto Cavalli Paradiso",
+          "inspirationFragrance": "Paradiso",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W52",
+        "id": "cfe43894-516b-4931-9102-80c6b37843ed",
+        "references": [
+          "W52"
+        ],
+        "before": {
+          "name": "Armani Privé Pivoine",
+          "inspirationFragrance": "Pivoine",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Armani Privé Pivoine",
+          "inspirationFragrance": "Pivoine",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption Pivoine; full variant unresolved.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W53",
+        "id": "9a6b5fd4-f285-4f45-92bb-80923c09bd87",
+        "references": [
+          "W53"
+        ],
+        "before": {
+          "name": "Thierry Mugler Alien",
+          "inspirationFragrance": "Alien",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Thierry Mugler Alien",
+          "inspirationFragrance": "Alien",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W54",
+        "id": "98f727b0-6307-4045-ba0e-43fd4730e9fe",
+        "references": [
+          "W54"
+        ],
+        "before": {
+          "name": "Carolina Herrera Good Girl",
+          "inspirationFragrance": "Good Girl",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera Good Girl",
+          "inspirationFragrance": "Good Girl",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W55",
+        "id": "624caab9-f408-404b-8692-ed9231560a08",
+        "references": [
+          "W55"
+        ],
+        "before": {
+          "name": "Dior Miss Dior",
+          "inspirationFragrance": "Miss Dior",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Miss Dior",
+          "inspirationFragrance": "Miss Dior",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W56",
+        "id": "bf593eca-6f18-4994-b02a-d207e877faf5",
+        "references": [
+          "W56"
+        ],
+        "before": {
+          "name": "Yves Saint Laurent Libre",
+          "inspirationFragrance": "Libre",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Yves Saint Laurent Libre",
+          "inspirationFragrance": "Libre",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W57",
+        "id": "f57990dc-5d5a-4158-8e72-e991fddd5333",
+        "references": [
+          "W57"
+        ],
+        "before": {
+          "name": "Dior J'adore",
+          "inspirationFragrance": "J'adore",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior J'adore",
+          "inspirationFragrance": "J'adore",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W58",
+        "id": "0a42bc35-29aa-474f-81b4-d8edc5df5c7d",
+        "references": [
+          "W58"
+        ],
+        "before": {
+          "name": "Gucci Bloom",
+          "inspirationFragrance": "Bloom",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Gucci Bloom",
+          "inspirationFragrance": "Bloom",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W59",
+        "id": "e10c77cc-dbe7-483e-a8a7-28058a15f110",
+        "references": [
+          "W59"
+        ],
+        "before": {
+          "name": "Giorgio Armani Sì",
+          "inspirationFragrance": "Sì",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Sì",
+          "inspirationFragrance": "Sì",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W60",
+        "id": "dba9e9e6-4a54-41d6-8673-d84da0043c66",
+        "references": [
+          "W60"
+        ],
+        "before": {
+          "name": "Lancôme Trésor in Love",
+          "inspirationFragrance": "Trésor in Love",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Lancôme Trésor in Love",
+          "inspirationFragrance": "Trésor in Love",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W61",
+        "id": "33799fca-08e6-41ef-a5f6-6170336da1b6",
+        "references": [
+          "W61"
+        ],
+        "before": {
+          "name": "Giorgio Armani My Way",
+          "inspirationFragrance": "My Way",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani My Way",
+          "inspirationFragrance": "My Way",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W62",
+        "id": "85d59efe-c7f8-4cc3-a944-8570abb3c59f",
+        "references": [
+          "W62"
+        ],
+        "before": {
+          "name": "Catalog W62 — Valentino",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog W62 — Valentino",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption Valentino only; fragrance/variant unclear.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W63",
+        "id": "bffabfd3-e30a-4a91-9001-28c345d357f5",
+        "references": [
+          "W63"
+        ],
+        "before": {
+          "name": "Guerlain Mon Guerlain",
+          "inspirationFragrance": "Mon Guerlain",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Guerlain Mon Guerlain",
+          "inspirationFragrance": "Mon Guerlain",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W64",
+        "id": "d2f04481-5245-4c44-90dc-99965872b91b",
+        "references": [
+          "W64"
+        ],
+        "before": {
+          "name": "Dior Hypnotic Poison",
+          "inspirationFragrance": "Hypnotic Poison",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Hypnotic Poison",
+          "inspirationFragrance": "Hypnotic Poison",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W65",
+        "id": "726b40aa-5ba5-4732-af4b-6214cfde5de7",
+        "references": [
+          "W65"
+        ],
+        "before": {
+          "name": "Givenchy Very Irrésistible",
+          "inspirationFragrance": "Very Irrésistible",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Givenchy Very Irrésistible",
+          "inspirationFragrance": "Very Irrésistible",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W66",
+        "id": "9d799175-9060-44af-971c-cd23efe2c6d5",
+        "references": [
+          "W66"
+        ],
+        "before": {
+          "name": "Givenchy L'Interdit Rouge",
+          "inspirationFragrance": "L'Interdit Rouge",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Givenchy L'Interdit Rouge",
+          "inspirationFragrance": "L'Interdit Rouge",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W67",
+        "id": "314ef5cd-a487-4d97-9940-592d6f420ed5",
+        "references": [
+          "W67"
+        ],
+        "before": {
+          "name": "Valentino Donna",
+          "inspirationFragrance": "Donna",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Valentino Donna",
+          "inspirationFragrance": "Donna",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Exact variant unconfirmed.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W68",
+        "id": "77be484c-5f1a-4836-a700-443a9e7aa46b",
+        "references": [
+          "W68"
+        ],
+        "before": {
+          "name": "Giorgio Armani Sì Intense EDP",
+          "inspirationFragrance": "Sì Intense EDP",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Giorgio Armani Sì Intense EDP",
+          "inspirationFragrance": "Sì Intense EDP",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W69",
+        "id": "8b6964f8-4396-4aa7-bc3b-7c8aa80961c8",
+        "references": [
+          "W69"
+        ],
+        "before": {
+          "name": "Carolina Herrera CH",
+          "inspirationFragrance": "CH",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera CH",
+          "inspirationFragrance": "CH",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W70",
+        "id": "3c9a943b-17d8-4d93-85d7-2a9bae7c75ef",
+        "references": [
+          "W70"
+        ],
+        "before": {
+          "name": "Catalog W70 — Roberto Cavalli",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Catalog W70 — Roberto Cavalli",
+          "inspirationFragrance": null,
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption Roberto Cavalli only; exact fragrance requires verification.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W71",
+        "id": "dbff632e-8fa8-4e1f-a215-db4a8d8e02c7",
+        "references": [
+          "W71"
+        ],
+        "before": {
+          "name": "Roberto Cavalli Paradiso Assoluto",
+          "inspirationFragrance": "Paradiso Assoluto",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Roberto Cavalli Paradiso Assoluto",
+          "inspirationFragrance": "Paradiso Assoluto",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W72",
+        "id": "1b8c1d65-a5d9-4b1d-a23e-e3eb894134d6",
+        "references": [
+          "W72"
+        ],
+        "before": {
+          "name": "Elie Saab Le Parfum",
+          "inspirationFragrance": "Le Parfum",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Elie Saab Le Parfum",
+          "inspirationFragrance": "Le Parfum",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W73",
+        "id": "7b9c9604-a7bf-41a3-97c1-6f06aceaa497",
+        "references": [
+          "W73"
+        ],
+        "before": {
+          "name": "Burberry London for Women",
+          "inspirationFragrance": "London for Women",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry London for Women",
+          "inspirationFragrance": "London for Women",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W74",
+        "id": "16a460d7-8249-4382-9309-0034490ff88c",
+        "references": [
+          "W74"
+        ],
+        "before": {
+          "name": "Versace Crystal Noir",
+          "inspirationFragrance": "Crystal Noir",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Crystal Noir",
+          "inspirationFragrance": "Crystal Noir",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W75",
+        "id": "6b3901d8-bd11-467a-b806-89c264522bec",
+        "references": [
+          "W75"
+        ],
+        "before": {
+          "name": "Versace Dylan Turquoise",
+          "inspirationFragrance": "Dylan Turquoise",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Versace Dylan Turquoise",
+          "inspirationFragrance": "Dylan Turquoise",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W76",
+        "id": "0d5c0203-952c-4392-af56-416c4f60a4f6",
+        "references": [
+          "W76"
+        ],
+        "before": {
+          "name": "Burberry Goddess",
+          "inspirationFragrance": "Goddess",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Burberry Goddess",
+          "inspirationFragrance": "Goddess",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W77",
+        "id": "ba09e424-7d75-487c-8e6e-64e3b952214c",
+        "references": [
+          "W77"
+        ],
+        "before": {
+          "name": "Carolina Herrera Good Girl Ylang",
+          "inspirationFragrance": "Good Girl Ylang",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera Good Girl Ylang",
+          "inspirationFragrance": "Good Girl Ylang",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "Caption Ylang; pink shoe image; exact variant unresolved, do not assume Blush.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W78",
+        "id": "9f5654c1-545d-4236-9daa-3af7cbdb587f",
+        "references": [
+          "W78"
+        ],
+        "before": {
+          "name": "Paco Rabanne Fame",
+          "inspirationFragrance": "Fame",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Paco Rabanne Fame",
+          "inspirationFragrance": "Fame",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      },
+      {
+        "reference": "W79",
+        "id": "b34fc96c-e25f-4279-a84c-9487af7f01f6",
+        "references": [
+          "W79",
+          "W82"
+        ],
+        "before": {
+          "name": "Carolina Herrera 212 VIP Rosé",
+          "inspirationFragrance": "212 VIP Rosé",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Carolina Herrera 212 VIP Rosé",
+          "inspirationFragrance": "212 VIP Rosé",
+          "published": false,
+          "referenceVerified": false
+        },
+        "holdReason": "W79/W82 share name but different bottle artwork; edition requires confirmation.",
+        "action": "unchanged"
+      },
+      {
+        "reference": "W81",
+        "id": "fe7c01a6-5f58-44e9-b542-e5287e486d57",
+        "references": [
+          "W81"
+        ],
+        "before": {
+          "name": "Dior Gris Dior",
+          "inspirationFragrance": "Gris Dior",
+          "published": false,
+          "referenceVerified": false
+        },
+        "after": {
+          "name": "Dior Gris Dior",
+          "inspirationFragrance": "Gris Dior",
+          "published": true,
+          "referenceVerified": true
+        },
+        "holdReason": null,
+        "action": "updated"
+      }
+    ],
+    "databaseVerification": {
+      "products": 180,
+      "published": 146,
+      "drafts": 34,
+      "referenceVerified": 146,
+      "publishedMen": 84,
+      "publishedWomen": 62,
+      "allCommercialDetailsUnknown": true,
+      "idsReferencesPreserved": true,
+      "namesChangedOnly": [
+        "M58",
+        "M71",
+        "M105"
+      ],
+      "approvedImages": 0
+    }
+  }
+]

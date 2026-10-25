@@ -1,0 +1,1712 @@
+{
+  "mode": "applied",
+  "sourceEntries": 189,
+  "unique": 180,
+  "products": [
+    {
+      "reference": "M1",
+      "name": "Versace Eros",
+      "outcome": "already-imported",
+      "id": "228705f9-8995-41c9-abca-664a53aa4eb8"
+    },
+    {
+      "reference": "M2",
+      "name": "Dolce & Gabbana K",
+      "outcome": "already-imported",
+      "id": "58eb538a-d0cc-48da-a8a9-3e9214ea70fa"
+    },
+    {
+      "reference": "M3",
+      "name": "Paco Rabanne Invictus Cologne",
+      "outcome": "already-imported",
+      "id": "c909e719-601f-47e7-99ce-2960a88c5778"
+    },
+    {
+      "reference": "M4",
+      "name": "Chanel Bleu de Chanel",
+      "outcome": "already-imported",
+      "id": "6499785b-9abf-4f4c-9b53-4bab6e3be816"
+    },
+    {
+      "reference": "M5",
+      "name": "Chanel Allure Homme Sport",
+      "outcome": "already-imported",
+      "id": "eeb928ae-8e4c-4b41-bab0-e30fe5313322"
+    },
+    {
+      "reference": "M6",
+      "name": "Dior Sauvage",
+      "outcome": "already-imported",
+      "id": "e6bba1ba-51da-45cc-83f3-02a3919db471"
+    },
+    {
+      "reference": "M7",
+      "name": "Creed Aventus",
+      "outcome": "already-imported",
+      "id": "5d87e462-2cee-454d-b335-d88ac8e6f155"
+    },
+    {
+      "reference": "M8",
+      "name": "Catalog M8 — Yves Saint Laurent",
+      "outcome": "already-imported",
+      "id": "d39300a6-1f67-412f-96e2-749a8a6e0f87"
+    },
+    {
+      "reference": "M9",
+      "name": "Catalog M9 — Montblanc",
+      "outcome": "already-imported",
+      "id": "f260e78f-8369-4e11-8e68-32807294fa8c"
+    },
+    {
+      "reference": "M10",
+      "name": "Giorgio Armani Acqua di Giò Pour Homme",
+      "outcome": "already-imported",
+      "id": "cd5fdb8e-f858-4768-8cb1-1a2cafa4571b"
+    },
+    {
+      "reference": "M11",
+      "name": "Jean Paul Gaultier Ultra Male",
+      "outcome": "already-imported",
+      "id": "1e909cbc-eca6-4e07-871a-941fd213cb3f"
+    },
+    {
+      "reference": "M12",
+      "name": "Dior Homme Intense",
+      "outcome": "already-imported",
+      "id": "d408fdbf-ebf7-44c7-9037-fcd01b0314e8"
+    },
+    {
+      "reference": "M13",
+      "name": "Dolce & Gabbana The One for Men",
+      "outcome": "already-imported",
+      "id": "460547b0-6776-4ae8-bbf9-15ffc94882fb"
+    },
+    {
+      "reference": "M14",
+      "name": "Emporio Armani Stronger With You",
+      "outcome": "already-imported",
+      "id": "acb1a9a7-fd37-4a06-a135-008ea6c9aaf4"
+    },
+    {
+      "reference": "M15",
+      "name": "Giorgio Armani Acqua di Giò Profumo",
+      "outcome": "already-imported",
+      "id": "f9035cac-88c1-493b-b00d-1877c7c7ea4d"
+    },
+    {
+      "reference": "M16",
+      "name": "Gucci Guilty Pour Homme",
+      "outcome": "already-imported",
+      "id": "24ce74fb-6d6c-40cb-89dd-7a9c3e00a8d5"
+    },
+    {
+      "reference": "M17",
+      "name": "Tom Ford Ombré Leather",
+      "outcome": "already-imported",
+      "id": "3b40e4e5-ea8f-4780-970f-6b4cdca87d2b"
+    },
+    {
+      "reference": "M18",
+      "name": "Dior Sauvage Elixir",
+      "outcome": "already-imported",
+      "id": "7fb8e67f-cbc3-49c9-a3c7-d8c7e0916b64"
+    },
+    {
+      "reference": "M19",
+      "name": "Louis Vuitton Ombre Nomade",
+      "outcome": "already-imported",
+      "id": "c8da7ade-23da-4160-8431-d6e4368b3fd2"
+    },
+    {
+      "reference": "M20",
+      "name": "Mancera Red Tobacco",
+      "outcome": "already-imported",
+      "id": "09496486-1562-4f90-b660-40f0381370a2"
+    },
+    {
+      "reference": "M21",
+      "name": "Montblanc Explorer Platinum",
+      "outcome": "already-imported",
+      "id": "8d582781-912d-4281-b9ce-2d47c17ee5b9"
+    },
+    {
+      "reference": "M22",
+      "name": "Jean Paul Gaultier Le Male Elixir",
+      "outcome": "already-imported",
+      "id": "9762c155-9731-4623-8ddd-483d06dc1bd5"
+    },
+    {
+      "reference": "M23",
+      "name": "Paco Rabanne Phantom",
+      "outcome": "already-imported",
+      "id": "2d648aed-646b-42e9-8b13-dcd9b68feaaf"
+    },
+    {
+      "reference": "M24",
+      "name": "Prada L'Homme Intense",
+      "outcome": "already-imported",
+      "id": "80697977-6f82-4d4a-8ea7-fccc7135488a"
+    },
+    {
+      "reference": "M25",
+      "name": "Burberry Mr. Burberry",
+      "outcome": "already-imported",
+      "id": "cdf2d7c1-2bfd-4bab-a304-e9bda65be1d9"
+    },
+    {
+      "reference": "M26",
+      "name": "Versace Dylan Blue Pour Homme",
+      "outcome": "already-imported",
+      "id": "9d22c5d7-27af-4db7-9a53-d8a4988c6713"
+    },
+    {
+      "reference": "M27",
+      "name": "Versace Pour Homme",
+      "outcome": "already-imported",
+      "id": "796c3319-005f-4b21-87d3-ca72da4b13ae"
+    },
+    {
+      "reference": "M28",
+      "name": "Yves Saint Laurent La Nuit de L'Homme",
+      "outcome": "already-imported",
+      "id": "6a52083e-3ab7-43e1-abce-87b7fb57a2d6"
+    },
+    {
+      "reference": "M29",
+      "name": "Yves Saint Laurent La Nuit de Bleu",
+      "outcome": "already-imported",
+      "id": "220c7f02-dbad-4c57-bc25-a299b5c18171"
+    },
+    {
+      "reference": "M30",
+      "name": "Yves Saint Laurent Tuxedo",
+      "outcome": "already-imported",
+      "id": "79753b93-fb55-49cb-ab65-8f0a7c1b513d"
+    },
+    {
+      "reference": "M32",
+      "name": "Jean Paul Gaultier Le Male Le Parfum",
+      "outcome": "already-imported",
+      "id": "e9d6af3a-db8c-4c24-9453-d1bcbfe2edbc"
+    },
+    {
+      "reference": "M34",
+      "name": "Nasomatto Black Afgano",
+      "outcome": "already-imported",
+      "id": "c0e456f3-ee3d-48a9-8c06-9284f2687be4"
+    },
+    {
+      "reference": "M35",
+      "name": "Hugo Boss Hugo Man",
+      "outcome": "already-imported",
+      "id": "f9cd9882-d322-4d58-9673-3fabec47d864"
+    },
+    {
+      "reference": "M36",
+      "name": "Carolina Herrera Bad Boy",
+      "outcome": "already-imported",
+      "id": "d6ee4951-0a05-4753-acea-ca644c53f348"
+    },
+    {
+      "reference": "M37",
+      "name": "Carolina Herrera 212 Sexy Men",
+      "outcome": "already-imported",
+      "id": "e8d07201-1094-47aa-95e7-ebdf8a13e123"
+    },
+    {
+      "reference": "M38",
+      "name": "Carolina Herrera 212 Men",
+      "outcome": "already-imported",
+      "id": "2a200397-b2a1-45cb-b925-3d6b1e6bd1bb"
+    },
+    {
+      "reference": "M39",
+      "name": "Bvlgari Man in Black",
+      "outcome": "already-imported",
+      "id": "20190c0f-4874-449a-b0d3-e2ac1fecb91c"
+    },
+    {
+      "reference": "M40",
+      "name": "Parfums de Marly Percival",
+      "outcome": "already-imported",
+      "id": "e40379b9-1c53-4e5d-91b5-6b640ca0140a"
+    },
+    {
+      "reference": "M41",
+      "name": "Parfums de Marly Greenley",
+      "outcome": "already-imported",
+      "id": "e3340914-3535-4ff0-ba4b-78fe610b55f1"
+    },
+    {
+      "reference": "M42",
+      "name": "Parfums de Marly Haltane",
+      "outcome": "already-imported",
+      "id": "f92a964e-a4dc-49c1-a7c3-b8c7d42e9fc1"
+    },
+    {
+      "reference": "M43",
+      "name": "Parfums de Marly Layton",
+      "outcome": "already-imported",
+      "id": "9fa4b443-c4be-45dd-8836-2d5338120cfb"
+    },
+    {
+      "reference": "M44",
+      "name": "Parfums de Marly Pegasus",
+      "outcome": "already-imported",
+      "id": "612aa924-6421-41f2-b068-40c6067c5404"
+    },
+    {
+      "reference": "M45",
+      "name": "Parfums de Marly Herod",
+      "outcome": "already-imported",
+      "id": "8a8f8b79-59f2-4ee9-9e18-6afb85066e02"
+    },
+    {
+      "reference": "M46",
+      "name": "Giorgio Armani Acqua di Giò Profondo",
+      "outcome": "already-imported",
+      "id": "3fe0bcdf-bb10-4077-b4bf-db209c19d649"
+    },
+    {
+      "reference": "M47",
+      "name": "Giorgio Armani Acqua di Giò Absolu",
+      "outcome": "already-imported",
+      "id": "b551528b-f9f3-46c2-856a-4e23acdc327c"
+    },
+    {
+      "reference": "M49",
+      "name": "Givenchy Gentleman",
+      "outcome": "already-imported",
+      "id": "a16be17c-eb97-4d84-82a0-140ac2424c7c"
+    },
+    {
+      "reference": "M50",
+      "name": "Givenchy Gentleman",
+      "outcome": "already-imported",
+      "id": "3b1bb1e7-fb82-43b9-a75a-232061af000c"
+    },
+    {
+      "reference": "M51",
+      "name": "Givenchy Gentleman Réserve Privée",
+      "outcome": "already-imported",
+      "id": "803cbba6-7a0c-435a-8fe3-8fe763cb7bfc"
+    },
+    {
+      "reference": "M52",
+      "name": "Hugo Boss Boss Bottled",
+      "outcome": "already-imported",
+      "id": "24d3d4c9-1a4e-496c-abee-bb9b8336b378"
+    },
+    {
+      "reference": "M53",
+      "name": "Hermès Terre d'Hermès",
+      "outcome": "already-imported",
+      "id": "483d46ce-4521-47bc-836d-8420e1b89739"
+    },
+    {
+      "reference": "M54",
+      "name": "Montblanc Legend Spirit",
+      "outcome": "already-imported",
+      "id": "3ac91d32-d1c0-4f44-9ba9-202625dc5012"
+    },
+    {
+      "reference": "M55",
+      "name": "Montblanc Explorer",
+      "outcome": "already-imported",
+      "id": "33b435af-0ac6-42b3-8644-ea47e28d137b"
+    },
+    {
+      "reference": "M56",
+      "name": "Lacoste L.12.12 Blanc",
+      "outcome": "already-imported",
+      "id": "ef46d603-c5be-48d0-9c0f-f6f95736d611"
+    },
+    {
+      "reference": "M57",
+      "name": "Carolina Herrera 212 VIP Men",
+      "outcome": "already-imported",
+      "id": "5556927f-5262-4a10-8e2c-4eb18063fc77"
+    },
+    {
+      "reference": "M58",
+      "name": "Dunhill Alfred Dunhill London",
+      "outcome": "already-imported",
+      "id": "814e6bb0-1a5e-4f75-9b3f-f7f10bcc3299"
+    },
+    {
+      "reference": "M59",
+      "name": "Calvin Klein CK One",
+      "outcome": "already-imported",
+      "id": "b260143d-b9ab-4745-be16-dce0c4f79294"
+    },
+    {
+      "reference": "M60",
+      "name": "Yves Saint Laurent Y Le",
+      "outcome": "already-imported",
+      "id": "534c2505-7f84-41e9-9d8c-cd065ddb324b"
+    },
+    {
+      "reference": "M61",
+      "name": "Carolina Herrera Mystery Tobacco",
+      "outcome": "already-imported",
+      "id": "46f33fec-4e17-4a01-b49a-44ca73d69f79"
+    },
+    {
+      "reference": "M62",
+      "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+      "outcome": "already-imported",
+      "id": "2ff2f76a-7c29-492f-86d4-9c5896d56881"
+    },
+    {
+      "reference": "M63",
+      "name": "Bvlgari Le Gemme Ambero",
+      "outcome": "already-imported",
+      "id": "7157d5b0-7af6-4376-9010-43b80596539f"
+    },
+    {
+      "reference": "M64",
+      "name": "Jean Paul Gaultier Le Male",
+      "outcome": "already-imported",
+      "id": "481b8e80-b40a-4acb-8045-3a72f8d9b314"
+    },
+    {
+      "reference": "M65",
+      "name": "Jean Paul Gaultier Scandal Pour Homme",
+      "outcome": "already-imported",
+      "id": "2eb5348c-e443-47f8-8e48-c8d42f043fef"
+    },
+    {
+      "reference": "M66",
+      "name": "Giorgio Armani Code",
+      "outcome": "already-imported",
+      "id": "f2bb30b1-f67a-4f5c-bc8c-07b57da5d8e8"
+    },
+    {
+      "reference": "M67",
+      "name": "Viktor & Rolf Spicebomb",
+      "outcome": "already-imported",
+      "id": "50f138ef-f557-470a-8d07-d7b598ef4958"
+    },
+    {
+      "reference": "M68",
+      "name": "Valentino Uomo",
+      "outcome": "already-imported",
+      "id": "4c35b32b-3e42-49fe-877c-51eb96591de0"
+    },
+    {
+      "reference": "M69",
+      "name": "Paco Rabanne 1 Million Privé",
+      "outcome": "already-imported",
+      "id": "79b7bded-125b-42ac-963f-1915fab3e91d"
+    },
+    {
+      "reference": "M70",
+      "name": "Paco Rabanne 1 Million",
+      "outcome": "already-imported",
+      "id": "d4c926e1-2865-47b6-91fe-30eed0198eb7"
+    },
+    {
+      "reference": "M71",
+      "name": "Tom Ford Portofino",
+      "outcome": "already-imported",
+      "id": "8f1e980f-4c2b-4aa3-97ed-30c746c04ab8"
+    },
+    {
+      "reference": "M72",
+      "name": "Tom Ford Oud Wood",
+      "outcome": "already-imported",
+      "id": "a03392ef-391c-4073-acbb-8e0acdca9c4d"
+    },
+    {
+      "reference": "M73",
+      "name": "Tom Ford Tuscan Leather",
+      "outcome": "already-imported",
+      "id": "11e90212-333b-47b6-959f-1ddf14ef4be6"
+    },
+    {
+      "reference": "M74",
+      "name": "Tom Ford Black Orchid",
+      "outcome": "already-imported",
+      "id": "4929956b-f106-4fc6-8347-1c7ac72dd34b"
+    },
+    {
+      "reference": "M75",
+      "name": "Amouage Interlude Man",
+      "outcome": "already-imported",
+      "id": "e785683d-3bd2-4dd0-ac59-e4b98e1e6831"
+    },
+    {
+      "reference": "M76",
+      "name": "Armani Privé Rose d'Arabie",
+      "outcome": "already-imported",
+      "id": "5a9c18c8-b750-4dc3-ba52-909a011e076d"
+    },
+    {
+      "reference": "M77",
+      "name": "Cartier Pasha de Cartier",
+      "outcome": "already-imported",
+      "id": "d0f20e7b-cb14-4bd8-82ad-c81d08e9af66"
+    },
+    {
+      "reference": "M78",
+      "name": "Maison Francis Kurkdjian Oud Satin Mood",
+      "outcome": "already-imported",
+      "id": "03284606-b877-4fa3-bc5c-935ab800bf18"
+    },
+    {
+      "reference": "M80",
+      "name": "Gucci Intense Oud",
+      "outcome": "already-imported",
+      "id": "20469665-2f81-4769-ada8-b02d1f9902b5"
+    },
+    {
+      "reference": "M81",
+      "name": "Dior Fahrenheit",
+      "outcome": "already-imported",
+      "id": "ebb4553a-4dad-4124-8d16-6c2862ab27f7"
+    },
+    {
+      "reference": "M82",
+      "name": "Dolce & Gabbana The One Royal Night",
+      "outcome": "already-imported",
+      "id": "cfe1a377-3d01-4ed8-a346-a25b49989d00"
+    },
+    {
+      "reference": "M83",
+      "name": "Calvin Klein Euphoria Men",
+      "outcome": "already-imported",
+      "id": "0dbc4a4e-f04b-456a-b7d9-5625c4c02b5c"
+    },
+    {
+      "reference": "M84",
+      "name": "Gucci Guilty Black Pour Homme",
+      "outcome": "already-imported",
+      "id": "7aef6f0b-6938-4ebd-b15b-d651539475dc"
+    },
+    {
+      "reference": "M85",
+      "name": "Nikos Sculpture",
+      "outcome": "already-imported",
+      "id": "3663cf54-7d9c-48ab-8aa1-8d60a47f18c9"
+    },
+    {
+      "reference": "M86",
+      "name": "Davidoff Cool Water",
+      "outcome": "already-imported",
+      "id": "e369a9a9-9dc9-4816-ae6c-9c77dc3694fd"
+    },
+    {
+      "reference": "M88",
+      "name": "Creed Silver Mountain",
+      "outcome": "already-imported",
+      "id": "6b32742b-5840-481b-a268-07d8166b5c33"
+    },
+    {
+      "reference": "M89",
+      "name": "Creed Green Irish",
+      "outcome": "already-imported",
+      "id": "bffd2bf0-4dd8-438c-a9e1-2aa76a927c21"
+    },
+    {
+      "reference": "M90",
+      "name": "Creed Viking",
+      "outcome": "already-imported",
+      "id": "75c5f336-ee94-4c61-8e68-64b361d69b12"
+    },
+    {
+      "reference": "M91",
+      "name": "Prada Black",
+      "outcome": "already-imported",
+      "id": "749e7303-86be-419b-a643-a357d4c0cd10"
+    },
+    {
+      "reference": "M92",
+      "name": "Nautica Voyage",
+      "outcome": "already-imported",
+      "id": "8b8d2d97-3d98-412d-8eab-b0ed68083267"
+    },
+    {
+      "reference": "M93",
+      "name": "Burberry Hero",
+      "outcome": "already-imported",
+      "id": "08c04c00-6a95-480b-9404-8bb150a93b2a"
+    },
+    {
+      "reference": "M94",
+      "name": "Emporio Armani Stronger With You Oud",
+      "outcome": "already-imported",
+      "id": "62a08716-e65b-4bbc-a3c1-4b2a5bed1cff"
+    },
+    {
+      "reference": "M95",
+      "name": "Emporio Armani Stronger With You Intensely",
+      "outcome": "already-imported",
+      "id": "814806c8-8c2a-4a69-8a8c-2ecfeb6cb239"
+    },
+    {
+      "reference": "M96",
+      "name": "Giorgio Armani Ambre Eccentrico",
+      "outcome": "already-imported",
+      "id": "50532655-5e65-465c-91af-1b00837ac6ae"
+    },
+    {
+      "reference": "M97",
+      "name": "Initio Psychedelic Love",
+      "outcome": "already-imported",
+      "id": "49821867-ae85-40d1-82c8-368ec3ed8dc2"
+    },
+    {
+      "reference": "M98",
+      "name": "Xerjoff Alexandria II",
+      "outcome": "already-imported",
+      "id": "b7e275d1-5db7-4503-8534-5d67abda99a2"
+    },
+    {
+      "reference": "M99",
+      "name": "Unique'e Luxury Crush On Me",
+      "outcome": "already-imported",
+      "id": "ae24ef9e-75cc-4cdd-916f-62f1fdc32a82"
+    },
+    {
+      "reference": "M100",
+      "name": "Parfums de Marly Layton Exclusif",
+      "outcome": "already-imported",
+      "id": "5b106216-b731-42f8-b5d3-ca8b11f21f03"
+    },
+    {
+      "reference": "M102",
+      "name": "Kilian Angels' Share",
+      "outcome": "already-imported",
+      "id": "ac58cb82-5c90-4d6a-9929-25a5b2fee797"
+    },
+    {
+      "reference": "M103",
+      "name": "Initio Oud for Greatness",
+      "outcome": "already-imported",
+      "id": "d9fbc734-3ceb-47c5-a0d4-aa4fc7dd9f7b"
+    },
+    {
+      "reference": "M104",
+      "name": "Lattafa Khamrah",
+      "outcome": "already-imported",
+      "id": "10eed24b-9c67-4515-b8db-8f379e8627e4"
+    },
+    {
+      "reference": "M105",
+      "name": "Chanel Égoïste",
+      "outcome": "already-imported",
+      "id": "a2856c8e-4635-45d1-b7be-57f7c16ec6bb"
+    },
+    {
+      "reference": "M106",
+      "name": "Carolina Herrera CH Men Privé",
+      "outcome": "already-imported",
+      "id": "9af76f3c-de05-4466-a2d2-b1cba1bbdfed"
+    },
+    {
+      "reference": "M107",
+      "name": "Dior Oud Ispahan",
+      "outcome": "already-imported",
+      "id": "bd217913-63ed-48bb-8040-c283683005f8"
+    },
+    {
+      "reference": "W1",
+      "name": "Giorgio Armani Sì Passione",
+      "outcome": "already-imported",
+      "id": "8a55e991-e1f6-4231-bacf-0f573a9da3bc"
+    },
+    {
+      "reference": "W2",
+      "name": "Chanel Coco Mademoiselle",
+      "outcome": "already-imported",
+      "id": "cd0c744e-4f78-4bcc-9733-80f7014246b2"
+    },
+    {
+      "reference": "W3",
+      "name": "Tom Ford Bitter Peach",
+      "outcome": "already-imported",
+      "id": "3e55eec1-18e9-4068-ad91-f169ea01c364"
+    },
+    {
+      "reference": "W4",
+      "name": "Lancôme La Vie Est Belle",
+      "outcome": "already-imported",
+      "id": "66f88e6f-28b3-47f3-8d2e-59ec5cb25173"
+    },
+    {
+      "reference": "W5",
+      "name": "Yves Saint Laurent Black Opium",
+      "outcome": "already-imported",
+      "id": "aa939abd-d4d0-48bd-bf00-020dbda7a64c"
+    },
+    {
+      "reference": "W6",
+      "name": "Versace Bright Crystal",
+      "outcome": "already-imported",
+      "id": "2593633e-9d11-4b1b-9300-848884fe4c28"
+    },
+    {
+      "reference": "W7",
+      "name": "Catalog W7 — Narciso Rodriguez",
+      "outcome": "already-imported",
+      "id": "5577ed22-9dbf-420f-9f25-719db7a64b58"
+    },
+    {
+      "reference": "W8",
+      "name": "Lancôme Idôle",
+      "outcome": "already-imported",
+      "id": "4d3b47b5-9e5e-45bb-b8d9-dd81ac0f78fa"
+    },
+    {
+      "reference": "W9",
+      "name": "Chanel Chance",
+      "outcome": "already-imported",
+      "id": "7e656400-59e3-46cf-ba98-8e36176ec02e"
+    },
+    {
+      "reference": "W10",
+      "name": "Burberry Her Blossom",
+      "outcome": "already-imported",
+      "id": "bcfe1db7-9ba3-472b-b2ba-0cf21fa6a95e"
+    },
+    {
+      "reference": "W11",
+      "name": "Dior Joy",
+      "outcome": "already-imported",
+      "id": "26cf6e0c-510a-4e71-aea4-7154dd87dd74"
+    },
+    {
+      "reference": "W12",
+      "name": "Dolce & Gabbana The One for Women",
+      "outcome": "already-imported",
+      "id": "165999c3-07c5-49d8-8ab3-600d76e8884a"
+    },
+    {
+      "reference": "W13",
+      "name": "Emporio Armani In Love With You",
+      "outcome": "already-imported",
+      "id": "7788c268-e588-4f94-8907-0943c8e61c59"
+    },
+    {
+      "reference": "W15",
+      "name": "Lancôme Trésor Midnight Rose",
+      "outcome": "already-imported",
+      "id": "054ed0f3-d0eb-46dc-95d7-993c61a3dd67"
+    },
+    {
+      "reference": "W16",
+      "name": "Versace Dylan Blue Pour Femme",
+      "outcome": "already-imported",
+      "id": "dfd8fe05-0b83-42f8-bdb5-cc2202bcf4c5"
+    },
+    {
+      "reference": "W17",
+      "name": "Tom Ford Lost Cherry",
+      "outcome": "already-imported",
+      "id": "5ba55463-dc54-403a-9d94-d017019690f6"
+    },
+    {
+      "reference": "W18",
+      "name": "Prada Candy",
+      "outcome": "already-imported",
+      "id": "063a4af9-e951-4166-ba4e-450efee9ac70"
+    },
+    {
+      "reference": "W19",
+      "name": "Viktor & Rolf Flowerbomb",
+      "outcome": "already-imported",
+      "id": "a64a3b89-c76f-4232-a034-a00c7aa56a5e"
+    },
+    {
+      "reference": "W20",
+      "name": "Burberry My Burberry",
+      "outcome": "already-imported",
+      "id": "b5e036f2-64d5-41ab-acad-42f93ef9aeb4"
+    },
+    {
+      "reference": "W21",
+      "name": "Calvin Klein Euphoria Women",
+      "outcome": "already-imported",
+      "id": "a9ca9cc3-6896-40a7-87d0-0d6efbd5f89c"
+    },
+    {
+      "reference": "W22",
+      "name": "Calvin Klein CK One Shock for Her",
+      "outcome": "already-imported",
+      "id": "978aea2f-1352-4655-b5b0-07f946b08b1c"
+    },
+    {
+      "reference": "W23",
+      "name": "Gucci Flora",
+      "outcome": "already-imported",
+      "id": "9d8548c5-5904-4085-8c1a-6bda8f3d5581"
+    },
+    {
+      "reference": "W24",
+      "name": "Gucci Oud",
+      "outcome": "already-imported",
+      "id": "302e964a-cebe-4e85-b67b-f24503d54b62"
+    },
+    {
+      "reference": "W25",
+      "name": "Gucci Guilty Pour Femme",
+      "outcome": "already-imported",
+      "id": "27d8faeb-56e7-43cf-b44a-bf93d1af84ae"
+    },
+    {
+      "reference": "W26",
+      "name": "Gucci Guilty EDP",
+      "outcome": "already-imported",
+      "id": "e15f4140-08e9-448e-bdb3-e89f033018ae"
+    },
+    {
+      "reference": "W27",
+      "name": "Escada Incredible Me",
+      "outcome": "already-imported",
+      "id": "8fb71d58-280b-4794-95bb-cf930458572c"
+    },
+    {
+      "reference": "W28",
+      "name": "Escada Especially",
+      "outcome": "already-imported",
+      "id": "a016a0d6-869e-4015-8c0c-d6cb34097a25"
+    },
+    {
+      "reference": "W29",
+      "name": "Escada Tropical Punch",
+      "outcome": "already-imported",
+      "id": "e06203ae-a2c7-46f1-8d36-ccd0092fe2de"
+    },
+    {
+      "reference": "W30",
+      "name": "Escada Magnetism",
+      "outcome": "already-imported",
+      "id": "647976d5-f235-4fdf-807f-0f20eb83ec46"
+    },
+    {
+      "reference": "W31",
+      "name": "Tom Ford Orchid Soleil",
+      "outcome": "already-imported",
+      "id": "01aef858-4a91-4f98-b7c6-7aad9cb99c57"
+    },
+    {
+      "reference": "W32",
+      "name": "Jean Paul Gaultier Scandal À Paris",
+      "outcome": "already-imported",
+      "id": "25802c8a-65ac-4073-b365-9366c53ad318"
+    },
+    {
+      "reference": "W33",
+      "name": "Lancôme Poême",
+      "outcome": "already-imported",
+      "id": "3c1ff0b6-f880-4d75-a9e4-72ae6dde35db"
+    },
+    {
+      "reference": "W34",
+      "name": "Jean Paul Gaultier Scandal Le Parfum",
+      "outcome": "already-imported",
+      "id": "b79a5b60-7a9e-477b-8189-2a6eab1b1a86"
+    },
+    {
+      "reference": "W35",
+      "name": "Carolina Herrera Very Good Girl",
+      "outcome": "already-imported",
+      "id": "d6cdf194-690a-4999-94bf-206d14e000ab"
+    },
+    {
+      "reference": "W36",
+      "name": "Versace Bright Crystal Absolu",
+      "outcome": "already-imported",
+      "id": "94052e93-db54-4cf1-8c79-4ba87d20e008"
+    },
+    {
+      "reference": "W37",
+      "name": "Chloé Signature",
+      "outcome": "already-imported",
+      "id": "7829912b-2525-406d-8692-619cd1c62636"
+    },
+    {
+      "reference": "W38",
+      "name": "Calvin Klein Eternity Moment",
+      "outcome": "already-imported",
+      "id": "449972f5-d7ef-468b-a02b-84310fd46af8"
+    },
+    {
+      "reference": "W39",
+      "name": "Paco Rabanne Lady Million",
+      "outcome": "already-imported",
+      "id": "10458921-5f2e-49dd-8125-fe3d6c75ef2e"
+    },
+    {
+      "reference": "W40",
+      "name": "Montale Roses Musk",
+      "outcome": "already-imported",
+      "id": "92e4e561-ddcd-45f5-a690-134ac29f8288"
+    },
+    {
+      "reference": "W41",
+      "name": "Narciso Rodriguez Pure Musc",
+      "outcome": "already-imported",
+      "id": "7555106b-5c1c-4d14-b73e-db3488a0ecaf"
+    },
+    {
+      "reference": "W42",
+      "name": "Hugo Boss The Scent for Her",
+      "outcome": "already-imported",
+      "id": "73ab982e-8e77-42a8-adba-6fe525715730"
+    },
+    {
+      "reference": "W43",
+      "name": "Dolce & Gabbana Floral Drops",
+      "outcome": "already-imported",
+      "id": "4c94cc3f-a2e2-435d-a446-67b826076ced"
+    },
+    {
+      "reference": "W44",
+      "name": "Jean Paul Gaultier La Belle Le",
+      "outcome": "already-imported",
+      "id": "fc6fbc84-bf53-4ea9-a418-22d5ea1e3667"
+    },
+    {
+      "reference": "W45",
+      "name": "Catalog W45 — Hugo Boss",
+      "outcome": "already-imported",
+      "id": "3548c517-bc26-43f8-9796-fc2cb4a775f5"
+    },
+    {
+      "reference": "W46",
+      "name": "Paco Rabanne Olympéa",
+      "outcome": "already-imported",
+      "id": "f0416c78-4fe4-4568-8aa3-c3a981c3aa56"
+    },
+    {
+      "reference": "W47",
+      "name": "Narciso Rodriguez Fleur Musc",
+      "outcome": "already-imported",
+      "id": "a3c29ed8-27db-44fb-bc79-386c1c2af4ae"
+    },
+    {
+      "reference": "W48",
+      "name": "Elie Saab Shine",
+      "outcome": "already-imported",
+      "id": "0d719b35-fb7b-49db-800c-8175036edea3"
+    },
+    {
+      "reference": "W49",
+      "name": "Parfums de Marly Delina",
+      "outcome": "already-imported",
+      "id": "02a14329-cf8a-42a1-939a-a4937dde0ef1"
+    },
+    {
+      "reference": "W50",
+      "name": "Guerlain Insolence",
+      "outcome": "already-imported",
+      "id": "ccc2fa44-1fed-4c4a-83d5-d15ddca33ce9"
+    },
+    {
+      "reference": "W51",
+      "name": "Roberto Cavalli Paradiso",
+      "outcome": "already-imported",
+      "id": "92259693-b4e0-4bf6-a077-c41efe51602a"
+    },
+    {
+      "reference": "W52",
+      "name": "Armani Privé Pivoine",
+      "outcome": "already-imported",
+      "id": "cfe43894-516b-4931-9102-80c6b37843ed"
+    },
+    {
+      "reference": "W53",
+      "name": "Thierry Mugler Alien",
+      "outcome": "already-imported",
+      "id": "9a6b5fd4-f285-4f45-92bb-80923c09bd87"
+    },
+    {
+      "reference": "W54",
+      "name": "Carolina Herrera Good Girl",
+      "outcome": "already-imported",
+      "id": "98f727b0-6307-4045-ba0e-43fd4730e9fe"
+    },
+    {
+      "reference": "W55",
+      "name": "Dior Miss Dior",
+      "outcome": "already-imported",
+      "id": "624caab9-f408-404b-8692-ed9231560a08"
+    },
+    {
+      "reference": "W56",
+      "name": "Yves Saint Laurent Libre",
+      "outcome": "already-imported",
+      "id": "bf593eca-6f18-4994-b02a-d207e877faf5"
+    },
+    {
+      "reference": "W57",
+      "name": "Dior J'adore",
+      "outcome": "already-imported",
+      "id": "f57990dc-5d5a-4158-8e72-e991fddd5333"
+    },
+    {
+      "reference": "W58",
+      "name": "Gucci Bloom",
+      "outcome": "already-imported",
+      "id": "0a42bc35-29aa-474f-81b4-d8edc5df5c7d"
+    },
+    {
+      "reference": "W59",
+      "name": "Giorgio Armani Sì",
+      "outcome": "already-imported",
+      "id": "e10c77cc-dbe7-483e-a8a7-28058a15f110"
+    },
+    {
+      "reference": "W60",
+      "name": "Lancôme Trésor in Love",
+      "outcome": "already-imported",
+      "id": "dba9e9e6-4a54-41d6-8673-d84da0043c66"
+    },
+    {
+      "reference": "W61",
+      "name": "Giorgio Armani My Way",
+      "outcome": "already-imported",
+      "id": "33799fca-08e6-41ef-a5f6-6170336da1b6"
+    },
+    {
+      "reference": "W62",
+      "name": "Catalog W62 — Valentino",
+      "outcome": "already-imported",
+      "id": "85d59efe-c7f8-4cc3-a944-8570abb3c59f"
+    },
+    {
+      "reference": "W63",
+      "name": "Guerlain Mon Guerlain",
+      "outcome": "already-imported",
+      "id": "bffabfd3-e30a-4a91-9001-28c345d357f5"
+    },
+    {
+      "reference": "W64",
+      "name": "Dior Hypnotic Poison",
+      "outcome": "already-imported",
+      "id": "d2f04481-5245-4c44-90dc-99965872b91b"
+    },
+    {
+      "reference": "W65",
+      "name": "Givenchy Very Irrésistible",
+      "outcome": "already-imported",
+      "id": "726b40aa-5ba5-4732-af4b-6214cfde5de7"
+    },
+    {
+      "reference": "W66",
+      "name": "Givenchy L'Interdit Rouge",
+      "outcome": "already-imported",
+      "id": "9d799175-9060-44af-971c-cd23efe2c6d5"
+    },
+    {
+      "reference": "W67",
+      "name": "Valentino Donna",
+      "outcome": "already-imported",
+      "id": "314ef5cd-a487-4d97-9940-592d6f420ed5"
+    },
+    {
+      "reference": "W68",
+      "name": "Giorgio Armani Sì Intense EDP",
+      "outcome": "already-imported",
+      "id": "77be484c-5f1a-4836-a700-443a9e7aa46b"
+    },
+    {
+      "reference": "W69",
+      "name": "Carolina Herrera CH",
+      "outcome": "already-imported",
+      "id": "8b6964f8-4396-4aa7-bc3b-7c8aa80961c8"
+    },
+    {
+      "reference": "W70",
+      "name": "Catalog W70 — Roberto Cavalli",
+      "outcome": "already-imported",
+      "id": "3c9a943b-17d8-4d93-85d7-2a9bae7c75ef"
+    },
+    {
+      "reference": "W71",
+      "name": "Roberto Cavalli Paradiso Assoluto",
+      "outcome": "already-imported",
+      "id": "dbff632e-8fa8-4e1f-a215-db4a8d8e02c7"
+    },
+    {
+      "reference": "W72",
+      "name": "Elie Saab Le Parfum",
+      "outcome": "already-imported",
+      "id": "1b8c1d65-a5d9-4b1d-a23e-e3eb894134d6"
+    },
+    {
+      "reference": "W73",
+      "name": "Burberry London for Women",
+      "outcome": "already-imported",
+      "id": "7b9c9604-a7bf-41a3-97c1-6f06aceaa497"
+    },
+    {
+      "reference": "W74",
+      "name": "Versace Crystal Noir",
+      "outcome": "already-imported",
+      "id": "16a460d7-8249-4382-9309-0034490ff88c"
+    },
+    {
+      "reference": "W75",
+      "name": "Versace Dylan Turquoise",
+      "outcome": "already-imported",
+      "id": "6b3901d8-bd11-467a-b806-89c264522bec"
+    },
+    {
+      "reference": "W76",
+      "name": "Burberry Goddess",
+      "outcome": "already-imported",
+      "id": "0d5c0203-952c-4392-af56-416c4f60a4f6"
+    },
+    {
+      "reference": "W77",
+      "name": "Carolina Herrera Good Girl Ylang",
+      "outcome": "already-imported",
+      "id": "ba09e424-7d75-487c-8e6e-64e3b952214c"
+    },
+    {
+      "reference": "W78",
+      "name": "Paco Rabanne Fame",
+      "outcome": "already-imported",
+      "id": "9f5654c1-545d-4236-9daa-3af7cbdb587f"
+    },
+    {
+      "reference": "W79",
+      "name": "Carolina Herrera 212 VIP Rosé",
+      "outcome": "already-imported",
+      "id": "b34fc96c-e25f-4279-a84c-9487af7f01f6"
+    },
+    {
+      "reference": "W81",
+      "name": "Dior Gris Dior",
+      "outcome": "already-imported",
+      "id": "fe7c01a6-5f58-44e9-b542-e5287e486d57"
+    }
+  ],
+  "duplicates": [
+    {
+      "reference": "M31",
+      "number": 31,
+      "category": "Men",
+      "brand": "Jean Paul Gaultier",
+      "fragrance": "Le Male Elixir",
+      "name": "Jean Paul Gaultier Le Male Elixir",
+      "source": "Screenshot_3303.png",
+      "review": null,
+      "canonical": "M22",
+      "season": null
+    },
+    {
+      "reference": "M33",
+      "number": 33,
+      "category": "Men",
+      "brand": "Jean Paul Gaultier",
+      "fragrance": "Ultra Male",
+      "name": "Jean Paul Gaultier Ultra Male",
+      "source": "Screenshot_3303.png",
+      "review": null,
+      "canonical": "M11",
+      "season": null
+    },
+    {
+      "reference": "M48",
+      "number": 48,
+      "category": "Men",
+      "brand": "Giorgio Armani",
+      "fragrance": "Acqua di Giò Pour Homme",
+      "name": "Giorgio Armani Acqua di Giò Pour Homme",
+      "source": "Screenshot_3304.png",
+      "review": null,
+      "canonical": "M10",
+      "season": null
+    },
+    {
+      "reference": "M79",
+      "number": 79,
+      "category": "Men",
+      "brand": "Maison Francis Kurkdjian",
+      "fragrance": "Baccarat Rouge 540",
+      "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+      "source": "Screenshot_3305.png",
+      "review": null,
+      "canonical": "M62",
+      "season": null
+    },
+    {
+      "reference": "M87",
+      "number": 87,
+      "category": "Men",
+      "brand": "Creed",
+      "fragrance": "Aventus",
+      "name": "Creed Aventus",
+      "source": "Screenshot_3305.png",
+      "review": null,
+      "canonical": "M7",
+      "season": null
+    },
+    {
+      "reference": "M101",
+      "number": 101,
+      "category": "Men",
+      "brand": "Louis Vuitton",
+      "fragrance": "Ombre Nomade",
+      "name": "Louis Vuitton Ombre Nomade",
+      "source": "Screenshot_3306.png",
+      "review": null,
+      "canonical": "M19",
+      "season": null
+    },
+    {
+      "reference": "W14",
+      "number": 14,
+      "category": "Women",
+      "brand": "Emporio Armani",
+      "fragrance": "In Love With You",
+      "name": "Emporio Armani In Love With You",
+      "source": "Screenshot_3307.png",
+      "review": null,
+      "canonical": "W13",
+      "season": null
+    },
+    {
+      "reference": "W80",
+      "number": 80,
+      "category": "Women",
+      "brand": "Versace",
+      "fragrance": "Dylan Blue Pour Femme",
+      "name": "Versace Dylan Blue Pour Femme",
+      "source": "Screenshot_3310.png",
+      "review": null,
+      "canonical": "W16",
+      "season": null
+    },
+    {
+      "reference": "W82",
+      "number": 82,
+      "category": "Women",
+      "brand": "Carolina Herrera",
+      "fragrance": "212 VIP Rosé",
+      "name": "Carolina Herrera 212 VIP Rosé",
+      "source": "Screenshot_3310.png",
+      "review": null,
+      "canonical": "W79",
+      "season": null
+    }
+  ],
+  "review": [
+    {
+      "reference": "M3",
+      "number": 3,
+      "category": "Men",
+      "brand": "Paco Rabanne",
+      "fragrance": "Invictus Cologne",
+      "name": "Paco Rabanne Invictus Cologne",
+      "source": "Screenshot_3301.png",
+      "review": "Caption says invictus cologne; exact variant requires confirmation.",
+      "canonical": "M3",
+      "season": "Summer"
+    },
+    {
+      "reference": "M4",
+      "number": 4,
+      "category": "Men",
+      "brand": "Chanel",
+      "fragrance": "Bleu de Chanel",
+      "name": "Chanel Bleu de Chanel",
+      "source": "Screenshot_3301.png",
+      "review": "Source caption misspells Blue De chane; concentration unconfirmed.",
+      "canonical": "M4",
+      "season": "Summer"
+    },
+    {
+      "reference": "M5",
+      "number": 5,
+      "category": "Men",
+      "brand": "Chanel",
+      "fragrance": "Allure Homme Sport",
+      "name": "Chanel Allure Homme Sport",
+      "source": "Screenshot_3301.png",
+      "review": "Source caption ALLURA HOME SPORT; bottle reads Allure Homme Sport.",
+      "canonical": "M5",
+      "season": "Summer"
+    },
+    {
+      "reference": "M8",
+      "number": 8,
+      "category": "Men",
+      "brand": "Yves Saint Laurent",
+      "fragrance": null,
+      "name": "Catalog M8 — Yves Saint Laurent",
+      "source": "Screenshot_3301.png",
+      "review": "Caption gives brand only; Y bottle shown; compare M60 before identifying variant.",
+      "canonical": "M8",
+      "season": "Summer"
+    },
+    {
+      "reference": "M9",
+      "number": 9,
+      "category": "Men",
+      "brand": "Montblanc",
+      "fragrance": null,
+      "name": "Catalog M9 — Montblanc",
+      "source": "Screenshot_3301.png",
+      "review": "Caption says Mont Blank; exact fragrance not stated.",
+      "canonical": "M9",
+      "season": "Summer"
+    },
+    {
+      "reference": "M11",
+      "number": 11,
+      "category": "Men",
+      "brand": "Jean Paul Gaultier",
+      "fragrance": "Ultra Male",
+      "name": "Jean Paul Gaultier Ultra Male",
+      "source": "Screenshot_3302.png",
+      "review": "Source says Jean Paul Le Male Ultra; also M33.",
+      "canonical": "M11",
+      "season": "Winter"
+    },
+    {
+      "reference": "M13",
+      "number": 13,
+      "category": "Men",
+      "brand": "Dolce & Gabbana",
+      "fragrance": "The One for Men",
+      "name": "Dolce & Gabbana The One for Men",
+      "source": "Screenshot_3302.png",
+      "review": "Source caption D&C the one; men's bottle shown.",
+      "canonical": "M13",
+      "season": "Winter"
+    },
+    {
+      "reference": "M17",
+      "number": 17,
+      "category": "Men",
+      "brand": "Tom Ford",
+      "fragrance": "Ombré Leather",
+      "name": "Tom Ford Ombré Leather",
+      "source": "Screenshot_3302.png",
+      "review": "Caption amber leather conflicts with Ombré Leather bottle text; verify.",
+      "canonical": "M17",
+      "season": "Winter"
+    },
+    {
+      "reference": "M19",
+      "number": 19,
+      "category": "Men",
+      "brand": "Louis Vuitton",
+      "fragrance": "Ombre Nomade",
+      "name": "Louis Vuitton Ombre Nomade",
+      "source": "Screenshot_3302.png",
+      "review": "Source Omber Nomade; bottle reads Ombre Nomade.",
+      "canonical": "M19",
+      "season": "Winter"
+    },
+    {
+      "reference": "M29",
+      "number": 29,
+      "category": "Men",
+      "brand": "Yves Saint Laurent",
+      "fragrance": "La Nuit de Bleu",
+      "name": "Yves Saint Laurent La Nuit de Bleu",
+      "source": "Screenshot_3303.png",
+      "review": "Source caption La Nuit de Bleu; exact variant requires verification.",
+      "canonical": "M29",
+      "season": null
+    },
+    {
+      "reference": "M32",
+      "number": 32,
+      "category": "Men",
+      "brand": "Jean Paul Gaultier",
+      "fragrance": "Le Male Le Parfum",
+      "name": "Jean Paul Gaultier Le Male Le Parfum",
+      "source": "Screenshot_3303.png",
+      "review": "Caption says Le Male Le; verify exact variant from owner.",
+      "canonical": "M32",
+      "season": null
+    },
+    {
+      "reference": "M37",
+      "number": 37,
+      "category": "Men",
+      "brand": "Carolina Herrera",
+      "fragrance": "212 Sexy Men",
+      "name": "Carolina Herrera 212 Sexy Men",
+      "source": "Screenshot_3303.png",
+      "review": "Source 212 Men Sexy.",
+      "canonical": "M37",
+      "season": null
+    },
+    {
+      "reference": "M49",
+      "number": 49,
+      "category": "Men",
+      "brand": "Givenchy",
+      "fragrance": "Gentleman",
+      "name": "Givenchy Gentleman",
+      "source": "Screenshot_3304.png",
+      "review": "Same caption as M50 but different bottle; variants unresolved; do not merge.",
+      "canonical": "M49",
+      "season": null
+    },
+    {
+      "reference": "M50",
+      "number": 50,
+      "category": "Men",
+      "brand": "Givenchy",
+      "fragrance": "Gentleman",
+      "name": "Givenchy Gentleman",
+      "source": "Screenshot_3304.png",
+      "review": "Same caption as M49 but different bottle; variants unresolved; do not merge.",
+      "canonical": "M50",
+      "season": null
+    },
+    {
+      "reference": "M58",
+      "number": 58,
+      "category": "Men",
+      "brand": "Dunhill",
+      "fragrance": "Alfred Dunhill London",
+      "name": "Dunhill Alfred Dunhill London",
+      "source": "Screenshot_3304.png",
+      "review": "Source Dunhill London Alfred; exact fragrance unclear.",
+      "canonical": "M58",
+      "season": null
+    },
+    {
+      "reference": "M60",
+      "number": 60,
+      "category": "Men",
+      "brand": "Yves Saint Laurent",
+      "fragrance": "Y Le",
+      "name": "Yves Saint Laurent Y Le",
+      "source": "Screenshot_3304.png",
+      "review": "Caption Y Le; exact variant unclear; compare M8.",
+      "canonical": "M60",
+      "season": null
+    },
+    {
+      "reference": "M62",
+      "number": 62,
+      "category": "Men",
+      "brand": "Maison Francis Kurkdjian",
+      "fragrance": "Baccarat Rouge 540",
+      "name": "Maison Francis Kurkdjian Baccarat Rouge 540",
+      "source": "Screenshot_3304.png",
+      "review": "M62 and M79 share title; concentration/edition unconfirmed.",
+      "canonical": "M62",
+      "season": null
+    },
+    {
+      "reference": "M67",
+      "number": 67,
+      "category": "Men",
+      "brand": "Viktor & Rolf",
+      "fragrance": "Spicebomb",
+      "name": "Viktor & Rolf Spicebomb",
+      "source": "Screenshot_3304.png",
+      "review": "Exact variant unconfirmed.",
+      "canonical": "M67",
+      "season": null
+    },
+    {
+      "reference": "M68",
+      "number": 68,
+      "category": "Men",
+      "brand": "Valentino",
+      "fragrance": "Uomo",
+      "name": "Valentino Uomo",
+      "source": "Screenshot_3304.png",
+      "review": "Exact variant unconfirmed.",
+      "canonical": "M68",
+      "season": null
+    },
+    {
+      "reference": "M71",
+      "number": 71,
+      "category": "Men",
+      "brand": "Tom Ford",
+      "fragrance": "Portofino",
+      "name": "Tom Ford Portofino",
+      "source": "Screenshot_3305.png",
+      "review": "Source PORTOFINO; precise Neroli/edition name not stated.",
+      "canonical": "M71",
+      "season": null
+    },
+    {
+      "reference": "M85",
+      "number": 85,
+      "category": "Men",
+      "brand": "Nikos",
+      "fragrance": "Sculpture",
+      "name": "Nikos Sculpture",
+      "source": "Screenshot_3305.png",
+      "review": "Exact variant unconfirmed.",
+      "canonical": "M85",
+      "season": null
+    },
+    {
+      "reference": "M88",
+      "number": 88,
+      "category": "Men",
+      "brand": "Creed",
+      "fragrance": "Silver Mountain",
+      "name": "Creed Silver Mountain",
+      "source": "Screenshot_3305.png",
+      "review": "Source CREED SILVER MOUNTAIN; exact full title requires confirmation.",
+      "canonical": "M88",
+      "season": null
+    },
+    {
+      "reference": "M89",
+      "number": 89,
+      "category": "Men",
+      "brand": "Creed",
+      "fragrance": "Green Irish",
+      "name": "Creed Green Irish",
+      "source": "Screenshot_3305.png",
+      "review": "Source CREED GREEN IRISH; exact full title requires confirmation.",
+      "canonical": "M89",
+      "season": null
+    },
+    {
+      "reference": "M91",
+      "number": 91,
+      "category": "Men",
+      "brand": "Prada",
+      "fragrance": "Black",
+      "name": "Prada Black",
+      "source": "Screenshot_3305.png",
+      "review": "Caption PRADA UNVEILS BLACK; exact Luna Rossa variant requires confirmation.",
+      "canonical": "M91",
+      "season": null
+    },
+    {
+      "reference": "M105",
+      "number": 105,
+      "category": "Men",
+      "brand": "Chanel",
+      "fragrance": "Égoïste",
+      "name": "Chanel Égoïste",
+      "source": "Screenshot_3306.png",
+      "review": "Caption Égoïste but bottle reads Platinum Égoïste; verify variant.",
+      "canonical": "M105",
+      "season": null
+    },
+    {
+      "reference": "W7",
+      "number": 7,
+      "category": "Women",
+      "brand": "Narciso Rodriguez",
+      "fragrance": null,
+      "name": "Catalog W7 — Narciso Rodriguez",
+      "source": "Screenshot_3307.png",
+      "review": "Brand-only caption; pale pink bottle; fragrance unresolved.",
+      "canonical": "W7",
+      "season": null
+    },
+    {
+      "reference": "W9",
+      "number": 9,
+      "category": "Women",
+      "brand": "Chanel",
+      "fragrance": "Chance",
+      "name": "Chanel Chance",
+      "source": "Screenshot_3307.png",
+      "review": "Pink bottle; variant not specified in caption.",
+      "canonical": "W9",
+      "season": null
+    },
+    {
+      "reference": "W13",
+      "number": 13,
+      "category": "Women",
+      "brand": "Emporio Armani",
+      "fragrance": "In Love With You",
+      "name": "Emporio Armani In Love With You",
+      "source": "Screenshot_3307.png",
+      "review": "W13/W14 share caption but different liquids/bottles; merged at stated name only; edition requires review.",
+      "canonical": "W13",
+      "season": null
+    },
+    {
+      "reference": "W23",
+      "number": 23,
+      "category": "Women",
+      "brand": "Gucci",
+      "fragrance": "Flora",
+      "name": "Gucci Flora",
+      "source": "Screenshot_3307.png",
+      "review": "Exact Flora variant not stated; verify.",
+      "canonical": "W23",
+      "season": null
+    },
+    {
+      "reference": "W25",
+      "number": 25,
+      "category": "Women",
+      "brand": "Gucci",
+      "fragrance": "Guilty Pour Femme",
+      "name": "Gucci Guilty Pour Femme",
+      "source": "Screenshot_3307.png",
+      "review": "Compare W26 EDP; possible related edition; kept separate.",
+      "canonical": "W25",
+      "season": null
+    },
+    {
+      "reference": "W26",
+      "number": 26,
+      "category": "Women",
+      "brand": "Gucci",
+      "fragrance": "Guilty EDP",
+      "name": "Gucci Guilty EDP",
+      "source": "Screenshot_3308.png",
+      "review": "Compare W25; exact variant unresolved; kept separate.",
+      "canonical": "W26",
+      "season": null
+    },
+    {
+      "reference": "W27",
+      "number": 27,
+      "category": "Women",
+      "brand": "Escada",
+      "fragrance": "Incredible Me",
+      "name": "Escada Incredible Me",
+      "source": "Screenshot_3308.png",
+      "review": "Source ESCADA INCREDIBLE; bottle text supports Incredible Me.",
+      "canonical": "W27",
+      "season": null
+    },
+    {
+      "reference": "W40",
+      "number": 40,
+      "category": "Women",
+      "brand": "Montale",
+      "fragrance": "Roses Musk",
+      "name": "Montale Roses Musk",
+      "source": "Screenshot_3308.png",
+      "review": "Source Rose Musk.",
+      "canonical": "W40",
+      "season": null
+    },
+    {
+      "reference": "W44",
+      "number": 44,
+      "category": "Women",
+      "brand": "Jean Paul Gaultier",
+      "fragrance": "La Belle Le",
+      "name": "Jean Paul Gaultier La Belle Le",
+      "source": "Screenshot_3308.png",
+      "review": "Source La Belle Le; full variant unresolved.",
+      "canonical": "W44",
+      "season": null
+    },
+    {
+      "reference": "W45",
+      "number": 45,
+      "category": "Women",
+      "brand": "Hugo Boss",
+      "fragrance": null,
+      "name": "Catalog W45 — Hugo Boss",
+      "source": "Screenshot_3308.png",
+      "review": "No caption at W45; visually resembles W42; do not merge without verification.",
+      "canonical": "W45",
+      "season": null
+    },
+    {
+      "reference": "W48",
+      "number": 48,
+      "category": "Women",
+      "brand": "Elie Saab",
+      "fragrance": "Shine",
+      "name": "Elie Saab Shine",
+      "source": "Screenshot_3308.png",
+      "review": "Source ELIE SAAB SHINE; full variant unresolved.",
+      "canonical": "W48",
+      "season": null
+    },
+    {
+      "reference": "W52",
+      "number": 52,
+      "category": "Women",
+      "brand": "Armani Privé",
+      "fragrance": "Pivoine",
+      "name": "Armani Privé Pivoine",
+      "source": "Screenshot_3309.png",
+      "review": "Caption Pivoine; full variant unresolved.",
+      "canonical": "W52",
+      "season": null
+    },
+    {
+      "reference": "W62",
+      "number": 62,
+      "category": "Women",
+      "brand": "Valentino",
+      "fragrance": null,
+      "name": "Catalog W62 — Valentino",
+      "source": "Screenshot_3309.png",
+      "review": "Caption Valentino only; fragrance/variant unclear.",
+      "canonical": "W62",
+      "season": null
+    },
+    {
+      "reference": "W67",
+      "number": 67,
+      "category": "Women",
+      "brand": "Valentino",
+      "fragrance": "Donna",
+      "name": "Valentino Donna",
+      "source": "Screenshot_3309.png",
+      "review": "Exact variant unconfirmed.",
+      "canonical": "W67",
+      "season": null
+    },
+    {
+      "reference": "W70",
+      "number": 70,
+      "category": "Women",
+      "brand": "Roberto Cavalli",
+      "fragrance": null,
+      "name": "Catalog W70 — Roberto Cavalli",
+      "source": "Screenshot_3309.png",
+      "review": "Caption Roberto Cavalli only; exact fragrance requires verification.",
+      "canonical": "W70",
+      "season": null
+    },
+    {
+      "reference": "W77",
+      "number": 77,
+      "category": "Women",
+      "brand": "Carolina Herrera",
+      "fragrance": "Good Girl Ylang",
+      "name": "Carolina Herrera Good Girl Ylang",
+      "source": "Screenshot_3310.png",
+      "review": "Caption Ylang; pink shoe image; exact variant unresolved, do not assume Blush.",
+      "canonical": "W77",
+      "season": null
+    },
+    {
+      "reference": "W79",
+      "number": 79,
+      "category": "Women",
+      "brand": "Carolina Herrera",
+      "fragrance": "212 VIP Rosé",
+      "name": "Carolina Herrera 212 VIP Rosé",
+      "source": "Screenshot_3310.png",
+      "review": "W79/W82 share name but different bottle artwork; edition requires confirmation.",
+      "canonical": "W79",
+      "season": null
+    }
+  ],
+  "databaseVerification": {
+    "imported": 180,
+    "sourceReferences": 189,
+    "men": 101,
+    "women": 79,
+    "drafts": 180,
+    "existingOtherProducts": 0,
+    "reviewRequired": 42
+  }
+}

@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: black-perfumes-api
+    runtime: node
+    buildCommand: npm ci --include=dev && npm run build --workspace=@black-perfumes/api
+    startCommand: npm run start:api
+    preDeployCommand: npm run db:deploy --workspace=@black-perfumes/api
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY_HOPS
+        value: "1"
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
