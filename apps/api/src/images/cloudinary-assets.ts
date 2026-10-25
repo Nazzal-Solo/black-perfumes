@@ -1,8 +1,23 @@
 import { cloudinary } from "../config/cloudinary.js";
+import { env } from "../config/env.js";
+import { ImageError } from "./service.js";
 import { ASSET_PREFIX, type CloudAsset, type ImageAssets } from "./service.js";
 import { cloudinaryStatus, cloudinaryUploadFailure } from "./upload-error.js";
 
 export const cloudinaryAssets: ImageAssets = {
+  sign(publicId) {
+    if (!env.CLOUDINARY_UPLOAD_PRESET) throw new ImageError(503, "Image uploads need a configured signed Cloudinary upload preset.", "upload");
+    // Cloudinary signatures last one hour; backdating leaves five minutes to upload.
+    const fields = {
+      public_id: publicId, timestamp: String(Math.floor(Date.now() / 1000) - 55 * 60),
+      upload_preset: env.CLOUDINARY_UPLOAD_PRESET, overwrite: "false", type: "upload",
+      allowed_formats: "jpg,png,webp", transformation: "c_limit,h_2400,w_2400",
+    };
+    return {
+      url: `https://api.cloudinary.com/v1_1/${encodeURIComponent(env.CLOUDINARY_CLOUD_NAME)}/image/upload`,
+      fields: { ...fields, api_key: env.CLOUDINARY_API_KEY, signature: cloudinary.utils.api_sign_request(fields, env.CLOUDINARY_API_SECRET) },
+    };
+  },
   upload(buffer, publicId) {
     return new Promise((resolve, reject) => {
       cloudinary.uploader.upload_stream({
@@ -16,7 +31,7 @@ export const cloudinaryAssets: ImageAssets = {
     });
   },
   async get(publicId) {
-    try { return await cloudinary.api.resource(publicId, { resource_type: "image", type: "upload" }) as CloudAsset; }
+    try { return await cloudinary.api.resource(publicId, { resource_type: "image", type: "upload", timeout: 10_000 }) as CloudAsset; }
     catch (error) {
       if (cloudinaryStatus(error) === 404) return null;
       throw new Error("Cloudinary lookup failed");

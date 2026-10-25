@@ -57,6 +57,17 @@ export function createImageRouter(service: ImageService, store: AuthStore, optio
     if (!parsed.success) throw new ImageError(400, "Choose a JPEG, PNG, or WebP image up to 10 MB.");
     response.json(await service.issue(String(request.params.productId), String(response.locals.sessionKey), parsed.data.size, parsed.data.contentType));
   });
+  const attachmentInput = z.object({ ticket: z.string().min(1).max(2000) }).strict();
+  router.post("/products/:productId/images/direct-upload", async (request, response) => {
+    const parsed = attachmentInput.safeParse(request.body);
+    if (!parsed.success) throw new ImageError(400, "Invalid upload ticket.");
+    response.json(await service.directUpload(String(request.params.productId), String(response.locals.sessionKey), parsed.data.ticket));
+  });
+  router.post("/products/:productId/images/attach", async (request, response) => {
+    const parsed = attachmentInput.safeParse(request.body);
+    if (!parsed.success) throw new ImageError(400, "Invalid upload ticket.");
+    response.json({ images: await service.attach(String(request.params.productId), String(response.locals.sessionKey), parsed.data.ticket) });
+  });
   router.put("/products/:productId/images/order", async (request, response) => {
     const parsed = orderInput.safeParse(request.body);
     if (!parsed.success) throw new ImageError(400, "Invalid image order.");

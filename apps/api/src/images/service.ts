@@ -14,7 +14,9 @@ const ticketSchema = z.object({ productId: z.uuid(), publicId: z.string().max(25
 type UploadTicket = z.infer<typeof ticketSchema>;
 
 export type CloudAsset = { public_id: string; secure_url: string; resource_type: string; type: string; format: string; bytes: number; width: number; height: number; created_at: string };
+export type DirectUpload = { url: string; fields: Record<string, string> };
 export interface ImageAssets {
+  sign?(publicId: string): DirectUpload;
   upload(buffer: Buffer, publicId: string): Promise<CloudAsset>;
   get(publicId: string): Promise<CloudAsset | null>;
   list(cursor?: string, prefix?: string): Promise<{ resources: CloudAsset[]; next_cursor?: string }>;
@@ -91,6 +93,26 @@ export class ImageService {
       if (error instanceof CloudinaryUploadFailure) throw new ImageError(error.status, error.message, "upload", error.code, error.providerStatus);
       throw new ImageError(502, "The upload to Cloudinary failed. The image was not attached to the product. Please try again.", "upload", "CLOUDINARY_UPLOAD_FAILED");
     }
+    return this.attachAsset(productId, claim, asset);
+  }
+  async directUpload(productId: string, sessionKey: string, ticket: string) {
+    const claim = this.authorize(productId, sessionKey, ticket);
+    if (!this.assets.sign) throw new ImageError(503, "Direct image uploads are not configured.", "upload");
+    await this.list(productId);
+    // A lost upload/attachment response must not cause a second asset or overwrite.
+    const existing = await this.assets.get(claim.publicId);
+    if (existing) return { uploaded: true as const };
+    return { uploaded: false as const, ...this.assets.sign(claim.publicId) };
+  }
+  async attach(productId: string, sessionKey: string, ticket: string) {
+    const claim = this.authorize(productId, sessionKey, ticket);
+    const current = await this.list(productId);
+    if (current.some(image => image.cloudinaryPublicId === claim.publicId)) return current;
+    const asset = await this.assets.get(claim.publicId);
+    if (!asset) throw new ImageError(409, "The uploaded image is not ready. Retry or refresh images.", "attachment");
+    return this.attachAsset(productId, claim, asset);
+  }
+  private async attachAsset(productId: string, claim: UploadTicket, asset: CloudAsset) {
     const url = URL.canParse(asset.secure_url) ? new URL(asset.secure_url) : null;
     if (asset.public_id !== claim.publicId || asset.resource_type !== "image" || asset.type !== "upload" ||
       !["jpg", "jpeg", "png", "webp"].includes(asset.format) || !Number.isSafeInteger(asset.bytes) || asset.bytes > MAX_IMAGE_BYTES || asset.bytes < 1 ||

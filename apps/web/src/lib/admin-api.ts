@@ -1,5 +1,3 @@
-import { env } from "@/config/env";
-
 export type AdminSession = { admin: { id: number; email: string }; expiresAt: string };
 export type Category = { id: string; name: string; _count: { products: number } };
 export type Product = {
@@ -21,7 +19,7 @@ export class ApiError extends Error {
   constructor(public status: number, message: string, public fields: Record<string, string[]> = {}, public stage?: "upload" | "attachment") { super(message); }
 }
 
-export const adminApiUrl = (path: string) => `${env.NEXT_PUBLIC_API_URL.replace(/\/$/, "")}/api/admin${path}`;
+export const adminApiUrl = (path: string) => `/api/admin${path}`;
 
 export async function adminApi<T>(path: string, options: { method?: "POST" | "PUT" | "DELETE"; body?: unknown; signal?: AbortSignal } = {}): Promise<T> {
   let response: Response;
@@ -35,8 +33,8 @@ export async function adminApi<T>(path: string, options: { method?: "POST" | "PU
     throw new ApiError(0, "Unable to reach the server. Check your connection and try again.");
   }
   if (!response.ok) {
-    const body = await response.json().catch(() => ({})) as { error?: string; fields?: Record<string, string[]> };
-    throw new ApiError(response.status, body.error ?? "Something went wrong. Please try again.", body.fields);
+    const body = await response.json().catch(() => ({})) as { error?: string; fields?: Record<string, string[]>; stage?: "upload" | "attachment" };
+    throw new ApiError(response.status, body.error ?? "Something went wrong. Please try again.", body.fields, body.stage);
   }
   return response.status === 204 ? undefined as T : response.json() as Promise<T>;
 }

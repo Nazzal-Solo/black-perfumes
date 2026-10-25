@@ -16,6 +16,7 @@ const schema = z.object({
   CLOUDINARY_CLOUD_NAME: z.string().min(1),
   CLOUDINARY_API_KEY: z.string().min(1),
   CLOUDINARY_API_SECRET: z.string().min(1),
+  CLOUDINARY_UPLOAD_PRESET: z.string().min(1).optional(),
 }).refine((value) => value.NODE_ENV !== "production" || value.CORS_ORIGINS.every((item) => item.startsWith("https://")), { message: "Production CORS origins must use HTTPS", path: ["CORS_ORIGINS"] });
 
 const result = schema.safeParse(process.env);
