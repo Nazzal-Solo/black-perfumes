@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { publicMetadata } from "@/lib/metadata";
 import { Suspense } from "react";
 import { cookies } from "next/headers";
 import Image from "next/image";
@@ -14,7 +14,7 @@ import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact";
 import "./home.css";
 
-export const metadata: Metadata = { title: "Black Perfumes — The Chemistry of an Unforgettable Scent", description: "One spray is all it takes. رشة وحدة بتكفي. Explore Black Perfumes." };
+export const generateMetadata = () => publicMetadata("home", "/");
 const instagram = "https://www.instagram.com/black_perfumes99/";
 const logo = officialLogo;
 

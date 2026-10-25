@@ -1,6 +1,9 @@
+import { publicMetadata } from "@/lib/metadata";
 import { z } from "zod";
 import { getCategories, getCatalogPage } from "@/lib/catalog";
 import { PublicCollection } from "@/components/public-collection";
+
+export const generateMetadata = () => publicMetadata("collection", "/collection");
 
 export default async function CollectionPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
   const query = await searchParams;
