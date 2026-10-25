@@ -19,7 +19,11 @@ const schema = z.object({
   CLOUDINARY_UPLOAD_PRESET: z.string().min(1).optional(),
 }).refine((value) => value.NODE_ENV !== "production" || value.CORS_ORIGINS.every((item) => item.startsWith("https://")), { message: "Production CORS origins must use HTTPS", path: ["CORS_ORIGINS"] });
 
-const result = schema.safeParse(process.env);
+// Render is always a hosted environment, even if NODE_ENV is accidentally overridden.
+const result = schema.safeParse({
+  ...process.env,
+  NODE_ENV: process.env.RENDER === "true" ? "production" : process.env.NODE_ENV,
+});
 if (!result.success) {
   // Report field names and validation messages only; never log supplied secrets.
   throw new Error(`Invalid API environment: ${result.error.issues.map((issue) => `${issue.path.join(".")}: ${issue.message}`).join("; ")}`);

@@ -106,3 +106,13 @@ test("BFF preserves cookie expiration, retry headers and multiple Set-Cookie bou
   assert.match(cookies[0]!, /Expires=Thu, 01 Jan 1970 00:00:00 GMT/);
   assert.match(cookies[0]!, /Max-Age=0/); assert.ok(!cookies[0]!.includes("Domain="));
 });
+
+test("production BFF fails closed instead of returning login success when Render emits a development or missing cookie", async () => {
+  for (const value of [undefined, `bp_admin=${"a".repeat(64)}; HttpOnly; SameSite=Lax; Path=/`]) {
+    const upstream: typeof fetch = async () => Response.json({ admin: { id: 1 }, expiresAt: "fixture" }, { headers: value ? { "Set-Cookie": value } : {} });
+    const result = await proxyAdmin(request("login", "POST", { email: "fixture@example.test", password: "fixture" }), ["login"], config, upstream);
+    assert.equal(result.status, 502); assert.equal(result.headers.get("set-cookie"), null);
+    const body = await result.text(); assert.match(body, /secure session/); assert.ok(!body.includes("a".repeat(64)));
+    assert.match(result.headers.get("cache-control")!, /no-store/);
+  }
+});

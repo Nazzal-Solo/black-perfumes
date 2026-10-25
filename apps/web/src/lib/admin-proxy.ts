@@ -63,10 +63,18 @@ export async function proxyAdmin(request: Request, path: string[], config: Admin
       signal: AbortSignal.any([request.signal, AbortSignal.timeout(45_000)]),
     });
     const responseHeaders = new Headers(noStore);
+    let sessionIssued = false;
     for (const name of ["Content-Type", "Retry-After"]) { const value = upstream.headers.get(name); if (value) responseHeaders.set(name, value); }
     for (const value of upstream.headers.getSetCookie()) {
       const cookie = browserCookie(value, config.production);
-      if (cookie) responseHeaders.append("Set-Cookie", cookie);
+      if (cookie) {
+        responseHeaders.append("Set-Cookie", cookie);
+        if (/^(?:__Host-)?bp_admin=[a-f0-9]{64};/.test(cookie)) sessionIssued = true;
+      }
+    }
+    if (method === "POST" && path.length === 1 && path[0] === "login" && upstream.ok && !sessionIssued) {
+      await upstream.body?.cancel();
+      return failure(502, "Sign-in could not establish a secure session. Check the API production configuration.");
     }
     return new Response(method === "HEAD" || upstream.status === 204 ? null : upstream.body, { status: upstream.status, headers: responseHeaders });
   } catch { return failure(502, "Unable to reach the admin API. Please try again."); }
