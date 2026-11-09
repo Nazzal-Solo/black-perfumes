@@ -13,7 +13,7 @@ export async function uploadProductImage(productId: string, file: File, ticket: 
   }
 }
 
-function sendImage(grant: Extract<UploadGrant, { uploaded: false }>, file: File, progress: (value: number) => void, signal: AbortSignal): Promise<void> {
+export function sendImage(grant: { url: string; fields: Record<string, string> }, file: File, progress: (value: number) => void, signal: AbortSignal): Promise<void> {
   return new Promise((resolve, reject) => {
     if (signal.aborted) { reject(new DOMException("Upload cancelled", "AbortError")); return; }
     const target = new URL(grant.url);

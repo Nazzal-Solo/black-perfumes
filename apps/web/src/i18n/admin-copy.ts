@@ -1,6 +1,7 @@
 "use client";
 import { useLocale } from "next-intl";
 const arabic: Record<string,string> = {
+  "Appearance": "المظهر", "Discard unsaved appearance changes?": "هل تريد تجاهل تغييرات المظهر غير المحفوظة؟",
  "Discard unsaved fields and queued images? Product details and images already saved will remain.":"هل تريد تجاهل الحقول غير المحفوظة والصور المعلّقة؟ ستبقى بيانات المنتج والصور التي حُفظت بالفعل.",
  "Product created.":"تم إنشاء المنتج.",
  "Images stay on your device until you create the product.":"تبقى الصور على جهازك حتى إنشاء المنتج.",
