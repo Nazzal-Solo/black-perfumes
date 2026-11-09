@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { env } from "@/config/env";
+import { createPublicReader, DETAIL_POLICY } from "./public-read";
 
 const category = z.object({ id: z.string(), name: z.string() });
 const product = z.object({
@@ -13,31 +14,24 @@ const product = z.object({
 export type PublicProduct = z.infer<typeof product>;
 export type PublicCategory = z.infer<typeof category>;
 
-async function read(path: string, signal?: AbortSignal) {
-  const response = await fetch(`${env.NEXT_PUBLIC_API_URL.replace(/\/$/, "")}/api/${path}`, {
-    cache: "no-store", credentials: "omit", signal: signal ?? AbortSignal.timeout(5000),
-  });
-  if (response.status === 404) return null;
-  if (!response.ok) throw new Error("The collection is temporarily unavailable.");
-  return response.json() as Promise<unknown>;
-}
+const reader = createPublicReader();
+const apiUrl = (path: string) => `${env.NEXT_PUBLIC_API_URL.replace(/\/$/, "")}/api/${path}`;
 export async function getCatalogPage(categoryId?: string, signal?: AbortSignal, limit = 6, page = 1, search = "") {
   const params = new URLSearchParams({ limit: String(limit), page: String(page) });
   if (categoryId) params.set("categoryId", categoryId);
   if (search) params.set("search", search);
-  return z.object({ products: z.array(product), total: z.number(), page: z.number(), pageSize: z.number() }).parse(await read("products?" + params, signal));
+  return z.object({ products: z.array(product), total: z.number(), page: z.number(), pageSize: z.number() }).parse(await reader(apiUrl("products?" + params), value => value, { signal }));
 }
 export async function getProducts(categoryId?: string, signal?: AbortSignal, limit = 6) {
   return (await getCatalogPage(categoryId, signal, limit)).products;
 }
 export async function getPublicProduct(id: string) {
-  const result = await read("products/" + encodeURIComponent(id));
-  return result === null ? null : z.object({ product }).parse(result).product;
+  return reader(apiUrl("products/" + encodeURIComponent(id)), value => value === null ? null : z.object({ product }).parse(value).product, { policy: DETAIL_POLICY });
 }
 export function productName(item: PublicProduct, locale: string) { return (locale === "ar" ? item.nameAr : null) || item.customDisplayName || item.name; }
 export function productDescription(item: PublicProduct, locale: string) { return (locale === "ar" ? item.descriptionAr : null) || item.description; }
-export async function getCategories() {
-  return z.object({ categories: z.array(category) }).parse(await read("categories")).categories;
+export async function getCategories(signal?: AbortSignal) {
+  return reader(apiUrl("categories"), value => z.object({ categories: z.array(category) }).parse(value).categories, { signal, categoryCache: true });
 }
 export function fragranceImage(url: string, width: number) {
   try {

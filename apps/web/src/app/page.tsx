@@ -1,14 +1,12 @@
 import { publicMetadata } from "@/lib/metadata";
-import { Suspense } from "react";
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 import { NextIntlClientProvider } from "next-intl";
 import { ArrowDown, ArrowUpRight, FlaskConical, Mouse, Sparkles } from "lucide-react";
 import officialLogo from "../../public/Berfumes Black_logo.png";
-import { PublicCollection, CollectionSkeleton } from "@/components/public-collection";
+import { PublicCollection } from "@/components/public-collection";
 import { LanguageSwitcher, PublicDocumentLanguage } from "@/components/public-locale";
-import { getCategories, getProducts } from "@/lib/catalog";
 import { messages } from "@/i18n/messages";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact";
@@ -20,13 +18,6 @@ const logo = officialLogo;
 
 function Instagram({ size = 19 }: { size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>;
-}
-
-async function Catalog() {
-  const [productResult, categoryResult] = await Promise.allSettled([getProducts(), getCategories()]);
-  return <PublicCollection initialProducts={productResult.status === "fulfilled" ? productResult.value : []}
-    categories={categoryResult.status === "fulfilled" ? categoryResult.value : []}
-    unavailable={productResult.status === "rejected"} categoriesUnavailable={categoryResult.status === "rejected"} />;
 }
 
 export default async function Home() {
@@ -51,7 +42,7 @@ export default async function Home() {
         </main>
       </div>
       <div className="public-content">
-        <Suspense fallback={<CollectionSkeleton section />}><Catalog /></Suspense>
+        <PublicCollection />
         <section id="about" className="home-section brand-section" aria-labelledby="brand-title">
           <div className="brand-art" aria-hidden="true"><div className="chemistry-orbit orbit-one" /><div className="chemistry-orbit orbit-two" /><div className="chemistry-core"><FlaskConical size={54} strokeWidth={.8} /><span>{t.personal}</span></div><span className="chemistry-label label-scent">{t.scent}</span><span className="chemistry-label label-skin">{t.skin}</span><span className="chemistry-label label-memory">{t.memory}</span><Sparkles className="chemistry-spark" size={20} strokeWidth={1} /></div>
           <div className="brand-copy"><p className="eyebrow">{t.brandEyebrow}</p><h2 id="brand-title">{t.brandTitle}<br /><em>{t.brandAccent}</em></h2><p>{t.brandText}</p><p>{t.brandTextTwo}</p><a className="text-link" href="#collection">{t.explore}<ArrowUpRight size={17} /></a></div>
