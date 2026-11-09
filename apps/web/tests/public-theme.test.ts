@@ -13,3 +13,15 @@ test("published public styles cannot introduce chromatic literals outside the se
   }
   assert.doesNotMatch(css, /rgba?\(|hsla?\(/i, "Use semantic tokens or neutral hex overlays");
 });
+
+
+test("admin colors use published aliases rather than fixed palette colors", () => {
+  const css = readFileSync(new URL("../src/app/admin/admin.css", import.meta.url), "utf8");
+  const rules = css.replace(/var\([^)]*\)/g, "");
+  for (const [, value] of rules.matchAll(/#([a-f0-9]{3,8})\b/gi)) {
+    const rgb = value!.length <= 4 ? value!.slice(0, 3).split("").map(v => v + v) : value!.slice(0, 6).match(/../g)!;
+    assert.equal(rgb[0], rgb[1], `Hardcoded admin color #${value}`);
+    assert.equal(rgb[1], rgb[2], `Hardcoded admin color #${value}`);
+  }
+  for (const token of ["background", "surface", "raised", "text", "muted", "border", "accent", "onAccent", "focus", "disabled", "disabledText"]) assert.ok(css.includes(`var(--appearance-${token},`));
+});

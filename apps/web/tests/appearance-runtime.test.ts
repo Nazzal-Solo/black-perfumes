@@ -38,7 +38,7 @@ test("temporary failures, malformed settings and aborts are non-throwing and pre
   assert.equal(latestPublishedAppearance(current, next), next); assert.equal(latestPublishedAppearance(current, { ...current }), current);
 });
 
-test("all four presets, including Emerald and Light Mode, apply semantic variables and restore admin styles exactly", () => {
+test("all four presets, including Emerald and Light Mode, apply shared semantic variables and preserve application-specific aliases", () => {
   for (const preset of ["emerald-lab", "retro-vice", "midnight-luxury", "light-elegance"] as const) {
     const h = documentFixture(); h.root.style.setProperty("--admin-bg", "#101312"); h.root.style.setProperty("--appearance-text", "#ffffff", "important");
     const undo = applyPublishedAppearance(h.document, { ...appearance, themePreset: preset });
@@ -68,4 +68,17 @@ test("published branding controls every image slot, with original assets on miss
     assert.equal(publishedAssetSource(published, slot, fallback, url), fallback);
     assert.equal(publishedAssetSource({ ...published, assets: { ...published.assets, [slot]: url + "?updated=1" } }, slot, fallback, url), url + "?updated=1");
   }
+});
+
+test("published light and dark palettes replace each other without retaining stale variables", () => {
+  const h = documentFixture();
+  const light = { ...appearance, revision: 2, themePreset: "light-elegance" as const, tokens: { ...tokens, background: "#FFFFFF", surface: "#FFFFFF", text: "#171717", accent: "#171717", onAccent: "#FFFFFF" } };
+  let undo = applyPublishedAppearance(h.document, light);
+  assert.equal(h.root.style.getPropertyValue("--appearance-background"), "#FFFFFF");
+  // The same document/variables are inherited by both the storefront and admin shell.
+  undo(); undo = applyPublishedAppearance(h.document, { ...appearance, revision: 3 });
+  assert.equal(h.root.dataset.appearanceTheme, "emerald-lab");
+  assert.equal(h.root.style.getPropertyValue("--appearance-background"), tokens.background);
+  assert.equal(h.root.style.getPropertyValue("--appearance-onAccent"), tokens.onAccent);
+  undo();
 });

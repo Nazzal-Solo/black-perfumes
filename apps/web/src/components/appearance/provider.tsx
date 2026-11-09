@@ -13,9 +13,7 @@ export const usePublishedAppearance = () => useContext(Context);
 export function AppearanceProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [appearance, setAppearance] = useState<Appearance | null>(null);
-  const publicPage = !pathname?.startsWith("/admin");
   useEffect(() => {
-    if (!publicPage) return;
     let active = true; let pending: AbortController | undefined;
     const refresh = async () => {
       if (document.visibilityState === "hidden" || pending) return;
@@ -31,12 +29,12 @@ export function AppearanceProvider({ children }: { children: React.ReactNode }) 
     const visible = () => { void refresh(); };
     document.addEventListener("visibilitychange", visible);
     return () => { active = false; pending?.abort(); clearInterval(timer); document.removeEventListener("visibilitychange", visible); };
-  }, [publicPage]);
+  }, [pathname]);
   useEffect(() => {
-    if (!publicPage || !appearance) return;
+    if (!appearance) return;
     return applyPublishedAppearance(document, appearance);
-  }, [appearance, pathname, publicPage]);
-  return <Context.Provider value={publicPage ? appearance : null}>{children}</Context.Provider>;
+  }, [appearance]);
+  return <Context.Provider value={appearance}>{children}</Context.Provider>;
 }
 
 export function AppearanceImage({ slot, fallbackSrc, alt, onError, ...props }: Omit<ImageProps, "src"> & { slot: "logo" | "hero" | "men" | "women" | "unisex"; fallbackSrc: ImageProps["src"] }) {
