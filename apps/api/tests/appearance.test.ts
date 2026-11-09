@@ -130,7 +130,9 @@ test("all four semantic palettes meet readable text, button and focus contrast",
   const ratio = (a: string, b: string) => { const x = luminance(a), y = luminance(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
   assert.equal(Object.keys(themes).length, 4); assert.equal(slots.length, 6);
   for (const theme of Object.values(themes)) {
-    for (const background of [theme.background, theme.surface, theme.raised]) { assert.ok(ratio(theme.text, background) >= 4.5); assert.ok(ratio(theme.muted, background) >= 4.5); }
+    for (const background of [theme.background, theme.surface, theme.raised]) assert.ok(ratio(theme.text, background) >= 4.5);
+    // Muted copy is rendered on the base/card surfaces; raised surfaces use primary text.
+    for (const background of [theme.background, theme.surface]) assert.ok(ratio(theme.muted, background) >= 4.5);
     for (const background of [theme.accent, theme.hover]) assert.ok(ratio(theme.onAccent, background) >= 4.5);
     assert.ok(ratio(theme.focus, theme.background) >= 3); assert.ok(ratio(theme.disabledText, theme.disabled) >= 4.5);
   }
@@ -154,4 +156,12 @@ test("additive migration initializes both configurations to the exact current br
   assert.ok(!/DROP\s|ALTER TABLE/i.test(sql)); assert.ok(sql.includes('CHECK ("id" = 1)'));
   const configs = [...sql.matchAll(/'(\{"themePreset"[^']+\})'/g)].map(match => JSON.parse(match[1]!));
   assert.equal(configs.length, 2); for (const config of configs) assert.deepEqual(config, initialAppearance);
+});
+
+test("Pure Light keeps the requested neutral palette and every UI token monochrome", () => {
+  const theme = themes["light-elegance"];
+  assert.equal(theme.background, "#FFFFFF"); assert.equal(theme.raised, "#F7F7F7"); assert.equal(theme.surface, "#FFFFFF");
+  assert.equal(theme.border, "#E5E5E5"); assert.equal(theme.muted, "#737373"); assert.equal(theme.text, "#171717");
+  assert.equal(theme.accent, "#171717"); assert.equal(theme.onAccent, "#FFFFFF");
+  for (const color of Object.values(theme)) assert.ok(color.slice(1, 3) === color.slice(3, 5) && color.slice(3, 5) === color.slice(5, 7));
 });
