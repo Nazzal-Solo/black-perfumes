@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import "./globals.css";
+import { AppearanceProvider } from "@/components/appearance/provider";
 
 export const metadata: Metadata = {
   title: "Berfumes Black | Find Your Signature Scent",
@@ -17,7 +18,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <header className="border-b px-6 py-6 sm:px-10">
           <Link href="/" className="text-sm font-semibold tracking-[0.2em]">BLACK PERFUMES</Link>
         </header>
-        {children}
+        <AppearanceProvider>{children}</AppearanceProvider>
         <footer className="border-t px-6 py-6 text-sm text-muted-foreground sm:px-10">Black Perfumes · Fine fragrance</footer>
       </body>
     </html>

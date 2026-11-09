@@ -122,8 +122,8 @@ html:has(.home-shell){scroll-padding-top:calc(112px + 20px)}
 }
 @media(max-width:380px){.home-shell .collection-entry{min-height:270px;padding:27px}.home-shell .entry-copy{padding-block-start:65px}.home-shell .entry-arrow{position:static}.home-shell[dir=rtl] .hero-copy h1{font-size:39px}}
 
-.home-shell .entry-men{--collection-cover:url('/Berfumes%20Black_Men.png')}
-.home-shell .entry-women{--collection-cover:url('/Berfumes%20Black_Women.png')}
+.home-shell .entry-men{--collection-cover:var(--appearance-men-image,url('/Berfumes%20Black_Men.png'))}
+.home-shell .entry-women{--collection-cover:var(--appearance-women-image,url('/Berfumes%20Black_Women.png'))}
 .home-shell .entry-background{background-position:65% center;background-repeat:no-repeat}
 .home-shell .collection-entry:before{background:linear-gradient(0deg,#041009f0 0%,#06130bb3 30%,#07160b18 76%),linear-gradient(90deg,#06120b50,transparent 65%)}
 .home-shell .entry-women:before{background:linear-gradient(0deg,#08130bf0 0%,#101c12b3 30%,#14241918 76%),linear-gradient(90deg,#101c1250,transparent 65%)}
@@ -166,3 +166,14 @@ html:has(.home-shell){scroll-padding-top:calc(112px + 20px)}
 .home-shell .catalog-filter-status{display:flex;align-items:center;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px}
 .home-shell[dir=rtl] .catalog-filter-status{font-size:16px;letter-spacing:0}
 @media(prefers-reduced-motion:reduce){.home-shell .skeleton-art,.home-shell .skeleton-line{animation:none}}
+
+/* Preset tokens only activate after an explicit appearance publication. */
+html[data-appearance-theme] .home-shell{--ink:var(--appearance-background);--ivory:var(--appearance-text);--muted:var(--appearance-muted);--glow:var(--appearance-accent);background:var(--appearance-background);color:var(--appearance-text)}
+html[data-appearance-theme] .home-shell :is(.public-content,.store-main,.home-footer){background:var(--appearance-background);color:var(--appearance-text)}
+html[data-appearance-theme] .home-shell :is(.home-nav,.fragrance-card,.collection-message,.collection-filters button,.public-search input){background:var(--appearance-surface);color:var(--appearance-text);border-color:var(--appearance-border)}
+html[data-appearance-theme] .home-shell :is(.home-cta,.collection-filters button[aria-pressed=true],.public-search button){background:var(--appearance-accent);color:var(--appearance-onAccent);border-color:var(--appearance-accent)}
+html[data-appearance-theme] .home-shell :is(.home-cta,.public-search button):hover{background:var(--appearance-hover);color:var(--appearance-onAccent)}
+html[data-appearance-theme] .home-shell :is(a,button,input):focus-visible{outline:2px solid var(--appearance-focus);outline-offset:4px}
+html[data-appearance-theme] .home-shell button:disabled{background:var(--appearance-disabled);color:var(--appearance-disabledText)}
+html[data-appearance-theme] .home-shell .cinematic-stage{--ivory:#F0EDE5;--muted:#A9C9B2;--glow:#A9C9B2;color:#F0EDE5}
+html[data-appearance-theme=light-elegance] .home-shell :is(.home-nav,.home-footer){--ivory:#F0EDE5;--muted:#A9C9B2;background:#152B20;color:#F0EDE5}

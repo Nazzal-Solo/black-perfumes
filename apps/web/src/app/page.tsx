@@ -1,6 +1,6 @@
 import { publicMetadata } from "@/lib/metadata";
 import { cookies } from "next/headers";
-import Image from "next/image";
+import { AppearanceImage } from "@/components/appearance/provider";
 import Link from "next/link";
 import { NextIntlClientProvider } from "next-intl";
 import { ArrowDown, ArrowUpRight, FlaskConical, Mouse, Sparkles } from "lucide-react";
@@ -28,9 +28,9 @@ export default async function Home() {
     <div className="home-shell" lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <a className="public-skip" href="#main">{t.skip}</a>
       <div className="cinematic-stage" id="home">
-        <div className="hero-visual" aria-hidden="true"><Image className="hero-backdrop" src="/Berfumes%20Black_Hero.jpg" alt="" fill priority sizes="100vw" quality={90} /></div>
+        <div className="hero-visual" aria-hidden="true"><AppearanceImage slot="hero" className="hero-backdrop" fallbackSrc="/Berfumes%20Black_Hero.jpg" alt="" fill priority sizes="100vw" quality={90} /></div>
         <header className="home-nav">
-          <Link href="/" className="brand-logo" aria-label={t.brandHome}><Image src={logo} alt="Berfumes Black" width={180} height={90} priority /></Link>
+          <Link href="/" className="brand-logo" aria-label={t.brandHome}><AppearanceImage slot="logo" fallbackSrc={logo} alt="Berfumes Black" width={180} height={90} priority /></Link>
           <nav aria-label={t.navigation}><a className="nav-active" href="#home">{t.home}</a><Link href="/collection">{t.collection}</Link><a href="#about">{t.about}</a></nav>
           <div className="nav-actions"><a className="icon-button nav-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label={t.whatsapp}><WhatsAppIcon /></a><a className="icon-button nav-instagram" href={instagram} target="_blank" rel="noopener noreferrer" aria-label={t.instagram}><Instagram /></a><LanguageSwitcher /></div>
         </header>
@@ -48,7 +48,7 @@ export default async function Home() {
           <div className="brand-copy"><p className="eyebrow">{t.brandEyebrow}</p><h2 id="brand-title">{t.brandTitle}<br /><em>{t.brandAccent}</em></h2><p>{t.brandText}</p><p>{t.brandTextTwo}</p><a className="text-link" href="#collection">{t.explore}<ArrowUpRight size={17} /></a></div>
         </section>
       </div>
-      <footer className="home-footer"><div className="footer-brand"><Link href="/" aria-label={t.brandHome}><Image src={logo} alt="Berfumes Black" width={180} height={90} /></Link><p>{t.footerLine}</p></div><nav className="footer-links" aria-label={t.navigation}><a href="#collection">{t.collection}</a><a href="#about">{t.about}</a><a className="whatsapp-contact" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={17} /><span>{t.whatsapp}<bdi>{WHATSAPP_NUMBER}</bdi></span></a><a href={instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16} />{t.instagram}<ArrowUpRight size={14} /></a></nav><div className="footer-bottom"><span>{t.copyright.replace("{year}", String(new Date().getFullYear()))}</span><Link className="admin-entry" href="/admin/login">{t.admin}</Link><a href="#home">{t.top}<ArrowUpRight size={14} /></a></div></footer>
+      <footer className="home-footer"><div className="footer-brand"><Link href="/" aria-label={t.brandHome}><AppearanceImage slot="logo" fallbackSrc={logo} alt="Berfumes Black" width={180} height={90} /></Link><p>{t.footerLine}</p></div><nav className="footer-links" aria-label={t.navigation}><a href="#collection">{t.collection}</a><a href="#about">{t.about}</a><a className="whatsapp-contact" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={17} /><span>{t.whatsapp}<bdi>{WHATSAPP_NUMBER}</bdi></span></a><a href={instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16} />{t.instagram}<ArrowUpRight size={14} /></a></nav><div className="footer-bottom"><span>{t.copyright.replace("{year}", String(new Date().getFullYear()))}</span><Link className="admin-entry" href="/admin/login">{t.admin}</Link><a href="#home">{t.top}<ArrowUpRight size={14} /></a></div></footer>
     </div>
   </NextIntlClientProvider>;
 }

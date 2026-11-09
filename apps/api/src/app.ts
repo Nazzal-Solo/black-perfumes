@@ -8,6 +8,8 @@ import { db } from "./db.js";
 import { images } from "./images/index.js";
 import { createImageRouter, createImageUploadRouter } from "./images/routes.js";
 import { createCatalogRouter } from "./catalog/routes.js";
+import { appearance } from "./appearance/index.js";
+import { createAppearanceRouters } from "./appearance/routes.js";
 
 export const app = express();
 app.disable("x-powered-by");
@@ -23,10 +25,11 @@ app.get("/api/health", (_request, response) => {
 });
 
 const adminOptions = { production: env.NODE_ENV === "production", origins: env.CORS_ORIGINS };
-app.use("/api", createCatalogRouter(db));
+const appearanceRouters = createAppearanceRouters(appearance, authStore, adminOptions);
+app.use("/api", appearanceRouters.publicRouter, createCatalogRouter(db));
 app.use("/api/admin", createImageUploadRouter(images, authStore, adminOptions));
 app.use("/api/admin", express.json({ limit: ADMIN_JSON_LIMIT }),
-  createAuthRouter(authStore, adminOptions), createImageRouter(images, authStore, adminOptions),
+  createAuthRouter(authStore, adminOptions), appearanceRouters.adminRouter, createImageRouter(images, authStore, adminOptions),
   createAdminRouter(db, authStore, adminOptions));
 
 app.use((_request, response) => {

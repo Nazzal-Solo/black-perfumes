@@ -7,7 +7,7 @@ import { cloudinaryAssets } from "./cloudinary-assets.js";
 // Isolate cleanup when separate databases share one Cloudinary account. Credentials
 // and pooling/SSL options do not influence the namespace.
 const databaseUrl = new URL(env.DATABASE_URL);
-const databaseScope = createHash("sha256").update([
+export const databaseScope = createHash("sha256").update([
   databaseUrl.hostname.toLowerCase().replace(/-pooler(?=\.)/, ""), databaseUrl.port || "5432",
   databaseUrl.pathname, databaseUrl.searchParams.get("schema") || "public",
 ].join("|")).digest("hex").slice(0, 24);
