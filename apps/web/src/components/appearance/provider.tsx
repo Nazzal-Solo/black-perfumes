@@ -1,17 +1,18 @@
 "use client";
 
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Image, { type ImageProps } from "next/image";
 import { usePathname } from "next/navigation";
 import { env } from "@/config/env";
 import { appearanceResponse, type Appearance } from "@/lib/appearance";
+import { applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "@/lib/appearance-runtime";
 export { appearanceResponse };
 const Context = createContext<Appearance | null>(null);
+export const usePublishedAppearance = () => useContext(Context);
 
 export function AppearanceProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [appearance, setAppearance] = useState<Appearance | null>(null);
-  const revision = useRef(0);
   const publicPage = !pathname?.startsWith("/admin");
   useEffect(() => {
     if (!publicPage) return;
@@ -20,10 +21,8 @@ export function AppearanceProvider({ children }: { children: React.ReactNode }) 
       if (document.visibilityState === "hidden" || pending) return;
       const controller = new AbortController(); pending = controller;
       try {
-        const response = await fetch(`${env.NEXT_PUBLIC_API_URL.replace(/\/$/, "")}/api/appearance`, { credentials: "omit", signal: AbortSignal.any([controller.signal, AbortSignal.timeout(2500)]) });
-        if (!response.ok) return;
-        const value = appearanceResponse.parse(await response.json());
-        if (active && value.revision > revision.current) { revision.current = value.revision; setAppearance(value); }
+        const value = await readPublishedAppearance(env.NEXT_PUBLIC_API_URL, controller.signal);
+        if (active) setAppearance(previous => latestPublishedAppearance(previous, value));
       } catch { /* Branding is optional; retain the existing assets and design on failure. */ }
       finally { if (pending === controller) pending = undefined; }
     };
@@ -34,34 +33,26 @@ export function AppearanceProvider({ children }: { children: React.ReactNode }) 
     return () => { active = false; pending?.abort(); clearInterval(timer); document.removeEventListener("visibilitychange", visible); };
   }, [publicPage]);
   useEffect(() => {
-    if (!appearance) return;
-    const root = document.documentElement;
-    for (const [key, value] of Object.entries(appearance.tokens)) root.style.setProperty(`--appearance-${key}`, value);
-    if (appearance.themePreset === "emerald-lab") delete root.dataset.appearanceTheme;
-    else root.dataset.appearanceTheme = appearance.themePreset;
-    for (const slot of ["men", "women", "unisex"] as const) {
-      const url = appearance.assets[slot];
-      if (url?.startsWith("https://")) root.style.setProperty(`--appearance-${slot}-image`, `url(${JSON.stringify(url)})`);
-      else root.style.removeProperty(`--appearance-${slot}-image`);
-    }
-    const links = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="icon"], link[rel="apple-touch-icon"]'));
-    for (const link of links) {
-      link.dataset.originalIcon ??= link.href;
-      link.dataset.originalIconType ??= link.getAttribute("type") ?? "";
-      link.dataset.originalIconSizes ??= link.getAttribute("sizes") ?? "";
-      link.href = appearance.assets.favicon?.startsWith("https://") ? appearance.assets.favicon : link.dataset.originalIcon;
-      if (appearance.assets.favicon?.startsWith("https://")) { link.type = "image/png"; link.removeAttribute("sizes"); }
-      else {
-        if (link.dataset.originalIconType) link.type = link.dataset.originalIconType; else link.removeAttribute("type");
-        if (link.dataset.originalIconSizes) link.setAttribute("sizes", link.dataset.originalIconSizes); else link.removeAttribute("sizes");
-      }
-    }
-  }, [appearance, pathname]);
-  return <Context.Provider value={appearance}>{children}</Context.Provider>;
+    if (!publicPage || !appearance) return;
+    return applyPublishedAppearance(document, appearance);
+  }, [appearance, pathname, publicPage]);
+  return <Context.Provider value={publicPage ? appearance : null}>{children}</Context.Provider>;
 }
 
-export function AppearanceImage({ slot, fallbackSrc, alt, ...props }: Omit<ImageProps, "src"> & { slot: "logo" | "hero"; fallbackSrc: ImageProps["src"] }) {
-  const appearance = useContext(Context);
+export function AppearanceImage({ slot, fallbackSrc, alt, onError, ...props }: Omit<ImageProps, "src"> & { slot: "logo" | "hero" | "men" | "women" | "unisex"; fallbackSrc: ImageProps["src"] }) {
+  const appearance = usePublishedAppearance();
+  const [failed, setFailed] = useState("");
   const custom = appearance?.assets[slot];
-  return <Image {...props} alt={alt} src={custom?.startsWith("https://") ? custom : fallbackSrc} unoptimized={custom?.startsWith("https://") || props.unoptimized} />;
+  const source = publishedAssetSource(appearance, slot, fallbackSrc, failed);
+  const useCustom = !!custom?.startsWith("https://") && source === custom;
+  return <Image {...props} alt={alt} src={source} unoptimized={useCustom || props.unoptimized} onError={event => { if (useCustom) setFailed(custom!); onError?.(event); }} />;
+}
+
+export function AppearanceCover({ slot }: { slot: "men" | "women" | "unisex" }) {
+  const appearance = usePublishedAppearance();
+  const fallback = slot === "men" ? "/Berfumes%20Black_Men.png" : slot === "women" ? "/Berfumes%20Black_Women.png" : null;
+  const [failed, setFailed] = useState("");
+  const custom = appearance?.assets[slot];
+  const source = publishedAssetSource(appearance, slot, fallback, failed);
+  return <span className="entry-background" aria-hidden="true">{source && <Image src={source} alt="" fill sizes="(max-width: 760px) 100vw, 50vw" unoptimized onError={() => { if (source === custom) setFailed(source); }} />}</span>;
 }

@@ -11,6 +11,7 @@ import { messages } from "@/i18n/messages";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact";
 import "./home.css";
+import "./public-theme.css";
 
 export const generateMetadata = () => publicMetadata("home", "/");
 const instagram = "https://www.instagram.com/black_perfumes99/";

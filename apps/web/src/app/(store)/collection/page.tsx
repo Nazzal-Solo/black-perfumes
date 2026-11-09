@@ -8,6 +8,6 @@ export default async function CollectionPage({ searchParams }: { searchParams: P
   const query = await searchParams;
   const category = z.uuid().safeParse(query.category);
   const selected = category.success ? category.data : undefined;
-  const collection = query.collection === "men" || query.collection === "women" ? query.collection : undefined;
+  const collection = query.collection === "men" || query.collection === "women" || query.collection === "unisex" ? query.collection : undefined;
   return <PublicCollection key={selected ?? collection ?? "all"} full initialCategory={selected} initialCollection={selected ? undefined : collection} />;
 }

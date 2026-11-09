@@ -9,6 +9,7 @@ import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/contact";
 import "../home.css";
 import "./store.css";
+import "../public-theme.css";
 
 export default async function StoreLayout({ children }: { children: React.ReactNode }) {
   const locale = (await cookies()).get("bp_locale")?.value === "ar" ? "ar" : "en";

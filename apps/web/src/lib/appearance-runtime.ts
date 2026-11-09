@@ -1,0 +1,35 @@
+import { appearanceResponse, type Appearance } from "./appearance";
+
+export async function readPublishedAppearance(apiOrigin: string, signal: AbortSignal, fetcher: typeof fetch = fetch): Promise<Appearance | null> {
+  try {
+    const response = await fetcher(`${apiOrigin.replace(/\/$/, "")}/api/appearance`, { cache: "no-store", credentials: "omit", signal: AbortSignal.any([signal, AbortSignal.timeout(2500)]) });
+    if (!response.ok) return null;
+    return appearanceResponse.parse(await response.json());
+  } catch { return null; }
+}
+
+export function latestPublishedAppearance(previous: Appearance | null, incoming: Appearance | null) {
+  if (!incoming || (previous && incoming.revision < previous.revision)) return previous;
+  return previous && JSON.stringify(previous) === JSON.stringify(incoming) ? previous : incoming;
+}
+
+export function publishedAssetSource<T>(appearance: Appearance | null, slot: keyof Appearance["assets"], fallback: T, failed = ""): string | T {
+  const custom = appearance?.assets[slot];
+  return custom?.startsWith("https://") && custom !== failed ? custom : fallback;
+}
+
+export function applyPublishedAppearance(document: Document, appearance: Appearance) {
+  const root = document.documentElement;
+  const originalTheme = root.dataset.appearanceTheme;
+  const variables = Object.entries(appearance.tokens).map(([key, value]) => [`--appearance-${key}`, value] as const);
+  const original = variables.map(([name]) => [name, root.style.getPropertyValue(name), root.style.getPropertyPriority(name)] as const);
+  for (const [name, value] of variables) root.style.setProperty(name, value);
+  root.dataset.appearanceTheme = appearance.themePreset;
+  const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="icon"],link[rel="apple-touch-icon"]')).map(link => ({ link, href: link.getAttribute("href"), type: link.getAttribute("type"), sizes: link.getAttribute("sizes") }));
+  if (appearance.assets.favicon?.startsWith("https://")) for (const { link } of icons) { link.href = appearance.assets.favicon; link.type = "image/png"; link.removeAttribute("sizes"); }
+  return () => {
+    if (originalTheme === undefined) delete root.dataset.appearanceTheme; else root.dataset.appearanceTheme = originalTheme;
+    for (const [name, value, priority] of original) { if (value) root.style.setProperty(name, value, priority); else root.style.removeProperty(name); }
+    for (const { link, href, type, sizes } of icons) for (const [name, value] of [["href", href], ["type", type], ["sizes", sizes]] as const) { if (value === null) link.removeAttribute(name); else link.setAttribute(name, value); }
+  };
+}

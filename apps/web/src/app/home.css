@@ -88,7 +88,7 @@ html:has(.home-shell){scroll-padding-top:calc(112px + 20px)}
 .home-shell[dir=rtl] .hero-actions{justify-content:flex-start;gap:14px;margin-top:20px}
 .home-shell[dir=rtl] .hero-scroll{direction:rtl}
 .home-shell .collection-entry{min-height:300px;padding:38px;border:1px solid #a1cfad2e;border-radius:28px;background:#0b1a12;box-shadow:inset 0 1px 0 #e4f4d91c,0 18px 40px #0005;align-items:end;gap:20px}
-.home-shell .entry-background{position:absolute;inset:0;z-index:-2;border-radius:inherit;background-image:var(--collection-cover,none);background-size:cover;background-position:center;transition:transform .35s;pointer-events:none}
+.home-shell .entry-background{position:absolute;inset:0;z-index:-2;border-radius:inherit;background-image:none;background-size:cover;background-position:center;transition:transform .35s;pointer-events:none}
 .home-shell .collection-entry:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 88% 18%,#69a17b38,transparent 56%),linear-gradient(125deg,#1e432c88,#09180ff2 78%);border-radius:inherit}
 .home-shell .entry-women:before{background:radial-gradient(ellipse at 88% 18%,#a2b18a33,transparent 56%),linear-gradient(125deg,#2b403180,#101d16f2 78%)}
 .home-shell .entry-orbit{width:300px;height:300px;top:-130px;inset-inline-end:-80px;border-color:#c1e6be14;box-shadow:0 0 0 35px #b3e8bb04,0 0 0 70px #b3e8bb03}
@@ -122,8 +122,6 @@ html:has(.home-shell){scroll-padding-top:calc(112px + 20px)}
 }
 @media(max-width:380px){.home-shell .collection-entry{min-height:270px;padding:27px}.home-shell .entry-copy{padding-block-start:65px}.home-shell .entry-arrow{position:static}.home-shell[dir=rtl] .hero-copy h1{font-size:39px}}
 
-.home-shell .entry-men{--collection-cover:var(--appearance-men-image,url('/Berfumes%20Black_Men.png'))}
-.home-shell .entry-women{--collection-cover:var(--appearance-women-image,url('/Berfumes%20Black_Women.png'))}
 .home-shell .entry-background{background-position:65% center;background-repeat:no-repeat}
 .home-shell .collection-entry:before{background:linear-gradient(0deg,#041009f0 0%,#06130bb3 30%,#07160b18 76%),linear-gradient(90deg,#06120b50,transparent 65%)}
 .home-shell .entry-women:before{background:linear-gradient(0deg,#08130bf0 0%,#101c12b3 30%,#14241918 76%),linear-gradient(90deg,#101c1250,transparent 65%)}
@@ -167,13 +165,6 @@ html:has(.home-shell){scroll-padding-top:calc(112px + 20px)}
 .home-shell[dir=rtl] .catalog-filter-status{font-size:16px;letter-spacing:0}
 @media(prefers-reduced-motion:reduce){.home-shell .skeleton-art,.home-shell .skeleton-line{animation:none}}
 
-/* Preset tokens only activate after an explicit appearance publication. */
-html[data-appearance-theme] .home-shell{--ink:var(--appearance-background);--ivory:var(--appearance-text);--muted:var(--appearance-muted);--glow:var(--appearance-accent);background:var(--appearance-background);color:var(--appearance-text)}
-html[data-appearance-theme] .home-shell :is(.public-content,.store-main,.home-footer){background:var(--appearance-background);color:var(--appearance-text)}
-html[data-appearance-theme] .home-shell :is(.home-nav,.fragrance-card,.collection-message,.collection-filters button,.public-search input){background:var(--appearance-surface);color:var(--appearance-text);border-color:var(--appearance-border)}
-html[data-appearance-theme] .home-shell :is(.home-cta,.collection-filters button[aria-pressed=true],.public-search button){background:var(--appearance-accent);color:var(--appearance-onAccent);border-color:var(--appearance-accent)}
-html[data-appearance-theme] .home-shell :is(.home-cta,.public-search button):hover{background:var(--appearance-hover);color:var(--appearance-onAccent)}
-html[data-appearance-theme] .home-shell :is(a,button,input):focus-visible{outline:2px solid var(--appearance-focus);outline-offset:4px}
-html[data-appearance-theme] .home-shell button:disabled{background:var(--appearance-disabled);color:var(--appearance-disabledText)}
-html[data-appearance-theme] .home-shell .cinematic-stage{--ivory:#F0EDE5;--muted:#A9C9B2;--glow:#A9C9B2;color:#F0EDE5}
-html[data-appearance-theme=light-elegance] .home-shell :is(.home-nav,.home-footer){--ivory:#F0EDE5;--muted:#A9C9B2;background:#152B20;color:#F0EDE5}
+
+.home-shell .entry-background img{object-fit:cover;object-position:65% center}
+@media(max-width:760px){.home-shell .entry-background img{object-position:70% center}}
