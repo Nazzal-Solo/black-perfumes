@@ -26,7 +26,7 @@ export function createAppearanceRouters(service: AppearanceService, store: AuthS
   adminRouter.post("/appearance/discard", async (request, response) => { response.json(await service.discard(version.parse(request.body).expectedVersion)); });
   adminRouter.post("/appearance/assets/signature", (request, response) => {
     const input = z.object({ slot: z.enum(slots), size: z.number().int().min(1).max(MAX_IMAGE_BYTES), contentType: z.enum(["image/jpeg", "image/png", "image/webp"]) }).strict().parse(request.body);
-    if (input.slot === "favicon" && input.contentType !== "image/png") throw new AppearanceError(400, "Choose a square PNG favicon.");
+    if (input.slot === "favicon" && input.contentType !== "image/png") throw new AppearanceError(400, "Choose a square PNG favicon.", { reason: ["favicon-format"] });
     response.json(service.issue(input.slot, String(response.locals.sessionKey)));
   });
   adminRouter.post("/appearance/assets/attach", async (request, response) => {
@@ -37,7 +37,7 @@ export function createAppearanceRouters(service: AppearanceService, store: AuthS
     await service.remove(z.uuid().parse(request.params.id)); response.status(204).end();
   });
   const errors: ErrorRequestHandler = (error: unknown, _request, response, next) => {
-    if (error instanceof AppearanceError || error instanceof ImageError) response.status(error.status).json({ error: error.message });
+    if (error instanceof AppearanceError || error instanceof ImageError) response.status(error.status).json({ error: error.message, ...(error instanceof AppearanceError ? { fields: error.fields } : { stage: error.stage }) });
     else if (error instanceof z.ZodError) response.status(400).json({ error: "Invalid appearance settings." });
     else next(error);
   };

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { sameAppearance, brandingUrl, validBrandingFile, loadAppearance, saveAppearance, previewAppearance, publishAppearance, discardAppearance, uploadBranding, defaultBranding, type AppearanceConfig, type BrandingUpload } from "../src/lib/appearance-admin";
+import { sameAppearance, appearanceActions, brandingUrl, validBrandingFile, loadAppearance, saveAppearance, previewAppearance, publishAppearance, discardAppearance, uploadBranding, defaultBranding, type AppearanceConfig, type BrandingUpload } from "../src/lib/appearance-admin";
 import { ApiError } from "../src/lib/admin-api";
 const id = "00000000-0000-4000-8000-000000000001";
 const config: AppearanceConfig = { themePreset: "emerald-lab", assets: { logo: null, hero: null, men: null, women: null, unisex: null, favicon: null } };
@@ -67,4 +67,22 @@ test("file selection enforces existing limits and PNG-only favicon validation", 
   const file = (type: string, size: number) => new File([new Uint8Array(size)], "fixture", { type });
   assert.ok(validBrandingFile(file("image/png", 10 * 1024 * 1024), "logo")); assert.equal(validBrandingFile(file("image/png", 10 * 1024 * 1024 + 1), "hero"), false);
   assert.equal(validBrandingFile(file("image/svg+xml", 10), "logo"), false); assert.equal(validBrandingFile(file("image/jpeg", 10), "favicon"), false); assert.equal(validBrandingFile(file("image/png", 0), "unisex"), false);
+});
+
+test("theme-only actions are independent of failed uploads and preserve every saved branding asset", () => {
+  const original = { ...config, assets: { logo: id, hero: id, men: id, women: id, unisex: id, favicon: id } };
+  for (const themePreset of ["emerald-lab", "retro-vice", "midnight-luxury", "light-elegance"] as const) {
+    const published = { ...original, themePreset: themePreset === "emerald-lab" ? "retro-vice" as const : "emerald-lab" as const };
+    const state = { draft: published, published, version: 2, publishedRevision: 1 };
+    const edited = { ...original, themePreset };
+    const failedTasks: Partial<Record<string, BrandingUpload>> = { favicon: { file: new File(["pending"], "favicon.png", { type: "image/png" }) } };
+    assert.equal(Object.keys(failedTasks).length, 1);
+    assert.deepEqual(appearanceActions(state, edited, false), { dirty: true, unpublished: false, save: true, preview: false, publish: false });
+    const saved = { ...state, draft: edited, version: 3 };
+    assert.deepEqual(appearanceActions(saved, edited, false), { dirty: false, unpublished: true, save: false, preview: true, publish: true });
+    assert.equal(appearanceActions(saved, edited, true).publish, false, "Active operations still block actions");
+    assert.deepEqual(edited.assets, original.assets, "Only the theme changed; failed files are not asset IDs");
+    const live = { ...saved, published: edited, version: 4, publishedRevision: 2 };
+    assert.equal(appearanceActions(live, edited, false).publish, false);
+  }
 });

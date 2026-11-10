@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "../src/lib/appearance-runtime";
+import { APPEARANCE_PUBLISHED_EVENT, announcePublishedAppearance, publishedAppearanceFromEvent, applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "../src/lib/appearance-runtime";
 import type { Appearance } from "../src/lib/appearance";
 const tokens = { background: "#090D0B", surface: "#152B20", raised: "#203D2C", text: "#F0EDE5", muted: "#A9C9B2", border: "#6F8B78", accent: "#A9C9B2", onAccent: "#090D0B", hover: "#C4E4CE", focus: "#C4E4CE", disabled: "#82988A", disabledText: "#090D0B" };
 const appearance: Appearance = { revision: 0, themePreset: "emerald-lab", tokens, assets: { logo: null, favicon: "/icon.png", hero: null, men: null, women: null, unisex: null } };
@@ -95,4 +95,38 @@ test("unavailable or missing published favicons use neutral browser/mobile fallb
   h.icons[0]!.fail(); assert.equal(h.icons[0]!.getAttribute("href"), "/favicon.ico", "cleanup removes the listener");
   applyPublishedAppearance(h.document, { ...appearance, assets: { ...appearance.assets, favicon: null } });
   assert.match(h.icons[0]!.getAttribute("href")!, /icon.png\?v=black-perfumes/);
+});
+
+test("publishing changes the browser/mobile favicon URL cache key without changing the stored asset URL", () => {
+  const h = documentFixture(); const assetUrl = "https://res.cloudinary.com/fixture/image/upload/v1/favicon.png";
+  const first = applyPublishedAppearance(h.document, { ...appearance, revision: 2, assets: { ...appearance.assets, favicon: assetUrl } });
+  const href = h.icons[0]!.getAttribute("href"); assert.equal(new URL(href!).searchParams.get("bp_revision"), "2"); first();
+  applyPublishedAppearance(h.document, { ...appearance, revision: 3, assets: { ...appearance.assets, favicon: assetUrl } });
+  for (const icon of h.icons) assert.equal(new URL(icon.getAttribute("href")!).searchParams.get("bp_revision"), "3");
+  assert.notEqual(h.icons[0]!.getAttribute("href"), href); assert.equal(appearance.assets.favicon, "/icon.png");
+});
+
+test("authoritative publish results win over an in-flight older GET and never apply a draft", () => {
+  const target = new EventTarget(); const previousWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
+  Object.defineProperty(globalThis, "window", { configurable: true, value: target });
+  try {
+    let current: Appearance | null = { ...appearance, revision: 6 };
+    target.addEventListener(APPEARANCE_PUBLISHED_EVENT, event => { current = latestPublishedAppearance(current, publishedAppearanceFromEvent(event)); });
+    for (const [index, themePreset] of (["retro-vice", "midnight-luxury", "light-elegance", "emerald-lab"] as const).entries()) {
+      const before = current;
+      announcePublishedAppearance({ ...appearance, themePreset, revision: 7 + index });
+      assert.equal(current!.themePreset, themePreset); assert.equal(current!.revision, 7 + index);
+      current = latestPublishedAppearance(current, before);
+      assert.equal(current!.themePreset, themePreset, "An old request cannot undo a successful publish");
+      target.dispatchEvent(new CustomEvent(APPEARANCE_PUBLISHED_EVENT, { detail: { draft: { ...appearance, themePreset: "light-elegance" } } }));
+      assert.equal(current!.themePreset, themePreset);
+    }
+  } finally { if (previousWindow) Object.defineProperty(globalThis, "window", previousWindow); else Reflect.deleteProperty(globalThis, "window"); }
+});
+test("current public /icon.png fallback hydrates every theme during mixed web/API deployments", async () => {
+  for (const themePreset of ["emerald-lab", "retro-vice", "midnight-luxury", "light-elegance"] as const) {
+    const response = { ...appearance, themePreset, revision: 6, assets: { ...appearance.assets, favicon: "/icon.png", logo: "https://res.cloudinary.com/fixture/image/upload/logo.png" } };
+    const loaded = await readPublishedAppearance("https://api.example.test", new AbortController().signal, async () => Response.json(response));
+    assert.equal(loaded!.themePreset, themePreset); assert.equal(loaded!.revision, 6); assert.equal(loaded!.assets.logo, response.assets.logo);
+  }
 });

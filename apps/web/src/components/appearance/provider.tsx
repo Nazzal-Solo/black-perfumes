@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand-mark";
 import { env } from "@/config/env";
 import { appearanceResponse, type Appearance } from "@/lib/appearance";
-import { applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "@/lib/appearance-runtime";
+import { APPEARANCE_PUBLISHED_EVENT, publishedAppearanceFromEvent, applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "@/lib/appearance-runtime";
 export { appearanceResponse };
 const Context = createContext<Appearance | null>(null);
 export const usePublishedAppearance = () => useContext(Context);
@@ -29,7 +29,12 @@ export function AppearanceProvider({ children }: { children: React.ReactNode }) 
     const timer = setInterval(() => void refresh(), 60_000);
     const visible = () => { void refresh(); };
     document.addEventListener("visibilitychange", visible);
-    return () => { active = false; pending?.abort(); clearInterval(timer); document.removeEventListener("visibilitychange", visible); };
+    const published = (event: Event) => {
+      const value = publishedAppearanceFromEvent(event);
+      if (active && value) setAppearance(previous => latestPublishedAppearance(previous, value));
+    };
+    window.addEventListener(APPEARANCE_PUBLISHED_EVENT, published);
+    return () => { active = false; pending?.abort(); clearInterval(timer); document.removeEventListener("visibilitychange", visible); window.removeEventListener(APPEARANCE_PUBLISHED_EVENT, published); };
   }, [pathname]);
   useEffect(() => {
     if (!appearance) return;

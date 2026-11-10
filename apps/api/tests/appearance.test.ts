@@ -115,6 +115,13 @@ test("appearance endpoints preserve auth/origin protections and expose only publ
     for (const invalid of [{ slot: "logo", size: MAX_IMAGE_BYTES + 1, contentType: "image/png" }, { slot: "favicon", size: 100, contentType: "image/jpeg" }, { slot: "hero", size: 100, contentType: "image/svg+xml" }]) {
       assert.equal((await fetch(base + "/api/admin/appearance/assets/signature", { method: "POST", headers, body: JSON.stringify(invalid) })).status, 400);
     }
+    const oversizedIcon = h.upload("favicon", createHash("sha256").update(token).digest("hex"));
+    h.cloud.set(oversizedIcon.remote.public_id, { ...oversizedIcon.remote, width: 1254, height: 1254, bytes: 1656632 });
+    const rejected = await fetch(base + "/api/admin/appearance/assets/attach", { method: "POST", headers, body: JSON.stringify({ ticket: oversizedIcon.ticket }) });
+    assert.equal(rejected.status, 400);
+    const rejection = await rejected.json() as { error: string; fields: Record<string, string[]> };
+    assert.equal(rejection.fields.reason?.[0], "favicon-dimensions"); assert.deepEqual(rejection.fields.width, ["1254"]); assert.deepEqual(rejection.fields.height, ["1254"]);
+    assert.equal(h.assets.size, 0); assert.equal(h.row.publishedRevision, 0);
     const config = { ...initialAppearance, themePreset: "midnight-luxury" }; const body = JSON.stringify({ expectedVersion: 0, config });
     const saved = await fetch(base + "/api/admin/appearance/draft", { method: "PUT", headers, body }); assert.equal(saved.status, 200); assert.match(saved.headers.get("cache-control")!, /no-store/);
     let publicResponse = await fetch(base + "/api/appearance"); const published = await publicResponse.json() as { themePreset: string }; assert.equal(published.themePreset, "emerald-lab"); assert.match(publicResponse.headers.get("cache-control")!, /max-age=30/);
@@ -167,9 +174,45 @@ test("Pure Light keeps the requested neutral palette and every UI token monochro
 });
 
 
-test("unconfigured published assets resolve only to neutral new-brand defaults", async () => {
+test("unconfigured assets retain a backward-compatible favicon path and neutral branding defaults", async () => {
   const h = harness();
   const result = await h.service.published();
   for (const slot of ["logo", "hero", "men", "women", "unisex"] as const) assert.equal(result.appearance.assets[slot], null);
-  assert.equal(result.appearance.assets.favicon, "/icon.png");
+  assert.equal(result.appearance.assets.favicon, "/favicon.ico");
+});
+
+test("square PNG favicon boundaries support attach, saved draft, preview and explicit publishing", async () => {
+  for (const size of [32, 512]) {
+    const h = harness(); const issued = h.upload("favicon");
+    h.cloud.set(issued.remote.public_id, { ...issued.remote, width: size, height: size });
+    const asset = await h.service.attach(issued.ticket, "fixture-session");
+    const config = structuredClone(initialAppearance); config.assets.favicon = asset.id;
+    await h.service.save(config, 0);
+    assert.equal((await h.service.preview()).assets.favicon, asset.url);
+    assert.equal((await h.service.published()).appearance.assets.favicon, staticAssets.favicon);
+    await h.service.publish(1);
+    assert.equal((await h.service.published()).appearance.assets.favicon, asset.url);
+  }
+  for (const patch of [{ width: 31, height: 31 }, { width: 513, height: 513 }, { width: 512, height: 256 }, { width: 1254, height: 1254 }, { format: "jpg" }]) {
+    const h = harness(); const issued = h.upload("favicon"); h.cloud.set(issued.remote.public_id, { ...issued.remote, ...patch });
+    await assert.rejects(h.service.attach(issued.ticket, "fixture-session"), error => error instanceof AppearanceError && error.status === 400 && !!error.fields.reason?.[0]?.startsWith("favicon-"));
+    assert.equal(h.assets.size, 0);
+  }
+});
+
+test("all four theme-only draft/preview/publish cycles retain published branding references", async () => {
+  const h = harness(); let config = structuredClone(initialAppearance);
+  for (const slot of slots) { const upload = h.upload(slot); const asset = await h.service.attach(upload.ticket, "fixture-session"); config.assets[slot] = asset.id; }
+  await h.service.save(config, 0); await h.service.publish(1); let version = 2;
+  const branding = structuredClone(config.assets);
+  for (const themePreset of ["retro-vice", "midnight-luxury", "light-elegance", "emerald-lab"] as const) {
+    const previous = await h.service.published(); config = { ...config, themePreset };
+    await h.service.save(config, version++);
+    assert.equal((await h.service.published()).appearance.themePreset, previous.appearance.themePreset);
+    assert.equal((await h.service.preview()).themePreset, themePreset);
+    const result = await h.service.publish(version++);
+    assert.equal(result.published.themePreset, themePreset); assert.deepEqual(result.published.tokens, themes[themePreset]);
+    assert.deepEqual((await h.service.admin()).published.assets, branding);
+    assert.deepEqual(result.published.assets, previous.appearance.assets);
+  }
 });

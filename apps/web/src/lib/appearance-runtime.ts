@@ -8,6 +8,16 @@ export async function readPublishedAppearance(apiOrigin: string, signal: AbortSi
   } catch { return null; }
 }
 
+export const APPEARANCE_PUBLISHED_EVENT = "appearance-published";
+export function publishedAppearanceFromEvent(event: Event): Appearance | null {
+  if (!(event instanceof CustomEvent)) return null;
+  const parsed = appearanceResponse.safeParse(event.detail);
+  return parsed.success ? parsed.data : null;
+}
+export function announcePublishedAppearance(appearance: Appearance) {
+  window.dispatchEvent(new CustomEvent(APPEARANCE_PUBLISHED_EVENT, { detail: appearanceResponse.parse(appearance) }));
+}
+
 export function latestPublishedAppearance(previous: Appearance | null, incoming: Appearance | null) {
   if (!incoming || (previous && incoming.revision < previous.revision)) return previous;
   return previous && JSON.stringify(previous) === JSON.stringify(incoming) ? previous : incoming;
@@ -34,7 +44,7 @@ export function applyPublishedAppearance(document: Document, appearance: Appeara
       link.type = "image/png"; link.setAttribute("sizes", apple ? "180x180" : "512x512");
     };
     link.addEventListener("error", onError);
-    if (appearance.assets.favicon?.startsWith("https://")) { link.href = appearance.assets.favicon; link.type = "image/png"; link.removeAttribute("sizes"); }
+    if (appearance.assets.favicon?.startsWith("https://")) { const url = new URL(appearance.assets.favicon); url.searchParams.set("bp_revision", String(appearance.revision)); link.href = url.toString(); link.type = "image/png"; link.removeAttribute("sizes"); }
     else onError();
     return { ...saved, onError };
   });

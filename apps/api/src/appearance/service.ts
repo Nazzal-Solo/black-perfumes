@@ -7,7 +7,7 @@ import { appearanceInput, initialAppearance, slots, staticAssets, themes, type A
 
 type Database = { client: Prisma.TransactionClient; transaction<T>(work: (tx: Prisma.TransactionClient) => Promise<T>): Promise<T> };
 const claimInput = z.object({ id: z.uuid(), slot: z.enum(slots), publicId: z.string().max(255), expiresAt: z.number().int() }).strict();
-export class AppearanceError extends Error { constructor(public status: number, message: string) { super(message); } }
+export class AppearanceError extends Error { constructor(public status: number, message: string, public fields: Record<string, string[]> = {}) { super(message); } }
 export class AppearanceService {
   constructor(private database: Database, private images: ImageAssets, private secret: string, private prefix: string, private cloudName: string, private now = Date.now) {}
   private async lock(tx: Prisma.TransactionClient) {
@@ -101,10 +101,14 @@ export class AppearanceService {
     let url: URL | undefined;
     try { url = new URL(asset?.secure_url ?? ""); } catch { /* Invalid provider response. */ }
     if (!asset || asset.public_id !== publicId || asset.resource_type !== "image" || asset.type !== "upload" ||
-      !["jpg", "jpeg", "png", "webp"].includes(asset.format) || !Number.isSafeInteger(asset.bytes) || asset.bytes < 1 || asset.bytes > MAX_IMAGE_BYTES ||
-      ![asset.width, asset.height].every(size => Number.isSafeInteger(size) && size > 0 && size <= 2400) ||
-      url?.protocol !== "https:" || url.username || url.password || url.hostname !== "res.cloudinary.com" || !url.pathname.startsWith(`/${this.cloudName}/image/upload/`) ||
-      (slot === "favicon" && (asset.format !== "png" || asset.width !== asset.height || asset.width < 32 || asset.width > 512))) throw new AppearanceError(400, "Choose a valid JPEG, PNG, or WebP up to 10 MiB. Favicons must be square PNGs, 32–512 pixels.");
+      url?.protocol !== "https:" || url.username || url.password || url.hostname !== "res.cloudinary.com" || !url.pathname.startsWith(`/${this.cloudName}/image/upload/`)) throw new AppearanceError(400, "The uploaded branding image could not be verified.", { reason: ["asset-verification"] });
+    if (!Number.isSafeInteger(asset.bytes) || asset.bytes < 1 || asset.bytes > MAX_IMAGE_BYTES) throw new AppearanceError(400, "Branding images must be no larger than 10 MiB.", { reason: ["image-size"] });
+    if (slot === "favicon") {
+      if (asset.format !== "png") throw new AppearanceError(400, "Favicons must use PNG format. Check that the Cloudinary preset does not convert the format.", { reason: ["favicon-format"] });
+      if (![asset.width, asset.height].every(Number.isSafeInteger) || asset.width !== asset.height || asset.width < 32 || asset.width > 512) throw new AppearanceError(400, "Favicons must be square and between 32 and 512 pixels.", { reason: ["favicon-dimensions"], width: [String(asset.width)], height: [String(asset.height)] });
+    }
+    if (!["jpg", "jpeg", "png", "webp"].includes(asset.format)) throw new AppearanceError(400, "Choose a JPEG, PNG, or WebP image.", { reason: ["image-type"] });
+    if (![asset.width, asset.height].every(size => Number.isSafeInteger(size) && size > 0 && size <= 2400)) throw new AppearanceError(400, "Branding images must be no larger than 2400 pixels per side.", { reason: ["image-dimensions"] });
   }
   async attach(ticket: string, session: string) {
     const claim = this.claim(ticket, session); const remote = await this.images.get(claim.publicId);
