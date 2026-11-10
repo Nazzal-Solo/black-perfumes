@@ -1,6 +1,6 @@
 import { publicMetadata } from "@/lib/metadata";
 import { cookies } from "next/headers";
-import { AppearanceImage, BrandLogo } from "@/components/appearance/provider";
+import { AppearanceHero, BrandLogo } from "@/components/appearance/provider";
 import Link from "next/link";
 import { NextIntlClientProvider } from "next-intl";
 import { ArrowDown, ArrowUpRight, Droplets, Mouse } from "lucide-react";
@@ -27,7 +27,7 @@ export default async function Home() {
     <div className="home-shell" lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <a className="public-skip" href="#main">{t.skip}</a>
       <div className="cinematic-stage" id="home">
-        <div className="hero-visual" aria-hidden="true"><AppearanceImage slot="hero" className="hero-backdrop" fallbackSrc="/brand/fragrance-fallback.svg" alt="" fill priority sizes="100vw" quality={90} /></div>
+        <div className="hero-visual" aria-hidden="true"><AppearanceHero /></div>
         <header className="home-nav">
           <Link href="/" className="brand-logo" aria-label={t.brandHome}><BrandLogo width={180} height={90} priority /></Link>
           <nav aria-label={t.navigation}><a className="nav-active" href="#home">{t.home}</a><Link href="/collection">{t.collection}</Link><a href="#about">{t.about}</a></nav>

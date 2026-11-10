@@ -7,7 +7,7 @@ import { ArrowUpRight, Droplets, Mars, RefreshCw, Venus } from "lucide-react";
 import { getCatalogPage, getCategories, productName, productDescription, type PublicCategory, type PublicProduct } from "@/lib/catalog";
 import { BrandedPlaceholder } from "@/components/branded-placeholder";
 import { FragranceImage } from "@/components/fragrance-image";
-import { AppearanceCover, usePublishedAppearance } from "@/components/appearance/provider";
+import { AppearanceCover } from "@/components/appearance/provider";
 
 export function CollectionSkeleton({ section = false, full = false }: { section?: boolean; full?: boolean }) {
   const t = useTranslations();
@@ -26,7 +26,6 @@ export function PublicCollection({ full = false, initialCategory = "", initialCo
 }) {
   const t = useTranslations();
   const locale = useLocale();
-  const appearance = usePublishedAppearance();
   const [query, setQuery] = useState({ category: initialCategory, collection: initialCollection, page: 1, search: "", retry: 0 });
   const [draft, setDraft] = useState("");
   const [categoryAttempt, setCategoryAttempt] = useState(0);
@@ -103,6 +102,6 @@ export function PublicCollection({ full = false, initialCategory = "", initialCo
       </div>
     </section>
     {full && !error && total > 24 && <nav className="public-pagination" aria-label={t("collection")}><button type="button" disabled={loading || page <= 1} onClick={() => void select(active, page - 1)}>{t("previousPage")}</button><span aria-live="polite">{t("pageLabel", { page, pages: Math.ceil(total / 24) })}</span><button type="button" disabled={loading || page * 24 >= total} onClick={() => void select(active, page + 1)}>{t("nextPage")}</button></nav>}
-    {!full && <section className="home-section collection-entries" aria-label={t("collectionsLabel")}>{entries.filter(entry => entry.kind !== "unisex" || (!!entry.category && !!appearance?.assets.unisex)).map((entry) => <Link key={entry.kind} className={"collection-entry entry-" + entry.kind} href={entry.category ? "/collection?category=" + encodeURIComponent(entry.category.id) : "/collection?collection=" + entry.kind}><AppearanceCover slot={entry.kind} /><span className="entry-symbol" aria-hidden="true">{entry.kind === "men" ? <Mars size={88} strokeWidth={1.1} /> : entry.kind === "women" ? <Venus size={88} strokeWidth={1.1} /> : <Droplets size={88} strokeWidth={1.1} />}</span><div className="entry-copy"><p className="eyebrow">{entry.label}</p><h2>{entry.title}</h2><p>{t("exploreCategory")}</p></div><span className="entry-arrow" aria-hidden="true"><ArrowUpRight size={25} strokeWidth={1.2} /></span></Link>)}</section>}
+    {!full && <section className="home-section collection-entries" aria-label={t("collectionsLabel")}>{entries.filter(entry => entry.kind !== "unisex" || !!entry.category).map((entry) => <Link key={entry.kind} className={"collection-entry entry-" + entry.kind} href={entry.category ? "/collection?category=" + encodeURIComponent(entry.category.id) : "/collection?collection=" + entry.kind}><AppearanceCover slot={entry.kind} /><span className="entry-symbol" aria-hidden="true">{entry.kind === "men" ? <Mars size={88} strokeWidth={1.1} /> : entry.kind === "women" ? <Venus size={88} strokeWidth={1.1} /> : <Droplets size={88} strokeWidth={1.1} />}</span><div className="entry-copy"><p className="eyebrow">{entry.label}</p><h2>{entry.title}</h2><p>{t("exploreCategory")}</p></div><span className="entry-arrow" aria-hidden="true"><ArrowUpRight size={25} strokeWidth={1.2} /></span></Link>)}</section>}
   </>;
 }

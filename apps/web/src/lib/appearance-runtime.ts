@@ -28,6 +28,15 @@ export function publishedAssetSource<T>(appearance: Appearance | null, slot: key
   return custom?.startsWith("https://") && custom !== failed ? custom : fallback;
 }
 
+export type BrandingAssetState = "loading" | "ready" | "removed" | "unavailable";
+export function publishedAssetView(appearance: Appearance | null, slot: keyof Appearance["assets"], failed = "", loaded = "", unavailable = false): { state: BrandingAssetState; source: string | null } {
+  if (!appearance) return { state: unavailable ? "unavailable" : "loading", source: null };
+  const source = publishedAssetSource(appearance, slot, null);
+  if (!source) return { state: "removed", source: null };
+  if (source === failed) return { state: "unavailable", source: null };
+  return { state: source === loaded ? "ready" : "loading", source };
+}
+
 export function applyPublishedAppearance(document: Document, appearance: Appearance) {
   const root = document.documentElement;
   const originalTheme = root.dataset.appearanceTheme;
@@ -38,7 +47,7 @@ export function applyPublishedAppearance(document: Document, appearance: Appeara
   const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="icon"],link[rel="apple-touch-icon"]')).map(link => {
     const saved = { link, href: link.getAttribute("href"), type: link.getAttribute("type"), sizes: link.getAttribute("sizes") };
     const apple = link.getAttribute("rel") === "apple-touch-icon";
-    const fallback = `${apple ? "/apple-icon.png" : "/icon.png"}?v=black-perfumes-v2`;
+    const fallback = `${apple ? "/apple-icon.png" : "/icon.png"}?v=black-perfumes-v3`;
     const onError = () => {
       if (link.getAttribute("href") !== fallback) link.href = fallback;
       link.type = "image/png"; link.setAttribute("sizes", apple ? "180x180" : "512x512");

@@ -20,3 +20,12 @@ export function productPayload(data: FormData) {
  referenceVerified:data.get("referenceVerified")==="on",productType:String(data.get("productType")??"UNCONFIRMED"),isArchived:data.get("isArchived")==="on",isVisible:data.get("isVisible")==="on",
  catalogReferences:String(data.get("catalogReferences")??"").split(",").map(value=>value.trim()).filter(Boolean),seasonalRecommendations:data.getAll("seasonalRecommendations") };
 }
+
+export type AdminSection = "products" | "categories" | "appearance";
+export function adminSectionForPath(pathname: string | null, fallback: AdminSection): AdminSection {
+  for (const section of ["appearance", "categories", "products"] as const) if (pathname === `/admin/${section}` || pathname?.startsWith(`/admin/${section}/`)) return section;
+  return fallback;
+}
+export function activeAdminItem(section: AdminSection, visibility: string) {
+  return section !== "products" ? section : visibility === "review" ? "review" : visibility === "archived" ? "archived" : "products";
+}

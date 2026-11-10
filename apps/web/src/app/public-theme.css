@@ -128,3 +128,6 @@ html[data-appearance-theme=light-elegance] .home-shell[dir=ltr] :is(.footer-bott
 
 /* Palette changes are immediate in Pure Light; retain only spatial/opacity transitions. */
 html[data-appearance-theme=light-elegance] .home-shell[dir] *{transition-property:transform,opacity}
+
+html[data-appearance-theme] .home-shell[dir=rtl] .cinematic-stage:before{transform:scaleX(-1)}
+html[data-appearance-theme] .home-shell[dir] .cinematic-stage:has(.hero-neutral):before{background:none}

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { APPEARANCE_PUBLISHED_EVENT, announcePublishedAppearance, publishedAppearanceFromEvent, applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "../src/lib/appearance-runtime";
+import { APPEARANCE_PUBLISHED_EVENT, announcePublishedAppearance, publishedAppearanceFromEvent, applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource, publishedAssetView } from "../src/lib/appearance-runtime";
 import type { Appearance } from "../src/lib/appearance";
 const tokens = { background: "#090D0B", surface: "#152B20", raised: "#203D2C", text: "#F0EDE5", muted: "#A9C9B2", border: "#6F8B78", accent: "#A9C9B2", onAccent: "#090D0B", hover: "#C4E4CE", focus: "#C4E4CE", disabled: "#82988A", disabledText: "#090D0B" };
 const appearance: Appearance = { revision: 0, themePreset: "emerald-lab", tokens, assets: { logo: null, favicon: "/icon.png", hero: null, men: null, women: null, unisex: null } };
@@ -88,8 +88,8 @@ test("unavailable or missing published favicons use neutral browser/mobile fallb
   const h = documentFixture();
   const undo = applyPublishedAppearance(h.document, { ...appearance, assets: { ...appearance.assets, favicon: "https://res.cloudinary.com/fixture/image/upload/new-favicon.png" } });
   for (const icon of h.icons) icon.fail();
-  assert.equal(h.icons[0]!.getAttribute("href"), "/icon.png?v=black-perfumes-v2");
-  assert.equal(h.icons[1]!.getAttribute("href"), "/apple-icon.png?v=black-perfumes-v2");
+  assert.equal(h.icons[0]!.getAttribute("href"), "/icon.png?v=black-perfumes-v3");
+  assert.equal(h.icons[1]!.getAttribute("href"), "/apple-icon.png?v=black-perfumes-v3");
   undo();
   assert.equal(h.icons[0]!.getAttribute("href"), "/favicon.ico");
   h.icons[0]!.fail(); assert.equal(h.icons[0]!.getAttribute("href"), "/favicon.ico", "cleanup removes the listener");
@@ -128,5 +128,22 @@ test("current public /icon.png fallback hydrates every theme during mixed web/AP
     const response = { ...appearance, themePreset, revision: 6, assets: { ...appearance.assets, favicon: "/icon.png", logo: "https://res.cloudinary.com/fixture/image/upload/logo.png" } };
     const loaded = await readPublishedAppearance("https://api.example.test", new AbortController().signal, async () => Response.json(response));
     assert.equal(loaded!.themePreset, themePreset); assert.equal(loaded!.revision, 6); assert.equal(loaded!.assets.logo, response.assets.logo);
+  }
+});
+
+test("explicit removal, pending loads and unavailable images remain distinguishable without changing published settings", () => {
+  for (const slot of ["logo", "hero", "men", "women", "unisex", "favicon"] as const) {
+    const current = { ...appearance, assets: { ...appearance.assets, [slot]: "https://res.cloudinary.com/fixture/image/upload/brand.png" } };
+    const source = current.assets[slot]!;
+    assert.deepEqual(publishedAssetView(null, slot), { state: "loading", source: null });
+    assert.deepEqual(publishedAssetView(null, slot, "", "", true), { state: "unavailable", source: null });
+    assert.deepEqual(publishedAssetView(current, slot), { state: "loading", source });
+    assert.deepEqual(publishedAssetView(current, slot, "", source), { state: "ready", source });
+    assert.deepEqual(publishedAssetView(current, slot, source), { state: "unavailable", source: null });
+    assert.equal(current.assets[slot], source, "An image error must not mutate settings");
+    const removed = { ...current, revision: 1, assets: { ...current.assets, [slot]: null } };
+    assert.deepEqual(publishedAssetView(removed, slot), { state: "removed", source: null });
+    assert.equal(latestPublishedAppearance(removed, null), removed, "Network failure must not restore removed assets");
+    assert.equal(publishedAssetView(current, slot, "https://res.cloudinary.com/fixture/image/upload/previous.png").source, source);
   }
 });

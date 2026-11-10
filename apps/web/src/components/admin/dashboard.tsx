@@ -1,13 +1,13 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { BrandLogo } from "@/components/appearance/provider";
 import { Archive, ArrowUpRight, ChevronLeft, ChevronRight, CircleCheck, ClipboardList, Droplets, FolderOpen, LayoutDashboard, LogOut, Menu, Package, Palette, PanelLeftClose, PanelLeftOpen, Pencil, Plus, RefreshCw, Search, ShieldCheck, TriangleAlert, X } from "lucide-react";
-import { adminApi, ApiError, type AdminSession, type Category, type Product, type ProductList } from "@/lib/admin-api";
-import { catalogSummary, filterCatalog, isPublished, needsReview } from "@/lib/admin-view";
+import { adminApi, ApiError, type AdminSession, type Product } from "@/lib/admin-api";
+import { adminSectionForPath, activeAdminItem, catalogSummary, filterCatalog, isPublished, needsReview } from "@/lib/admin-view";
 import { useAdminText } from "@/i18n/admin-copy";
 import { ProductForm, type ProductFormHandle } from "@/components/admin/product-form";
 import { AdminDialog, useAdminUi } from "@/components/admin/admin-ui";
@@ -15,12 +15,14 @@ import { CloudinaryImage } from "@/components/admin/cloudinary-image";
 import { CategoryManager } from "@/components/admin/category-manager";
 import { LanguageSwitcher } from "@/components/public-locale";
 import { Card } from "@/components/ui/card";
+import { useAdminCatalog } from "@/components/admin/catalog-provider";
 import { AppearanceManager } from "@/components/admin/appearance-manager";
 
 const initialFilters = { search: "", categoryId: "", visibility: "all", page: 1 };
 const pageSize = 12;
 export default function AdminDashboard({ initialSection = "products", initialVisibility = "all" }: { initialSection?: "products" | "categories" | "appearance"; initialVisibility?: string }) {
-  const router = useRouter();
+  const router = useRouter(); const pathname = usePathname();
+  const { products, categories, loading, ready, setProducts, load: loadCatalog, reset: resetCatalog } = useAdminCatalog();
   const locale = useLocale();
   const t = useAdminText();
   const { toast, confirm } = useAdminUi();
@@ -28,12 +30,9 @@ export default function AdminDashboard({ initialSection = "products", initialVis
   const [checking, setChecking] = useState(true);
   const [sessionError, setSessionError] = useState("");
   const [sessionRetry, setSessionRetry] = useState(0);
-  const [tab, setTab] = useState<"products" | "categories" | "appearance">(initialSection);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedTab, setTab] = useState<"products" | "categories" | "appearance">(initialSection);
+  const tab = adminSectionForPath(pathname, selectedTab);
   const [filters, setFilters] = useState({ ...initialFilters, visibility: initialVisibility });
-  const [refresh, setRefresh] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [editor, setEditor] = useState<Product | "new" | null>(null);
   const [busy, setBusy] = useState(false);
@@ -42,12 +41,10 @@ export default function AdminDashboard({ initialSection = "products", initialVis
   const [appearanceState, setAppearanceState] = useState({ dirty: false, busy: false });
   const editorRef = useRef<ProductFormHandle>(null);
   const imagesChanged = useRef(false);
-  const signedIn = session !== null;
-  const catalogActive = signedIn && tab !== "appearance";
   const expired = useCallback(() => {
-    setSession(null); setProducts([]); setCategories([]); setEditor(null); setChecking(true);
+    setSession(null); resetCatalog(); setEditor(null); setChecking(true);
     router.replace("/admin/login?expired=1");
-  }, [router]);
+  }, [router, resetCatalog, setEditor]);
   const report = useCallback((error: unknown) => {
     if (error instanceof ApiError && error.status === 401) { expired(); return; }
     setError(error instanceof Error ? error.message : "Unable to load your collection.");
@@ -69,29 +66,20 @@ export default function AdminDashboard({ initialSection = "products", initialVis
     return () => { clearTimeout(timeout); window.removeEventListener("focus", checkSession); };
   }, [session, expired]);
   useEffect(() => {
-    if (!catalogActive) return;
-    const controller = new AbortController();
-    async function load() {
-      const [first, categoryData] = await Promise.all([
-        adminApi<ProductList>("/products?visibility=all&pageSize=50&page=1", { signal: controller.signal }),
-        adminApi<{ categories: Category[] }>("/categories", { signal: controller.signal }),
-      ]);
-      const pages = await Promise.all(Array.from({ length: Math.max(0, Math.ceil(first.total / first.pageSize) - 1) }, (_, index) => adminApi<ProductList>(`/products?visibility=all&pageSize=50&page=${index + 2}`, { signal: controller.signal })));
-      if (!controller.signal.aborted) { setProducts([...first.products, ...pages.flatMap(page => page.products)]); setCategories(categoryData.categories); }
-    }
-    load().catch(error => { if (!controller.signal.aborted) report(error); }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
-    return () => controller.abort();
-  }, [catalogActive, refresh, report]);
-  function reload() { setLoading(true); setError(""); setRefresh(value => value + 1); }
+    if (!session) return;
+    let active = true;
+    loadCatalog(session).catch(error => { if (active && !(error instanceof Error && error.name === "AbortError")) report(error); });
+    return () => { active = false; };
+  }, [session, loadCatalog, report]);
+  function reload() { setError(""); if (session) void loadCatalog(session, true).catch(report); }
   async function canLeaveAppearance() {
     if (appearanceState.busy) { toast("Finish the current save or upload before closing.", true); return false; }
     return !appearanceState.dirty || await confirm({ title: "Unsaved changes", body: "Discard unsaved appearance changes?", confirmText: "Discard changes", danger: true });
   }
   async function navigate(visibility = "all", section: "products" | "categories" | "appearance" = "products") {
     if (section !== tab && !await canLeaveAppearance()) return;
-    if (section === "appearance" && initialSection !== "appearance") { setMobileNav(false); router.push("/admin/appearance"); return; }
-    if (section !== "appearance" && initialSection === "appearance") { setMobileNav(false); router.push(`/admin?section=${section}&visibility=${encodeURIComponent(visibility)}`); return; }
-    if (section !== "appearance" && tab === "appearance") setLoading(true);
+    if (section === "appearance" && adminSectionForPath(pathname, "products") !== "appearance") { setMobileNav(false); router.push("/admin/appearance"); return; }
+    if (section !== "appearance" && pathname !== "/admin") { setMobileNav(false); router.push(`/admin?section=${section}&visibility=${encodeURIComponent(visibility)}`); return; }
     setTab(section); setFilters({ ...initialFilters, visibility }); setMobileNav(false);
   }
   function visitSite(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -128,8 +116,8 @@ export default function AdminDashboard({ initialSection = "products", initialVis
   const visible = matching.slice((page - 1) * pageSize, page * pageSize);
   const filtered = !!filters.search || !!filters.categoryId || filters.visibility !== "all";
   const jod = new Intl.NumberFormat(locale === "ar" ? "ar-JO" : "en-JO", { style: "currency", currency: "JOD", minimumFractionDigits: 3 });
-  const navItems = [{ label: "Products", icon: Package, visibility: "all" }, { label: "Review queue", icon: TriangleAlert, visibility: "review" }, { label: "Categories", icon: FolderOpen, section: "categories" }, { label: "Archived", icon: Archive, visibility: "archived" }, { label: "Appearance", icon: Palette, section: "appearance" }] as const;
-  const sidebar = <><Link href="/" onClick={visitSite} className="admin-brand" aria-label="Black Perfumes"><BrandLogo width={154} height={84} priority /></Link><div className="sidebar-label"><span>{t("Workspace")}</span><ShieldCheck size={14} /></div><nav aria-label={t("Workspace")}>{navItems.map(item => { const section = "section" in item ? item.section : "products"; const visibility = "visibility" in item ? item.visibility : "all"; const active = tab === section && (section !== "products" || filters.visibility === visibility); return <button key={item.label} type="button" title={t(item.label)} className={active ? "active" : ""} aria-current={active ? "page" : undefined} onClick={() => navigate(visibility, section)}><item.icon size={20} /><span>{t(item.label)}</span>{item.label === "Review queue" && !loading && <b>{summary.review}</b>}</button>; })}</nav><div className="sidebar-bottom"><div className="admin-account"><span className="account-avatar">{session.admin.email.slice(0, 1).toUpperCase()}</span><div><strong>{t("Administrator")}</strong><p title={session.admin.email}>{session.admin.email}</p></div></div><button className="admin-button quiet" title={t("Sign out")} disabled={busy} onClick={() => void logout()}><LogOut size={18} /><span>{t(busy ? "Working…" : "Sign out")}</span></button></div></>;
+  const navItems = [{ id: "products", label: "Products", icon: Package, visibility: "all" }, { id: "review", label: "Review queue", icon: TriangleAlert, visibility: "review" }, { id: "categories", label: "Categories", icon: FolderOpen, section: "categories" }, { id: "archived", label: "Archived", icon: Archive, visibility: "archived" }, { id: "appearance", label: "Appearance", icon: Palette, section: "appearance" }] as const;
+  const sidebar = <><Link href="/" onClick={visitSite} className="admin-brand" aria-label="Black Perfumes"><BrandLogo width={154} height={84} priority /></Link><div className="sidebar-label"><span>{t("Workspace")}</span><ShieldCheck size={14} /></div><nav aria-label={t("Workspace")}>{navItems.map(item => { const section = "section" in item ? item.section : "products"; const visibility = "visibility" in item ? item.visibility : "all"; const active = activeAdminItem(tab, filters.visibility) === item.id; return <button key={item.label} type="button" title={item.id === "review" && ready ? `${t(item.label)} (${summary.review})` : t(item.label)} aria-label={item.id === "review" && ready ? `${t(item.label)} ${summary.review}` : t(item.label)} className={active ? "active" : ""} aria-current={active ? "page" : undefined} onClick={() => navigate(visibility, section)}><item.icon size={20} /><span>{t(item.label)}</span>{item.id === "review" && <b aria-busy={loading}>{ready ? summary.review.toLocaleString(locale) : loading ? "…" : "—"}</b>}</button>; })}</nav><div className="sidebar-bottom"><div className="admin-account"><span className="account-avatar">{session.admin.email.slice(0, 1).toUpperCase()}</span><div><strong>{t("Administrator")}</strong><p title={session.admin.email}>{session.admin.email}</p></div></div><button className="admin-button quiet" title={t("Sign out")} disabled={busy} onClick={() => void logout()}><LogOut size={18} /><span>{t(busy ? "Working…" : "Sign out")}</span></button></div></>;
   return <main id="main" className={`admin-dashboard ${collapsed ? "sidebar-collapsed" : ""}`}>
     <aside className="admin-sidebar">{sidebar}</aside>
     <AdminDialog open={mobileNav} title={t("Workspace")} onClose={() => setMobileNav(false)} className="admin-mobile-nav"><button className="admin-icon-button mobile-nav-close" aria-label={t("Close navigation")} onClick={() => setMobileNav(false)}><X size={22} /></button>{sidebar}</AdminDialog>

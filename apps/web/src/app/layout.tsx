@@ -6,7 +6,7 @@ import { AppearanceProvider, BrandLogo } from "@/components/appearance/provider"
 
 export const metadata: Metadata = {
   title: "Black Perfumes | Find Your Signature Scent",
-  icons: { icon: { url: "/icon.png?v=black-perfumes-v2", type: "image/png", sizes: "512x512" }, apple: "/apple-icon.png?v=black-perfumes-v2" },
+  icons: { icon: { url: "/icon.png?v=black-perfumes-v3", type: "image/png", sizes: "512x512" }, apple: "/apple-icon.png?v=black-perfumes-v3" },
   description: "Explore fragrance references at Black Perfumes. Contact us for details, pricing and availability.",
 };
 
