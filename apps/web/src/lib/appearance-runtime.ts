@@ -25,11 +25,25 @@ export function applyPublishedAppearance(document: Document, appearance: Appeara
   const original = variables.map(([name]) => [name, root.style.getPropertyValue(name), root.style.getPropertyPriority(name)] as const);
   for (const [name, value] of variables) root.style.setProperty(name, value);
   root.dataset.appearanceTheme = appearance.themePreset;
-  const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="icon"],link[rel="apple-touch-icon"]')).map(link => ({ link, href: link.getAttribute("href"), type: link.getAttribute("type"), sizes: link.getAttribute("sizes") }));
-  if (appearance.assets.favicon?.startsWith("https://")) for (const { link } of icons) { link.href = appearance.assets.favicon; link.type = "image/png"; link.removeAttribute("sizes"); }
+  const icons = Array.from(document.querySelectorAll<HTMLLinkElement>('link[rel="icon"],link[rel="apple-touch-icon"]')).map(link => {
+    const saved = { link, href: link.getAttribute("href"), type: link.getAttribute("type"), sizes: link.getAttribute("sizes") };
+    const apple = link.getAttribute("rel") === "apple-touch-icon";
+    const fallback = `${apple ? "/apple-icon.png" : "/icon.png"}?v=black-perfumes-v2`;
+    const onError = () => {
+      if (link.getAttribute("href") !== fallback) link.href = fallback;
+      link.type = "image/png"; link.setAttribute("sizes", apple ? "180x180" : "512x512");
+    };
+    link.addEventListener("error", onError);
+    if (appearance.assets.favicon?.startsWith("https://")) { link.href = appearance.assets.favicon; link.type = "image/png"; link.removeAttribute("sizes"); }
+    else onError();
+    return { ...saved, onError };
+  });
   return () => {
     if (originalTheme === undefined) delete root.dataset.appearanceTheme; else root.dataset.appearanceTheme = originalTheme;
     for (const [name, value, priority] of original) { if (value) root.style.setProperty(name, value, priority); else root.style.removeProperty(name); }
-    for (const { link, href, type, sizes } of icons) for (const [name, value] of [["href", href], ["type", type], ["sizes", sizes]] as const) { if (value === null) link.removeAttribute(name); else link.setAttribute(name, value); }
+    for (const { link, href, type, sizes, onError } of icons) {
+      link.removeEventListener("error", onError);
+      for (const [name, value] of [["href", href], ["type", type], ["sizes", sizes]] as const) { if (value === null) link.removeAttribute(name); else link.setAttribute(name, value); }
+    }
   };
 }

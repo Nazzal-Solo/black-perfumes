@@ -11,9 +11,9 @@ html[data-appearance-theme] .home-shell[dir]{
 html[data-appearance-theme=light-elegance] .home-shell[dir]{color-scheme:light;--store-image-muted:#525252;--store-overlay:#ffffffc9}
 html[data-appearance-theme] .home-shell[dir] ::selection{background:var(--appearance-accent);color:var(--appearance-onAccent)}
 html[data-appearance-theme] .home-shell[dir] :is(.public-content,.store-main){background:var(--appearance-background);color:var(--appearance-text)}
-html[data-appearance-theme] .home-shell[dir] :is(.eyebrow,.text-link,.detail-price,.product-identity-label,.chemistry-core,.chemistry-spark){color:var(--appearance-focus)}
+html[data-appearance-theme] .home-shell[dir] :is(.eyebrow,.text-link,.detail-price,.product-identity-label,.fragrance-core){color:var(--appearance-focus)}
 html[data-appearance-theme] .home-shell[dir] :is(.section-heading>p,.fragrance-description,.detail-description,.brand-copy>p:not(.eyebrow),.catalog-limit,.image-pending,.catalog-filter-status,.gallery-controls>span){color:var(--appearance-muted)}
-html[data-appearance-theme] .home-shell[dir] :is(.fragrance-card,.skeleton-card,.collection-message,.product-primary,.chemistry-label,.product-thumbnails button){background:var(--appearance-surface);color:var(--appearance-text);border-color:var(--store-line)}
+html[data-appearance-theme] .home-shell[dir] :is(.fragrance-card,.skeleton-card,.collection-message,.product-primary,.fragrance-label,.product-thumbnails button){background:var(--appearance-surface);color:var(--appearance-text);border-color:var(--store-line)}
 html[data-appearance-theme] .home-shell[dir] :is(.fragrance-card:hover,.product-thumbnails button:hover){border-color:var(--appearance-accent);box-shadow:0 16px 40px #0000001f}
 html[data-appearance-theme] .home-shell[dir] :is(.fragrance-title>span,.product-copy .detail-price){color:var(--appearance-focus)}
 html[data-appearance-theme] .home-shell[dir] .fragrance-art{background:var(--appearance-raised)}
@@ -27,7 +27,6 @@ html[data-appearance-theme] .home-shell[dir] .home-cta:after{background:var(--ap
 html[data-appearance-theme] .home-shell[dir] :is(.language-switch button[aria-pressed=true],.product-thumbnails button[aria-pressed=true]){background:var(--appearance-raised);color:var(--appearance-text);border-color:var(--appearance-focus);box-shadow:none}
 html[data-appearance-theme] .home-shell[dir] :is(a,button,input):focus-visible{outline:2px solid var(--appearance-focus);outline-offset:4px}
 html[data-appearance-theme] .home-shell[dir] :is(.text-link:hover,.product-category:hover){color:var(--appearance-text)}
-html[data-appearance-theme] .home-shell[dir] :is(.chemistry-orbit,.placeholder-orbit){border-color:var(--store-line)}
 html[data-appearance-theme] .home-shell[dir] .brand-art{background:transparent}
 html[data-appearance-theme] .home-shell[dir] .skeleton-art{background:linear-gradient(110deg,var(--appearance-surface) 8%,var(--appearance-raised) 18%,var(--appearance-surface) 33%);background-size:220% 100%}
 html[data-appearance-theme] .home-shell[dir] .skeleton-line{background:var(--appearance-raised)}
@@ -59,16 +58,15 @@ html[data-appearance-theme] .home-shell[dir] .cinematic-stage :is(a,button):focu
 html[data-appearance-theme] .home-shell[dir] :is(.home-nav,.home-footer) :is(a,button):focus-visible{outline-color:var(--store-chrome-accent)}
 
 /* Shared surface and interaction details follow the same published palette. */
-html[data-appearance-theme] .home-shell[dir] :is(.fragrance-card,.collection-message,.product-primary,.chemistry-label,.collection-entry){box-shadow:0 12px 32px #00000012}
-html[data-appearance-theme] .home-shell[dir] :is(.icon-button,.home-cta,.entry-arrow,.entry-orbit,.placeholder-orbit,.branded-placeholder,.language-switch button){box-shadow:none;text-shadow:none}
-html[data-appearance-theme] .home-shell[dir] :is(.entry-symbol,.chemistry-core>svg){filter:none}
+html[data-appearance-theme] .home-shell[dir] :is(.fragrance-card,.collection-message,.product-primary,.fragrance-label,.collection-entry){box-shadow:0 12px 32px #00000012}
+html[data-appearance-theme] .home-shell[dir] :is(.icon-button,.home-cta,.entry-arrow,.branded-placeholder,.language-switch button){box-shadow:none;text-shadow:none}
+html[data-appearance-theme] .home-shell[dir] :is(.entry-symbol,.fragrance-core>svg){filter:none}
 html[data-appearance-theme] .home-shell[dir] .fragrance-art:after{background:#00000018}
 html[data-appearance-theme] .home-shell[dir] .hero-copy h1{text-shadow:none}
 html[data-appearance-theme] .home-shell[dir] .public-pagination button{background:var(--appearance-surface);color:var(--appearance-text);border-color:var(--appearance-border)}
 html[data-appearance-theme] .home-shell[dir] .public-pagination button:hover:not(:disabled){background:var(--appearance-raised);color:var(--appearance-text);border-color:var(--appearance-focus)}
 html[data-appearance-theme] .home-shell[dir] .entry-arrow{background:#0003;color:#FFFFFF;border-color:#FFFFFF80}
 html[data-appearance-theme] .home-shell[dir] .collection-entry:hover .entry-arrow{background:#0008}
-html[data-appearance-theme] .home-shell[dir] .entry-orbit{border-color:#FFFFFF26;box-shadow:none}
 html[data-appearance-theme] .home-shell[dir] .collection-entry:hover:not([aria-disabled=true]){box-shadow:0 18px 40px #00000026}
 html[data-appearance-theme] .home-shell[dir] .collection-entry:focus-visible{border-color:var(--appearance-focus)}
 html[data-appearance-theme] .home-shell[dir] :is(button:disabled,[aria-disabled=true]){background:var(--appearance-disabled);color:var(--appearance-disabledText);border-color:var(--appearance-disabled);opacity:1}
@@ -88,7 +86,7 @@ html[data-appearance-theme=light-elegance] .home-shell[dir] .hero-copy h1{font-s
 html[data-appearance-theme=light-elegance] .home-shell[dir] .hero-scroll{background:var(--appearance-surface);border:1px solid var(--appearance-border)}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .home-section{padding-block:56px}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .section-heading{margin-bottom:26px}
-html[data-appearance-theme=light-elegance] .home-shell[dir] :is(.fragrance-card,.collection-message,.product-primary,.chemistry-label,.collection-entry){box-shadow:none}
+html[data-appearance-theme=light-elegance] .home-shell[dir] :is(.fragrance-card,.collection-message,.product-primary,.fragrance-label,.collection-entry){box-shadow:none}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .fragrance-card{border-radius:18px}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .fragrance-card:hover{border-color:var(--appearance-focus);box-shadow:none;transform:translateY(-3px)}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .fragrance-art{border-bottom:1px solid var(--appearance-border)}
@@ -102,7 +100,6 @@ html[data-appearance-theme=light-elegance] .home-shell[dir] .collection-entry:be
 html[data-appearance-theme=light-elegance] .home-shell[dir] .collection-entry:hover:not([aria-disabled=true]){box-shadow:none}
 html[data-appearance-theme=light-elegance] .home-shell[dir]:not(.storefront-shell) .brand-section{width:88%;max-width:1268px;padding:40px;margin-block:16px 48px;gap:40px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);background:var(--appearance-raised);border:1px solid var(--appearance-border);border-radius:24px}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .brand-art{height:260px;background:var(--appearance-surface);border:1px solid var(--appearance-border);border-radius:18px}
-html[data-appearance-theme=light-elegance] .home-shell[dir] .chemistry-spark{display:none}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .brand-copy h2{font-size:clamp(30px,3vw,40px);line-height:1.25}
 html[data-appearance-theme=light-elegance] .home-shell[dir] .brand-copy>p:not(.eyebrow){color:var(--appearance-text);font-size:15px;margin-top:14px;max-width:100%}
 html[data-appearance-theme=light-elegance] .home-shell[dir=rtl] .brand-copy>p:not(.eyebrow){font-size:16px;line-height:1.9}

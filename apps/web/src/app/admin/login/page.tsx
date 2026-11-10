@@ -4,6 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAdminText } from "@/i18n/admin-copy";
+import { BrandLogo } from "@/components/appearance/provider";
 import { LanguageSwitcher } from "@/components/public-locale";
 import { adminApi, ApiError, type AdminSession } from "@/lib/admin-api";
 
@@ -46,7 +47,7 @@ export default function AdminLogin() {
   return (
     <main id="main" className="admin-login">
       <section className="login-story" aria-label="Black Perfumes administration">
-        <Link href="/" className="admin-wordmark">BLACK <span>PERFUMES</span></Link>
+        <Link href="/" className="admin-wordmark admin-login-brand" aria-label="Black Perfumes"><BrandLogo width={200} height={100} priority /></Link>
         <div><p className="admin-eyebrow">{t("The private collection")}</p><h1>{t("Considered scents.")}<br /><em>{t("Carefully curated.")}</em></h1><p className="login-description">{t("A quiet space to shape the Black Perfumes collection.")}</p></div>
         <p className="admin-fineprint">{t("Private workspace")}</p>
       </section>

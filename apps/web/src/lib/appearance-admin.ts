@@ -6,7 +6,7 @@ import { appearanceResponse, type Appearance } from "./appearance";
 export const brandingSlots = ["logo", "hero", "men", "women", "unisex", "favicon"] as const;
 export const themePresets = ["emerald-lab", "retro-vice", "midnight-luxury", "light-elegance"] as const;
 export type BrandingSlot = typeof brandingSlots[number];
-export const defaultBranding: Record<BrandingSlot, string | null> = { logo: "/Berfumes%20Black_logo.png", hero: "/Berfumes%20Black_Hero.jpg", men: "/Berfumes%20Black_Men.png", women: "/Berfumes%20Black_Women.png", unisex: null, favicon: "/favicon.ico" };
+export const defaultBranding: Record<BrandingSlot, string | null> = { logo: null, hero: null, men: null, women: null, unisex: null, favicon: "/icon.png" };
 export const appearanceConfig = z.object({ themePreset: z.enum(themePresets), assets: z.object({ logo: z.uuid().nullable(), hero: z.uuid().nullable(), men: z.uuid().nullable(), women: z.uuid().nullable(), unisex: z.uuid().nullable(), favicon: z.uuid().nullable() }).strict() }).strict();
 export type AppearanceConfig = z.infer<typeof appearanceConfig>;
 export const appearanceState = z.object({ draft: appearanceConfig, published: appearanceConfig, version: z.number().int().nonnegative(), publishedRevision: z.number().int().nonnegative() });

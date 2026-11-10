@@ -15,6 +15,6 @@ test("EN/AR themes use native radios, explicit selected/live states and private 
     assert.equal((cards.match(/type="radio"/g) ?? []).length, 4); assert.equal((cards.match(/checked=""/g) ?? []).length, 1);
     assert.ok(cards.includes(locale === "ar" ? "الوضع الفاتح" : "Light Mode")); assert.ok(cards.includes(locale === "ar" ? "منشور" : "Live"));
     const preview = render(createElement(AppearancePreview, { appearance: { themePreset: "retro-vice", tokens, revision: 0, assets: { logo: null, favicon: null, hero: null, men: null, women: null, unisex: null } } }));
-    assert.ok(preview.includes(locale === "ar" ? "كيمياء عطر" : "The Chemistry")); assert.ok(!preview.includes("iframe"));
+    assert.ok(preview.includes(locale === "ar" ? "عطر يعبّر" : "Find a Fragrance")); assert.ok(!preview.includes("iframe"));
   }
 });

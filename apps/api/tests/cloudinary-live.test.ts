@@ -17,7 +17,7 @@ test("opt-in live Cloudinary upload, retry, primary order and removal; DB rollba
         const category = await tx.category.create({ data: { name: `cloudinary-qa-${randomUUID()}` } });
         const product = await tx.product.create({ data: { name: "Private Cloudinary QA fixture", categoryId: category.id } });
         const service = new ImageService({ client: tx, transaction: work => work(tx) }, cloudinaryAssets, env.CLOUDINARY_API_SECRET, Date.now, prefix);
-        const bytes = await readFile(new URL("../../web/public/Berfumes Black_logo.png", import.meta.url));
+        const bytes = await readFile(new URL("../../web/src/app/icon.png", import.meta.url));
         const issue = async () => {
           const grant = await service.issue(product.id, "isolated-test-session", bytes.length, "image/png");
           const claim = JSON.parse(Buffer.from(grant.ticket.split(".")[0]!, "base64url").toString()) as { publicId: string };

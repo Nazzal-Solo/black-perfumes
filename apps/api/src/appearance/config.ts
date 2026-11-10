@@ -8,7 +8,7 @@ export const appearanceInput = z.object({
 }).strict();
 export type AppearanceConfig = z.infer<typeof appearanceInput>;
 export const initialAppearance: AppearanceConfig = { themePreset: "emerald-lab", assets: { logo: null, favicon: null, hero: null, men: null, women: null, unisex: null } };
-export const staticAssets: Record<AssetSlot, string | null> = { logo: "/Berfumes%20Black_logo.png", favicon: "/favicon.ico", hero: "/Berfumes%20Black_Hero.jpg", men: "/Berfumes%20Black_Men.png", women: "/Berfumes%20Black_Women.png", unisex: null };
+export const staticAssets: Record<AssetSlot, string | null> = { logo: null, favicon: "/icon.png", hero: null, men: null, women: null, unisex: null };
 const tokens = (background: string, surface: string, raised: string, text: string, muted: string, border: string, accent: string, onAccent: string, hover: string, focus: string, disabled: string, disabledText: string) => ({ background, surface, raised, text, muted, border, accent, onAccent, hover, focus, disabled, disabledText });
 export const themes = {
   "emerald-lab": tokens("#090D0B", "#111A15", "#1A2921", "#F0EDE5", "#A9BBAF", "#647B6C", "#24563E", "#F0EDE5", "#2E654A", "#A9C9B2", "#26372F", "#ADBCB2"),

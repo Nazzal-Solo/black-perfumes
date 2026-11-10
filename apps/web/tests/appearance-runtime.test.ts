@@ -3,13 +3,14 @@ import { test } from "node:test";
 import { applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "../src/lib/appearance-runtime";
 import type { Appearance } from "../src/lib/appearance";
 const tokens = { background: "#090D0B", surface: "#152B20", raised: "#203D2C", text: "#F0EDE5", muted: "#A9C9B2", border: "#6F8B78", accent: "#A9C9B2", onAccent: "#090D0B", hover: "#C4E4CE", focus: "#C4E4CE", disabled: "#82988A", disabledText: "#090D0B" };
-const appearance: Appearance = { revision: 0, themePreset: "emerald-lab", tokens, assets: { logo: "/Berfumes%20Black_logo.png", favicon: "/favicon.ico", hero: "/Berfumes%20Black_Hero.jpg", men: "/Berfumes%20Black_Men.png", women: "/Berfumes%20Black_Women.png", unisex: null } };
+const appearance: Appearance = { revision: 0, themePreset: "emerald-lab", tokens, assets: { logo: null, favicon: "/icon.png", hero: null, men: null, women: null, unisex: null } };
 function documentFixture() {
   const values = new Map<string, [string, string]>();
   const style = { getPropertyValue(name: string) { return values.get(name)?.[0] ?? ""; }, getPropertyPriority(name: string) { return values.get(name)?.[1] ?? ""; }, setProperty(name: string, value: string, priority = "") { values.set(name, [value, priority]); }, removeProperty(name: string) { values.delete(name); } };
   const icon = (rel: string, href: string) => {
     const attributes = new Map([["href", href], ["type", "image/x-icon"], ["sizes", "32x32"], ["rel", rel]]);
-    return { getAttribute(name: string) { return attributes.get(name) ?? null; }, setAttribute(name: string, value: string) { attributes.set(name, value); }, removeAttribute(name: string) { attributes.delete(name); }, set href(value: string) { attributes.set("href", value); }, set type(value: string) { attributes.set("type", value); } };
+    const listeners = new Map<string, () => void>();
+    return { addEventListener(name: string, listener: () => void) { listeners.set(name, listener); }, removeEventListener(name: string) { listeners.delete(name); }, fail() { listeners.get("error")?.(); }, getAttribute(name: string) { return attributes.get(name) ?? null; }, setAttribute(name: string, value: string) { attributes.set(name, value); }, removeAttribute(name: string) { attributes.delete(name); }, set href(value: string) { attributes.set("href", value); }, set type(value: string) { attributes.set("type", value); } };
   };
   const icons = [icon("icon", "/favicon.ico"), icon("apple-touch-icon", "/apple-icon.png")];
   const root = { style, dataset: {} as Record<string, string> };
@@ -58,7 +59,7 @@ test("custom favicons revert to original browser/mobile metadata on navigation o
 });
 
 
-test("published branding controls every image slot, with original assets on missing or failed images", () => {
+test("published branding controls every image slot, with neutral fallbacks on missing or failed images", () => {
   for (const slot of ["logo", "hero", "men", "women", "unisex"] as const) {
     const url = `https://res.cloudinary.com/fixture/image/upload/${slot}.png`;
     const published = { ...appearance, assets: { ...appearance.assets, [slot]: url } };
@@ -81,4 +82,17 @@ test("published light and dark palettes replace each other without retaining sta
   assert.equal(h.root.style.getPropertyValue("--appearance-background"), tokens.background);
   assert.equal(h.root.style.getPropertyValue("--appearance-onAccent"), tokens.onAccent);
   undo();
+});
+
+test("unavailable or missing published favicons use neutral browser/mobile fallbacks", () => {
+  const h = documentFixture();
+  const undo = applyPublishedAppearance(h.document, { ...appearance, assets: { ...appearance.assets, favicon: "https://res.cloudinary.com/fixture/image/upload/new-favicon.png" } });
+  for (const icon of h.icons) icon.fail();
+  assert.equal(h.icons[0]!.getAttribute("href"), "/icon.png?v=black-perfumes-v2");
+  assert.equal(h.icons[1]!.getAttribute("href"), "/apple-icon.png?v=black-perfumes-v2");
+  undo();
+  assert.equal(h.icons[0]!.getAttribute("href"), "/favicon.ico");
+  h.icons[0]!.fail(); assert.equal(h.icons[0]!.getAttribute("href"), "/favicon.ico", "cleanup removes the listener");
+  applyPublishedAppearance(h.document, { ...appearance, assets: { ...appearance.assets, favicon: null } });
+  assert.match(h.icons[0]!.getAttribute("href")!, /icon.png\?v=black-perfumes/);
 });

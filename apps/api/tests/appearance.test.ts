@@ -165,3 +165,11 @@ test("Pure Light keeps the requested neutral palette and every UI token monochro
   assert.equal(theme.accent, "#171717"); assert.equal(theme.onAccent, "#FFFFFF");
   for (const color of Object.values(theme)) assert.ok(color.slice(1, 3) === color.slice(3, 5) && color.slice(3, 5) === color.slice(5, 7));
 });
+
+
+test("unconfigured published assets resolve only to neutral new-brand defaults", async () => {
+  const h = harness();
+  const result = await h.service.published();
+  for (const slot of ["logo", "hero", "men", "women", "unisex"] as const) assert.equal(result.appearance.assets[slot], null);
+  assert.equal(result.appearance.assets.favicon, "/icon.png");
+});

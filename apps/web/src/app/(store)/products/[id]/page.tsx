@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (z.uuid().safeParse(id).success) {
     try { product = await readProduct(id); } catch { /* Render the existing unavailable state. */ }
   }
-  if (!product) return { title: "Fragrance unavailable | Berfumes Black", robots: { index: false, follow: false } };
+  if (!product) return { title: "Fragrance unavailable | Black Perfumes", robots: { index: false, follow: false } };
   const locale = (await cookies()).get("bp_locale")?.value === "ar" ? "ar" : "en";
   return publicMetadata("product", `/products/${id}`, productName(product, locale));
 }

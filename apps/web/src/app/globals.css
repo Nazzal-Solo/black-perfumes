@@ -54,3 +54,6 @@
   * { @apply border-border; }
   body { @apply bg-background font-sans text-foreground antialiased; }
 }
+
+.brand-fallback{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:.18em;max-width:100%;max-height:100%;font-family:Arial,Helvetica,sans-serif;font-weight:600;line-height:1.15;letter-spacing:.12em;color:inherit;text-align:center;direction:ltr}
+.brand-fallback>span:last-child{font-size:.42em;font-weight:400;letter-spacing:.25em}

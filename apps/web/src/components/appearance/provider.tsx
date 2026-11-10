@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import Image, { type ImageProps } from "next/image";
 import { usePathname } from "next/navigation";
+import { BrandMark } from "@/components/brand-mark";
 import { env } from "@/config/env";
 import { appearanceResponse, type Appearance } from "@/lib/appearance";
 import { applyPublishedAppearance, readPublishedAppearance, latestPublishedAppearance, publishedAssetSource } from "@/lib/appearance-runtime";
@@ -48,9 +49,16 @@ export function AppearanceImage({ slot, fallbackSrc, alt, onError, ...props }: O
 
 export function AppearanceCover({ slot }: { slot: "men" | "women" | "unisex" }) {
   const appearance = usePublishedAppearance();
-  const fallback = slot === "men" ? "/Berfumes%20Black_Men.png" : slot === "women" ? "/Berfumes%20Black_Women.png" : null;
+  const fallback = null;
   const [failed, setFailed] = useState("");
   const custom = appearance?.assets[slot];
   const source = publishedAssetSource(appearance, slot, fallback, failed);
   return <span className="entry-background" aria-hidden="true">{source && <Image src={source} alt="" fill sizes="(max-width: 760px) 100vw, 50vw" unoptimized onError={() => { if (source === custom) setFailed(source); }} />}</span>;
+}
+
+export function BrandLogo({ width = 180, height = 90, onError, ...props }: Omit<ImageProps, "src" | "alt">) {
+  const appearance = usePublishedAppearance();
+  const [failed, setFailed] = useState("");
+  const source = publishedAssetSource(appearance, "logo", null, failed);
+  return source ? <Image {...props} src={source} alt="Black Perfumes" width={width} height={height} unoptimized onError={event => { setFailed(source); onError?.(event); }} /> : <BrandMark width={Number(width)} height={Number(height)} />;
 }
